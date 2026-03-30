@@ -28,7 +28,7 @@
 \begin{document}
 \maketitle
 \subsection*{Základní pojmy}
-\textbf{Axiom} je základní tvrzení, jehož pravdivost se nedokazuje a stavíme na ní dále daný důkaz
+\textbf{Axiom} je základní tvrzení, jehož pravdivost se nedokazuje a staví základ matematické teorie.
 \textbf{Věta} je tvrzení, jehož pravdivost je potřeba ověřit
 \textbf{Výrok} je věta u které má smysl ověřit, jestli je pravdivá. Výroky jsou oznamovací věty, nebo matematická tvrzení, například:
 
@@ -36,7 +36,7 @@
 
 - $4 + 4 = 5$
 
-\textbf{Výroková forma} je výraz, který obsahuje jednu či více proměnných a není výrokem, dokud za ně nedosadíme. Výroková forma je například $4 + x = 8$
+\textbf{Výroková forma} je výraz, který obsahuje jednu či více proměnných a není výrokem, dokud za ně nedosadíme, nebo před něj předřadíme kvatifikátor. Výroková forma je například $4 + x = 8$ naopak $\exists x \in \mathbb{Z}:(4 + x = 4)$ není výroková forma, ale výrok, protože můžeme řešit jeho pravdivost.
 
 \textbf{Tautologie} je výrok, který je pravdivý pro všechny možné hodnoty proměnných, například $A \lor \neg A$\\
 \textbf{Kontradikce} je výrok, který je nepravdivý pro všechny možné hodnoty proměnných, například $A \land \neg A$\\
@@ -61,7 +61,7 @@ $A$ & $B$ & $\neg A$ & $A \land B$ & $A \lor B$ & $A \Rightarrow B$ & $A \Leftri
 \end{tabular}
 \caption*{Pravdivostní hodnoty logických spojek}
 \end{table}
-\textbf{Obměněná implikace} je $\neg A \Rightarrow \neg B$ a má stejnou pravdivostní hodnotu jako původní implikace\\
+\textbf{Obměněná implikace} je $\neg B \Rightarrow \neg A$ a má stejnou pravdivostní hodnotu jako původní implikace\\
 \textbf{Obrácená implikace} je $B \Rightarrow A$ a nemá stejnou pravdivostní hodnotu jako původní implikace\\
 \subsection*{Kvantiﬁkátory}
 \textbf{Existenční kvantifikátor} se značí $\exists$ a znamená existuje alespoň jeden\\
@@ -134,7 +134,7 @@ Tento výraz je vždy pravdivý, protože druhý mocnina je vždy nezáporná. T
 
 \textbf{Důkaz sporem} je negace výroku, který chceme dokázat a pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé.(spor)
 
-\[\neg(\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}) = \exists x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}<2\cdot \sqrt{x\cdot y}\]\\
+\[\neg(\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}) = \exists x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}<\sqrt{x\cdot y}\]\\
 A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
 \begin{align*}
 \Rightarrow x+y &< 2\cdot \sqrt{x\cdot y}\\
@@ -172,7 +172,7 @@ Došli jsme ke sporu, což znamená, že původní věta je pravdivá.
 Je to přímý důkaz obměněné implikace, tedy místo $A \Rightarrow B$ dokážeme $\neg B \Rightarrow \neg A$.\\
 Používá se, pokud je výrok B jednodušší na důkaz než výrok A.\\
 Jako příklad si dokážeme větu \[\forall(n\in \mathbb{N}): 5|(n^2+1) \Rightarrow 5\nmid n\]
-Nejprve si implikaci převedem na obměněnou implikaci, tedy \[\exists(n\in \mathbb{N}): 5 \mid n \Rightarrow 5\nmid (n^2+1)\]
+Nejprve si implikaci převedem na obměněnou implikaci, tedy \[5 \mid n \Rightarrow 5\nmid (n^2+1)\]
 A teď už jen dokážeme tuto implikaci přímým důkazem.
 \[\Rightarrow \exists k \in \mathbb{N}: n = 5k\]
 \[\Rightarrow n^2 + 1 = (5k)^2 + 1\]
