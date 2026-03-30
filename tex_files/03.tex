@@ -32,5 +32,90 @@
 
 \begin{document}
 \maketitle
+\subsection*{Základní pojmy}
+\begin{itemize}[itemsep = 2pt]
+    \item \textbf{Číselný obor} je množina čísel, která splňuje určité vlastnosti a pravidla pro operace s těmito čísly.
+    \item \textbf{Uzavřenost} je vlastnost množiny, kde výsledek operace se dvěma prvky množiny patří do stejné množiny.
+    \item \textbf{Komutativnost} je vlastnost operace, kde pořadí operandů nemá vliv na výsledek. $a \cdot b = b \cdot a$
+    \item \textbf{Asociativnost} je vlastnost operace, kde způsob seskupení operandů nemá vliv na výsledek. $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
+    \item \textbf{Distributivnost} je následovná vlastnost: $a \cdot (b + c) = a \cdot b + a \cdot c$
+    \item \textbf{Neutrální prvek} je prvek, který výsledek operace nezmění. Pro sčítání je to například 0, pro násobení je to 1.
+    \item \textbf{Inverzní prvek} je prvek, který při operaci s jiným prvkem vždy dává neutrální prvek. Pro sčítání je to například $-a$, pro násobení je to $\frac{1}{a}$ a platí, že $a \neq 0$
+\end{itemize}
+
+\begin{itemize} [itemsep = 2pt]
+    \item \textbf{Obor přirozených čísel} se značí $\mathbb{N} = \{1, 2 ,3, 4, \dots\}$. Pro přídání nuly se značí $\mathbb{N}_0$ Obor je uzavřený pro sčítání a násobení. Je charakteristický tím, že má nejmenší prvek a prvky mají jednoznačně dané pořadí.
+    \item \textbf{Obor celých čísel} se značí $\mathbb{Z} = \{ \dots, -2, -1, 0, 1, 2, \dots \}$. Je uzavřený pro sčítání, odčtání a násobení.
+    \item \textbf{Obor racionálních čísel} se značí $\mathbb{Q} = \{ \frac{p}{q} : p \in \mathbb{Z}, q \in \mathbb{N}, q \neq 0 \}$. Každé racionální číslo má buď ukončený, nebo nekonečný periodický desetinný rozvoj. Uzavřený pro sčítání, odčítání, násobená a dělení(kromě dělení nulou).
+    \item \textbf{Obor iracionálních čísel} se značí $\mathbb{I} = \{\pi, e, \sqrt{2}, \dots\}$ Tato množina je obsahuje jen čísla s nekonečným neperiodickým desetinným rozvojem. Není uzavřená pro žádnou z běžných operací.
+    \item \textbf{Obor reálných čísel} se značí $\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$
+    \item \textbf{Obor komplexních čísel} se značí $\mathbb{C} = \{ a + bi : a, b \in \mathbb{R}, i^2 = -1 \}$. Každé komplexní číslo lze zapsat ve tvaru $a + bi$, kde $a$ je reálná část a $b$ je imaginární část. Je uzavřený pro sčítání, odčítání, násobení a dělení(kromě dělení nulou).
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        % Komplexní čísla (největší kruh)
+        \filldraw[fill=blue!5, draw=blue, thick] (0,0) circle (4.5cm);
+        \node[text=blue!80!black] at (0, 3.8) {\small $\mathbb{C}$ (Komplexní čísla)};
+
+        % Reálná čísla
+        \filldraw[fill=green!5, draw=green!60!black, thick] (0,-0.6) circle (3.7cm);
+        \node[text=green!40!black] at (0, 2.3) {\small $\mathbb{R}$ (Reálná čísla)};
+
+        % Racionální čísla
+        \filldraw[fill=yellow!10, draw=orange, thick] (0,-1.2) circle (2.9cm);
+        \node[text=orange!80!black] at (0, 0.8) {\small $\mathbb{Q}$ (Racionální čísla)};
+
+        % Celá čísla
+        \filldraw[fill=red!5, draw=red, thick] (0,-1.8) circle (2.1cm);
+        \node[text=red!80!black] at (0, -0.5) {\small $\mathbb{Z}$ (Celá čísla)};
+
+        % Přirozená čísla (nejmenší kruh uvnitř)
+        \filldraw[fill=white, draw=black, thick] (0,-2.4) circle (1.3cm);
+        \node at (0, -2.4) {\small $\mathbb{N}$ (Přirozená)};
+    \end{tikzpicture}
+    \caption*{Vennův diagram znázorňující postupnou inkluzi číselných oborů}
+\end{figure}
+
+\begin{itemize} [itemsep = 2pt]
+    \item \textbf{Absolutní hodnota} se značí $|x|$. Vyjadřuje vzdálenost čísla od počátku.
+    \item \textbf{Rozdíl v absolutní hodnotě} se značí $|x-y|$ a vyjadřuje vzdálenost 2 bodů na číselné ose, popřípadě na Gaussovo rovině.
+\end{itemize}
+
+Příklad: Na reálných číslech definujme operaci * následovně: $$a*b \stackrel{def}{=} \frac{a + b}{3}-1, a,b \in \mathbb{R}.$$
+
+Určete, zda tato operace je komutativní nebo asociativní a zda v ní existuje neutrální prvek (tj. číslo $n \in \mathbb{R}$ takové, že pro každe $a \in \mathbb{R}$ platí $a*n = a, n*a = a$).\\
+\\
+Řešení: Pro komutativnost zkontrolujeme, zda $a*b = b*a$ pro všechna $a,b \in \mathbb{R}$: \[a*b = \frac{a+b}{3}-1\] \[b*a = \frac{b+a}{3}-1\]
+Obě strany rovnice jsou stejné a tudíž je operace * komunitativní.\\
+Pro asociativnost zkontrolujeme, zda $(a*b)*c = a*(b*c)$\\ 
+\[(a*b)*c = \frac{(\frac{a+b}{3}-1)+c}{3}-1 \]
+\[a*(b*c) = \frac{(\frac{b+c}{3}-1)+a}{3}-1 \]
+
+Vidíme, že výrazy jsou rozdílné, tudíž operace není asociativní. Pro neutrální prvek dosadíme do rovnice $a*n=a$ a vyjádříme n, pokud bude n jen nějaké číslo bez a, operace má neutrální prvek.
+\begin{align*}
+a &= \frac{a+n}{3}-1\\
+3a + 3 - a &= n\\
+2a + 3 &= n\\
+\end{align*}
+Výsledný výraz má v sobě nějaké a, tudíž pro tuto operaci neexistuje neutrální prvek.
+
+\subsection*{Komplexní čísla}
+\begin{itemize} [itemsep = 2pt]
+    \item \textbf{Imaginární jednotka} se značí $i$ a je definována jako $i^2 = -1$.
+    \item \textbf{Reálná část} komplexního čísla $z = a + bi$ je $a$.
+    \item \textbf{Imaginární část} komplexního čísla $z = a + bi$ je $b$.
+    \item \textbf{Ryze imaginární číslo} je komplexní číslo, jehož reálná část je nulová, tedy ve tvaru $0 + bi$.
+    \item \textbf{Gaussova rovina} je ortogonální(pravoúhlá) a ortonormální(jednotková délka stejná na obou osách). Osa x je reálná osa a osa y je imaginární osa.
+    \item \textbf{Komplexně sdružené číslo} je číslo ve tvaru $a - bi$ k číslu $a + bi $, značí se $\overline{z}$
+\end{itemize}
+Tvary ve kterých lze zapsat komplexní číslo:
+\begin{itemize} [itemsep = 2pt]
+    \item \textbf{Algebraický tvar} je ve tvaru $a + bi$, kde $a$ je reálná část a $b$ je imaginární část.
+    \item \textbf{Goniometrický tvar} je ve tvaru $|z|(\cos \varphi + i \sin \varphi)$, kde $|z|$ je velikost komplexního čísla a $\varphi$ je argument komplexního čísla.
+    \item \textbf{Exponenciální tvar} je ve tvaru $|z|e^{i\varphi}$, kde $|z|$ je velikost komplexního čísla a $\varphi$ je argument komplexního čísla.
+\end{itemize}
+
 
 \end{document}
