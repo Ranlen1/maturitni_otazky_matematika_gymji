@@ -210,10 +210,41 @@ Tvary ve kterých lze zapsat komplexní číslo:
     \item \textbf{Exponenciální tvar} je ve tvaru $|z|e^{i\varphi}$, kde $|z|$ je velikost komplexního čísla a $\varphi$ je argument komplexního čísla.
 \end{itemize}
 
+\subsection*{Porovnávání komplexních čísel}
+Komplexní čísla jsou si stejná, pokud mají stejnou reálnou i imafinární část, tedy $a + bi = c + di$ pokud $a = c$ a $b = d$
+\subsection*{Usměrnění komplexních čísel}
+Usměrnění komplexních čísel se provádí pomocí komplexně sdruženého čísla. Ukážeme si to na příkladu: 
+\[\frac{3+i}{\sqrt{2} + 2i} = \frac{(3+i)\cdot(\sqrt{2}-2i)}{(\sqrt{2}+2i)\cdot(\sqrt{2}-2i)} = \frac{3\sqrt{2} + \sqrt{2}i - 6i -2i^2}{2 - 4i^2} = \frac{3\sqrt{2}+2}{6} + \frac{(\sqrt{2}-6)i}{6}\]
+
 \subsection*{Rovnice v $\mathbb{C}$}
 \begin{itemize} [itemsep = 2pt]
-    \item \textbf{Lineární rovnice} 
-    \item \textbf{Kvadratická rovnice}
+    \item \textbf{Lineární rovnice} Počítají se hlavně 2 typy, první je ve tvaru $az + b = 0$, případně obsahuje neznámou z a nějaká čísla kolem, tyto se řeší pomocí přesunutí všeho, co obsahuje z na jednu stranu a všchno ostatní na druhou stranu. Příklad: 
+    \begin{align*}
+    z &= 3i(z-i)-5z \\
+    z &= 3iz + 3 -5z\\
+    6z-3iz &= 3\\
+    z(6-3i) &= 3\\
+    z &= \frac{3}{6-3i} = \frac{1}{2-i} = \frac{2+i}{5} = \frac{2}{5} + \frac{i}{5}\\
+    \end{align*}
+    druhý typ lineární rovnice obsahuje proměnnou z i $\overline{z}$, tyto se řeší pomocí dosazení proměnných $a$ a $b$ za reálnou a imaginární složku původních proměnných a následným rozdělením rovnice na reálnou a imaginární část(2 rovnice o 2 neznámých)
+    
+    Příklad: 
+    \begin{align*}
+    z(\overline{z}-4) -1 &= 8i\\
+    z\overline{z} - 4z -1 &= 8i\\
+    (a+bi)(a-bi) - 4(a+bi) -1 &= 8i\\
+    a^2 + b^2 - 4a - 4bi &= 8i +1\\
+    4b &= -8\\
+    b &= -2\\
+    a^2 +b^2 - 4a &= 1\\
+    a^2 - 4a + 3 &= 0\\
+    (a-1)(a-3) &= 0\\
+    a = 1 \vee a = 3\\
+     z_1 &= 1 - 2i\\
+     z_2 &= 3 - 2i\\
+    \end{align*}
+    \item \textbf{Kvadratická rovnice} má 2 reálná řešení, pokud $Đ>0$, jeden dvojný kořen, pokud $D = 0$ a dva komplexní kořeny, pokud $D < 0$. Aby toto platilo, musí mít \textbf{reálné} koeficienty.
+    \item \textbf{Binomická rovnice}
 \end{itemize}
 
 
