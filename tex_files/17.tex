@@ -1,0 +1,80 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+
+% matematicke package
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+
+\title{Maturitní otázka číslo 17: Vektorová algebra}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection*{Soustavy souřadnic}
+\subsubsection*{Na přímce}
+Soustava souřadnic na přímce se nazývá číselná osa. Ta se zavádí pomocí přímky $p$ a dvou bodů $O$ a
+$I$. Úsečka $OI$ se nazývá jednotková úsečka a její délká je jednotkou délky číselné osy. Bod $O$ se
+nazývá počátek číselné osy a $I$ se nazývá jednotkový bod. Každému bodu na ose odpovídá právě jedno
+reálné číslo a každému reálnému číslu odpovídá právě jeden bod na ose.
+\subsubsection*{V rovině}
+Soustava souřadnic v rovině se zavádí pomocí dvou os $x, y$, které jsou na sebe kolmé a mají
+společný počátek v $O$. Tato soustava se nazývá kartézská soustava.
+Jednotkový bod osy $x$ označíme $I$ a osy $y$ bodem $J$. Jednotkové úsečky
+$OI$ a $OJ$ jsou většinou shodné. Bod $O$ se nazývá počátkem soustavy souřadnic a osy $x, y$ se
+nazývají osy soustavy souřadnic. Osy $x, y$ rozdělují rovinu na 4 kvadranty. První kvadrant se nachází
+vpravo nahoře od středu soustavy a pojmenování pokračuje proti směru hodinových ručiček. Nechť je bod
+$A$ libovolný bod roviny. Veďme tímto bodem rovnoběžky k obou osám. Rovnoběžka s osou $y$ protíná
+osu $x$ v bodě odpovídajícímu relnému číslu $a_1$. Rovnoběžka s osou $x$ protíná osu $y$ v bodě
+odpovídajícímu realnému číslu $a_2$. Číslo $a_1$ se nazývá první souřadnice nebo x-ová souřadnice
+boud $A$ a $a_2$ se nazývá druhá souřadnice nebo y-ová souřadnice bodu $A$. Pokud chceme vyjadrit,
+že bod $A$ ma souřadnice $a_1, a_2$, píšeme $A[a_1, a_2]$.
+
+Kromě kartézské soustavy existuje ještě polární soustava. Pro její definici zvolíme nějakou přímku
+roviny nazývanou polárni osou. Její počátek $O$ nazýváme pól. Jednotkový bod polární osy označíme
+$I$. Libovolný bod $M$ roviny má polární souřadnice $O[r, \alpha]$, přičemž $r = OM$ a $\alpha$ je
+polární úhle který je roven úhlu mezi kladnou poloosou $OI$ a polopřímkou $OM$. Polární úhel je
+orientovaný a měří se od kartézské osy proti směru hodinových ručiček.
+\subsubsection*{V prostoru}
+
+Soustava souřadnic v prostoru se zavádí pomocí tří os $x, y$ a $z$, které jsou na sebe navzájem kolmé.
+Tyto osy mají společný počátek $O$. Jednotkový bod osy $x$ značíme $I$, osy $y$ $J$ a osy $z$ $K$.
+Roviny $OIJ, OJK, OKI$ se nazývají roviny souřadnic. Roviny jak označené $xy, yz, zx$ dělí prostor
+souřadnic na takzvané oktanty. Když se zakresluje soustava souřadnic v prostoru, dvě nejčastejší
+zobrazení jsou že x-ová souřadnice míří k nám, y-ová doprava a z-ová nahoru a nebo x-ová doprava,
+y-ová nahoru a z-ová k nám. Soustavy se také dělí na pravotočivé a levotočivé. Namiřme palec směrem
+kladné polosy $x$ a ukazováček kladné polosy $y$. Pokud je možné ukázat prostředníčkem na směr kladné
+poloosy $z$, soustava je pravotočivá, pokud ne, soustava je levotočivá. Zápis bodu $A$ funguje
+stejně jako u soustavě v rovině, ale s osou navíc. Zapisuje se jako $A[a_1, a_2, a_3]$.
+
+\subsection*{Vzdálenost a střed dvou bodů}
+Na přímce se určuje vzdálenost dvou bodů $A[a], B[b]$ pomocí vzorce $|AB| = |b - a|$. Střed se určuje
+pomocí vzorce $s = \frac{a + b}{2}$.
+
+V rovině se určuje vzdálenost dvou bodů $A[x_1, y_1], B[x_2, y_2]$ pomocí pythagorovy věty. Vzorec
+je $|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}.$ Střed $S[s_1, s_2]$ se vypočítá pomocí vzorců $s_1 
+= \frac{x_1 + x_2}{2}$ a $s_2 = \frac{y_1 + y_2}{2}$.
+
+V prostoru se učuje vzdálenost dvou bodů $A[x_1, y_1, z_1], B[x_2, y_2, z_2]$ pomocí dvou složených
+pythagorových vět. Vzorec je $|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$. Střed
+$S[s_1, s_2, s_3$ se zjistí pomocí vzorců $s_1 = \frac{x_1 + x_2}{2}, s_2 = \frac{y_1 + y_2}{2}$ a 
+$s_3 = \frac{z_1 + z_2}{2}$.
+
+\end{document}
