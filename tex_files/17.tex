@@ -64,7 +64,7 @@ kladné polosy $x$ a ukazováček kladné polosy $y$. Pokud je možné ukázat p
 poloosy $z$, soustava je pravotočivá, pokud ne, soustava je levotočivá. Zápis bodu $A$ funguje
 stejně jako u soustavě v rovině, ale s osou navíc. Zapisuje se jako $A[a_1, a_2, a_3]$.
 
-\subsection*{Vzdálenost a střed dvou bodů}
+\subsection*{Vzdálenost a střed dvou bodů, těžiště}
 Na přímce se určuje vzdálenost dvou bodů $A[a], B[b]$ pomocí vzorce $|AB| = |b - a|$. Střed se určuje
 pomocí vzorce $s = \frac{a + b}{2}$.
 
@@ -76,5 +76,32 @@ V prostoru se učuje vzdálenost dvou bodů $A[x_1, y_1, z_1], B[x_2, y_2, z_2]$
 pythagorových vět. Vzorec je $|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$. Střed
 $S[s_1, s_2, s_3$ se zjistí pomocí vzorců $s_1 = \frac{x_1 + x_2}{2}, s_2 = \frac{y_1 + y_2}{2}$ a 
 $s_3 = \frac{z_1 + z_2}{2}$.
+
+Vzorec těžiště pro trojúhelníky, rovnoběžníky a pravidelné n-úhelníky je $T = \frac{A_1 + A_2 + \dots
++ A_n}{n}$. Vzorec v rovině by vypadal takto $T = [t_1, t_2], t_1 = \frac{x_1 + x_2 + \dots + x_n}{n}
+, t_2 = \frac{y_1 + y_2 + \dots + y_n}{n}$.
+\subsection*{Vektor a operace s ním}
+\subsubsection*{Co to je vektor}
+Vektor je množina všech orientovaných úseček, které mají stejnou velikost a stejný směr. Orientovaná
+úsečka $AB$ je úsečka s orientací. Bod $A$ nazvěme počátečním bodem a bod $B$ nazveme koncovým bodem.
+Tato úsečka se značí jako $\overrightarrow{AB}$. Z orientované úsečky s body $A[x_1, y_1], B[x_2, y_2]$ získáme vektor $\overrightarrow{u} = (u_1, u_2), u_1 = x_2 - x_1, u_2 = y_2 - y_1$. Vektor se dá
+brát jako předpis posunutí, tedy o kolik a jakým směrem se musíme posunout z bodu $A$, abychom se
+dostali do bodu $B$. Velikost vektoru se získává pomocí vzorce $|\overrightarrow{u}| =
+\sqrt{u_1^2 + u_2^2}$. Velikost vektoru odpovídá $|AB|$.
+
+\subsubsection*{Sčítání, odčítání a násobení vektorů realným číslem}
+Sčítání vektorů $\overrightarrow{u} = (u_1, u_2), \overrightarrow{v} = (v_1, v_2)$ se dá představit
+jako kombinaci těchto dvou posunutí. Místo toho abychom se posunuli nejříve podle prvního vektoru
+a následně druhého to skombinujeme do jednoho posunutí, tedy $\overrightarrow{u} + \overrightarrow{v}
+= (u_1 + v_1, u_2 + v_2)$.
+
+Odčítání vektorů se dá představit jako sčítání opačného. Mějme dva vektory $\overrightarrow{u} =
+(u_1, u_2), \overrightarrow{v} = (v_1, v_2)$. Opačný vektor se tvoří znegováním každé složky vektoru,
+tedy opačný vektor je $\overrightarrow{v_o} = (-v_1, -v_2)$. Platí
+$\overrightarrow{u} - \overrightarrow{v} = (u_1 - v_1, u_2 - v_2)$ nebo
+$\overrightarrow{u} + \overrightarrow{v_o} = (u_1 - v_1, u_2 - v_2)$.
+
+Pokud chceme vynásobit vektor realným číslem $k$, tímto číslem si vynásobí každá složka daného
+vektoru. Tedy $k \cdot \overrightarrow{u} = (k \cdot u_1, k \cdot u_2)$.
 
 \end{document}
