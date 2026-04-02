@@ -33,12 +33,25 @@
 
 \begin{document}
 \maketitle
-\section{Základni pojmy}
+Tato otázka se zabývá limitami, které zkoumají k jaké hodnotě se funkce blíží, když se její argument (x) nekonečně blíží k určité hodnotě. Je to nástroj pro analýzu bodů, kde funkce nemusí být definována. Spojitost zkoumá nepřerušovanost funkce, charakterizuje, kdy se funkce mění plynule bez "skoků". Funkce je spojitá, pokud její hodnota odpovídá tomu, co jsme předpověděli pomocí limity
+\section*{Základní pojmy}
+\subsection*{Okolí bodu}
+Předpokládejme $a \in \mathbb{R}, \quad \epsilon \in \mathbb{R}>0$ 
+Množinu $\{x\in\mathbb{R}; a-\epsilon<x<a+\epsilon\}$ nazýváme \textbf{okolí bodu} a. Číslo a nazýváme \textbf{střed okolí}, číslo $\epsilon$ nazýváme \textbf{poloměr okolí}.\\
+Okolí bodu se značí jako $U(a,\epsilon)$
 \begin{itemize}[itemsep = 2pt]
-    \item \textbf{Okolí bodu} 
-    \item \textbf{Přírůstek argumentu}
-    \item \textbf{Přírůstek funkce}
-    \item \textbf{Funkce spojitá v bodě}
+    \item \textbf{Pravé okolí bodu} nazýváme množinu $\{x\in \mathbb{R};a\leq x < a+\epsilon\}$ a značíme ho jako $U^+(a,\epsilon)$
+    \item \textbf{Levé okolí bodu} nazýváme množinu $\{x \in \mathbb{R};a-\epsilon < x \leq a\}$ a značíme ho jako $U^-(a,\epsilon)$
+    \item \textbf{Prstencové okolí bodu} nazýváme množinu $\{x\in \mathbb{R}; a-\epsilon < x < a+\epsilon \land x \neq a\}$ a značíme ho jako $P(a,\epsilon)$
+    \item \textbf{Pravé prstencové okolí bodu} nazýváme množinu $\{x \in \mathbb{R};a<x<a+\epsilon\}$ a značíme ho jako $P^+(a,\epsilon)$
+    \item \textbf{Levé prstencové okolí bodu} nazýváme množiny $\{x\in \mathbb{R}; a-\epsilon < x<a\}$ a značíme ho jako $P^-(a,\epsilon)$
+    \item \textbf{Nevlastní body} nazýváme body $+\infty$ a $-\infty$.
 \end{itemize}
+
+\section*{Spojitost funkce}
+Řekněme, že funkce $f$ je spojitá v bodě $a$, jestliže \\
+$\forall \epsilon > 0 \quad \exists \delta > 0 \quad \forall x \in \mathbb{R}\quad$ platí $\forall x, x \in U(a, \delta) \Rightarrow f(x) \in U(f(a), \epsilon)$ V podstatě to znamená, že funkce $f$ je spojitá v bodě $a$, jestliže k libovolně zvolenému okolí bodu f(a) existuje takové okolí bodu $a$, že pro všechna $x$ z tohoto okolí bodu $a$ patří hodnoty $f(x)$ do zvoleného okolí bodu $f(a)$
+
+\textbf{Spojitost funkce zprava}
 
 \end{document}
