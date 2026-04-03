@@ -51,11 +51,39 @@ Okolí bodu se značí jako $U(a,\epsilon)$
 Doplnit příklad
 
 \section*{Spojitost funkce}
-Řekněme, že funkce $f$ je spojitá v bodě $a$, jestliže \\
-$\forall \epsilon > 0 \quad \exists \delta > 0 \quad \forall x \in \mathbb{R}\quad$ platí $\forall x, x \in U(a, \delta) \Rightarrow f(x) \in U(f(a), \epsilon)$ To znamená, že pokud pro všechna $\epsilon > 0$ existuje $\delta > 0$ a všechna $x \in \mathbb{R}$ tak platí, že všechna $x$ náleží do takového okolí $\delta$ bodu $a$, že funkční hodnota $x$ náleží do okolí $\epsilon$ funkční hodnoty $f(a)$
+Funkce f je spojitá v bodě $a \in \mathbb{R}$, jestliže\\
+$\forall a \in \mathbb{R} : \forall \epsilon > 0 \quad  \exists \delta > 0 \quad \forall x \in \mathbb{R} : |x-a| < \delta \Rightarrow |f(x) - f(a)| <  \epsilon$ \\
+
+Příklad: Dokažte, že funkce $f(x) = 2x+1$ je spojitá.
+Zvolíme si libovolné $\epsilon$ a musíme k němu najít $\delta$.
+Dosadíme si do podmínky pro okolí epsilonu:
+\[|f(x)-f(a)| = |2x+1 - (2a+1)|\leq \epsilon\]
+Následně upravíme absolutní hodnotu:
+\[|2x+1-2a-1| = |2x-2a| = |2(x-a)| = 2|x-a|\leq \epsilon\]
+Ve výrazu máme $|x-a|$, tedy máme výraz pro body z okolí na ose x
+\[|x-a|\leq\frac{\epsilon}{2} = \delta\]
+z tohoto výrazu vyplývá, že když si zvolíme na ose y libovolné $\epsilon$ bodu $f(a)$, stačí, když si uděláme na ose $x$ kolem bodu $a$ okolí s polovičním poloměrem, aby se všechny $x$ z okolí $a$ zobrazily do okolí $f(a)$, tudíž je dokázáno, že funkce je spojitá v každém bodě
+
+Příklad: Dokažte, že funkce $f(x) = x^2 - 2x$ je spojitá
+
+Řešení: Dokazujeme, že pokud $|x - a| < \delta$, potom $|f(x) - f(a)| < \epsilon$\\
+Dosadíme funkci za $|f(x) - f(a)|$ a upravíme:
+\[|(x^2 - 2x)-(a^2 - 2a)|\leq \epsilon\]
+\[|x^2 - a^2 -2x +2a| \leq \epsilon\]
+A vytkneme $|x -a|$, protože o něm víme, že musí být menší, než $\delta$, také využijeme větu o násobení absolutních hodnot.
+\[|(x-a) \cdot (x+a-2)| = |x-a|\cdot |x+a-2|\]
+Určíme si $\delta = 1$, tudíž $|x-a| < 1$
+Poté si výraz $|x+a-2|$ rozepíšeme jako $|(x-a) + 2a - 2|$
+Díky trojúhelníkové nerovnosti $|A + B| \leq |A| +|B|$ víme:
+\[|x+a-2| \leq |x-a| + |2a-2|\]
+A protože $|x - a| < 1$, tak platí:
+\[|x+a-2|<1 + |2a-2|\]
+(\textbf{zeptat se PEtrový jestli to chce})
 
 \textbf{Spojitost funkce zprava} nastává, pokud \\
 $\forall\epsilon > 0 \quad \exists \delta>0 \quad \forall x \in \mathbb{R} $ platí $ \forall x \quad x\in U^+(a,\delta) \Rightarrow f(x) \in U(f(a), \epsilon)$ To znamená, že pokud pro všechna $\epsilon > 0$ existuje $\delta > 0$ a všechna $x \in \mathbb{R}$ tak platí, že všechna $x$ náleží do takového pravého okolí $\delta$ bodu $a$, že funkční hodnota $x$ náleží do okolí $\epsilon$ funkční hodnoty $f(a)$
+
+
 
 \textbf{Spojitost funkce zleva} nastává, pokud\\ $\forall \epsilon > 0 \quad \exists \delta > 0 \quad \forall x \in \mathbb{R}$ platí $ \forall x \quad  x \in U^-(a,\delta) \Rightarrow f(x) \in U(f(a), \epsilon)$
 
