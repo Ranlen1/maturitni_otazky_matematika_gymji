@@ -43,13 +43,13 @@ nazývají osy soustavy souřadnic. Osy $x, y$ rozdělují rovinu na 4 kvadranty
 vpravo nahoře od středu soustavy a pojmenování pokračuje proti směru hodinových ručiček. Nechť je bod
 $A$ libovolný bod roviny. Veďme tímto bodem rovnoběžky k obou osám. Rovnoběžka s osou $y$ protíná
 osu $x$ v bodě odpovídajícímu relnému číslu $a_1$. Rovnoběžka s osou $x$ protíná osu $y$ v bodě
-odpovídajícímu realnému číslu $a_2$. Číslo $a_1$ se nazývá první souřadnice nebo x-ová souřadnice
+odpovídajícímu reálnému číslu $a_2$. Číslo $a_1$ se nazývá první souřadnice nebo x-ová souřadnice
 boud $A$ a $a_2$ se nazývá druhá souřadnice nebo y-ová souřadnice bodu $A$. Pokud chceme vyjadrit,
 že bod $A$ ma souřadnice $a_1, a_2$, píšeme $A[a_1, a_2]$.
 
 Kromě kartézské soustavy existuje ještě polární soustava. Pro její definici zvolíme nějakou přímku
 roviny nazývanou polárni osou. Její počátek $O$ nazýváme pól. Jednotkový bod polární osy označíme
-$I$. Libovolný bod $M$ roviny má polární souřadnice $O[r, \alpha]$, přičemž $r = OM$ a $\alpha$ je
+$I$. Libovolný bod $M$ roviny má polární souřadnice $O[r, \varphi]$, přičemž $r = OM$ a $\varphi$ je
 polární úhle který je roven úhlu mezi kladnou poloosou $OI$ a polopřímkou $OM$. Polární úhel je
 orientovaný a měří se od kartézské osy proti směru hodinových ručiček.
 \subsubsection*{V prostoru}
@@ -80,28 +80,72 @@ $s_3 = \frac{z_1 + z_2}{2}$.
 Vzorec těžiště pro trojúhelníky, rovnoběžníky a pravidelné n-úhelníky je $T = \frac{A_1 + A_2 + \dots
 + A_n}{n}$. Vzorec v rovině by vypadal takto $T = [t_1, t_2], t_1 = \frac{x_1 + x_2 + \dots + x_n}{n}
 , t_2 = \frac{y_1 + y_2 + \dots + y_n}{n}$.
-\subsection*{Vektor a operace s ním}
+\subsection*{Vektory a operace s nimi}
 \subsubsection*{Co to je vektor}
 Vektor je množina všech orientovaných úseček, které mají stejnou velikost a stejný směr. Orientovaná
 úsečka $AB$ je úsečka s orientací. Bod $A$ nazvěme počátečním bodem a bod $B$ nazveme koncovým bodem.
-Tato úsečka se značí jako $\overrightarrow{AB}$. Z orientované úsečky s body $A[x_1, y_1], B[x_2, y_2]$ získáme vektor $\overrightarrow{u} = (u_1, u_2), u_1 = x_2 - x_1, u_2 = y_2 - y_1$. Vektor se dá
-brát jako předpis posunutí, tedy o kolik a jakým směrem se musíme posunout z bodu $A$, abychom se
-dostali do bodu $B$. Velikost vektoru se získává pomocí vzorce $|\overrightarrow{u}| =
+Tato úsečka se značí jako $\overrightarrow{AB}$. Z orientované úsečky s body $A[x_1, y_1],
+B[x_2, y_2]$ získáme vektor $\vec{u} = (u_1, u_2), u_1 = x_2 - x_1, u_2 = y_2 - y_1$.
+Vektor se dá brát jako předpis posunutí, tedy o kolik a jakým směrem se musíme posunout z bodu $A$,
+abychom se dostali do bodu $B$. Velikost vektoru se získává pomocí vzorce $|\vec{u}| =
 \sqrt{u_1^2 + u_2^2}$. Velikost vektoru odpovídá $|AB|$.
 
-\subsubsection*{Sčítání, odčítání a násobení vektorů realným číslem}
-Sčítání vektorů $\overrightarrow{u} = (u_1, u_2), \overrightarrow{v} = (v_1, v_2)$ se dá představit
-jako kombinaci těchto dvou posunutí. Místo toho abychom se posunuli nejříve podle prvního vektoru
-a následně druhého to skombinujeme do jednoho posunutí, tedy $\overrightarrow{u} + \overrightarrow{v}
+\subsubsection*{Sčítání, odčítání a násobení vektorů reálným číslem}
+Sčítání vektorů $\vec{u} = (u_1, u_2), \vec{v} = (v_1, v_2)$ se dá představit
+jako kombinaci těchto dvou posunutí. Místo toho, abychom se posunuli nejříve podle prvního vektoru
+a následně druhého to zkombinujeme do jednoho posunutí, tedy $\vec{u} + \vec{v}
 = (u_1 + v_1, u_2 + v_2)$.
 
-Odčítání vektorů se dá představit jako sčítání opačného. Mějme dva vektory $\overrightarrow{u} =
-(u_1, u_2), \overrightarrow{v} = (v_1, v_2)$. Opačný vektor se tvoří znegováním každé složky vektoru,
-tedy opačný vektor je $\overrightarrow{v_o} = (-v_1, -v_2)$. Platí
-$\overrightarrow{u} - \overrightarrow{v} = (u_1 - v_1, u_2 - v_2)$ nebo
-$\overrightarrow{u} + \overrightarrow{v_o} = (u_1 - v_1, u_2 - v_2)$.
+Odčítání vektorů se dá představit jako sčítání opačného. Mějme dva vektory $\vec{u} =
+(u_1, u_2), \vec{v} = (v_1, v_2)$. Opačný vektor se tvoří znegováním každé složky vektoru,
+tedy opačný vektor je $\vec{v_o} = (-v_1, -v_2)$. Platí
+$\vec{u} - \vec{v} = (u_1 - v_1, u_2 - v_2)$ nebo
+$\vec{u} + \vec{v_o} = (u_1 - v_1, u_2 - v_2)$.
 
-Pokud chceme vynásobit vektor realným číslem $k$, tímto číslem si vynásobí každá složka daného
-vektoru. Tedy $k \cdot \overrightarrow{u} = (k \cdot u_1, k \cdot u_2)$.
+Pokud chceme vynásobit vektor reálným číslem $k$, tímto číslem si vynásobí každá složka daného
+vektoru. Tedy $k \cdot \vec{u} = (k \cdot u_1, k \cdot u_2)$.
+
+\subsubsection*{Nulový a jednotkový vektor}
+Nulový vektor se většinou značí $\vec{o}$ a jeho všechny složky jsou nulové. Nulový
+vektor udává, že se nepohneme nijak žádným směrem. Odečtením dvou stejných vektoruů získáváme nulový
+vektor.
+
+Jednotkový vektor je vektor, jehož velikost je 1, tedy platí $|\vec{u}| = 1$. Často 
+používané jednotkové vektory jsou ty, které mají všechny složky nulové kromě jedné. Vytvoření
+jednotkového vektoru z jiného vektoru, který má stjený směr funguje následovně. Pokud máme nenulový
+vektor, jednotkový vektor získáme pokud ho vydělíme jeho vlastní velikostí $\hat{u} = \frac{\vec{u}}
+{|\vec{u}|}$
+Pokud jsme měli vektor $\vec{u} = (3, 4), |u| = \sqrt{3^2 + 4^2} = 5$ a nulový vektor bude
+$\hat{u} = (\frac{3}{5}, \frac{4}{5})$. Můžeme ověřit že $0,6^2 + 0,8^2 = 1$.
+
+\subsubsection*{Lineární kombinace a lineární závislost vektorů}
+Mějme skupinu $N$ vektorů $\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}$ a stejného počtu reálných čísel
+$k_1, k_2, \dots, 
+k_n$. Lineární kombinací těchto vektorů vznikne vektor $\vec{w} = \sum_{i = 1}^{n} k_i \cdot
+\vec{v_i}$. Pomocí dvou vektorů, které nejsou nulové, stejné a rovnoběžné lze v 2D prostoru vytvořit
+jakýkoliv jiný vektor. U vektoru se vlastnost toho, že vektory jsou stejné a rovnoběžné nazývá
+kolineárnost. Pomocí třech vektorů, které jsou nekolineární a nekomplanární můžeme ve 3D prostoru
+vytvořit pomocí lineární kombinaci vytvořit jakýkoliv vektor. Komplanárnost udává, že vektory
+leží ve stejné rovině. Pro řešení
+
+$N$ vektorů $\vec{v_1}, \vec{v_2}, \dots, \vec{v_n}$ jsou lineárně závislé, pokud existuje n-tice
+realných čísel $k_1, k_2, \dots, k_n$, z nichž alespoň jedno je nenulové a platí $\sum_{i = 1}^{n}
+k_i \cdot \vec{v_i} = \vec{o}$. V 2D prostou jsou vektory lineárně závislé, pokud je alespoň jeden z
+nich nulový a nebo jsou dva kolineární. V 3D prostoru jsou vektory lineárně závislé, pokud je alespoň
+jeden nulový, nebo jsou 2 z nich kolineární nebo jsou 3 z nich komplanární.
+
+\subsubsection*{Skalární součin a odchylka vektorů}
+Skalární součin je násobení vektorů, ve kterém je výsledek skalár(realné číslo). Mějme dva vektory
+$\vec{u} = (x_1, y_1), \vec{v} = (x_2, y_2)$ platí $\vec{u} \cdot \vec{v} = |\vec{u}| \cdot |\vec{v}|
+\cdot \cos \varphi$ a teké platí $\vec{u} \cdot \vec{v} = x_1 \cdot x_2 + y_1 \cdot
+y_2$. Ve 3D by se jen přídalo $z_1 \cdot z_2$.
+Pokud jsou oba vektory nenulové a výsledek je roven 0, vektory jsou navájem kolmé. To jde
+odvodit pomocí prvního vzorce. Aby se pravá strana rovnala 0, musí být $\cos \varphi$ roven nule,
+protože délky vekotů budou vždy kladná čísla. Kosínus dává nulu práve v $90^\circ$.
+
+Důležitý trik je hledání kolmého vektoru k zadanému vektoru v 2D. Mějme vektor $\vec{u} = (x_1,
+y_1)$. Vektor na něj kolmý je $\vec{v} = (-y_1, x_1)$ nebo $\vec{v} = (y_1, -x_1)$.
+
+\subsubsection*{Vektorový součin}
 
 \end{document}
