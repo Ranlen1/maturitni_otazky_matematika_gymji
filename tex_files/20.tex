@@ -48,10 +48,39 @@ Okolí bodu se značí jako $U(a,\epsilon)$
     \item \textbf{Nevlastní body} nazýváme body $+\infty$ a $-\infty$.
 \end{itemize}
 
+Doplnit příklad
+
 \section*{Spojitost funkce}
 Řekněme, že funkce $f$ je spojitá v bodě $a$, jestliže \\
-$\forall \epsilon > 0 \quad \exists \delta > 0 \quad \forall x \in \mathbb{R}\quad$ platí $\forall x, x \in U(a, \delta) \Rightarrow f(x) \in U(f(a), \epsilon)$ V podstatě to znamená, že funkce $f$ je spojitá v bodě $a$, jestliže k libovolně zvolenému okolí bodu f(a) existuje takové okolí bodu $a$, že pro všechna $x$ z tohoto okolí bodu $a$ patří hodnoty $f(x)$ do zvoleného okolí bodu $f(a)$
+$\forall \epsilon > 0 \quad \exists \delta > 0 \quad \forall x \in \mathbb{R}\quad$ platí $\forall x, x \in U(a, \delta) \Rightarrow f(x) \in U(f(a), \epsilon)$ To znamená, že pokud pro všechna $\epsilon > 0$ existuje $\delta > 0$ a všechna $x \in \mathbb{R}$ tak platí, že všechna $x$ náleží do takového okolí $\delta$ bodu $a$, že funkční hodnota $x$ náleží do okolí $\epsilon$ funkční hodnoty $f(a)$
 
-\textbf{Spojitost funkce zprava}
+\textbf{Spojitost funkce zprava} nastává, pokud \\
+$\forall\epsilon > 0 \quad \exists \delta>0 \quad \forall x \in \mathbb{R} $ platí $ \forall x \quad x\in U^+(a,\delta) \Rightarrow f(x) \in U(f(a), \epsilon)$ To znamená, že pokud pro všechna $\epsilon > 0$ existuje $\delta > 0$ a všechna $x \in \mathbb{R}$ tak platí, že všechna $x$ náleží do takového pravého okolí $\delta$ bodu $a$, že funkční hodnota $x$ náleží do okolí $\epsilon$ funkční hodnoty $f(a)$
+
+\textbf{Spojitost funkce zleva} nastává, pokud\\ $\forall \epsilon > 0 \quad \exists \delta > 0 \quad \forall x \in \mathbb{R}$ platí $ \forall x \quad  x \in U^-(a,\delta) \Rightarrow f(x) \in U(f(a), \epsilon)$
+
+\textbf{Definice spojitosti na otevřeném intervalu} $(a,b)$: Funkce je spojitá na tomto intervalu, pokud je spojitá v každém bodě tohoto intervalu
+\textbf{Definice spojitosti na uzavřeném intervalu} $<a,b>$: Funkce je spojitá na tomto intervalu, je-li spojitá v $(a,b)$ a v bodě $a$ je spojitá zprava a v bodě $b$ je spojitá zleva
+
+Příklad: Dokažte, že funkce $f(x) = x^2 - 2x$ je spojitá
+
+Řešení: 
+
+\subsection*{Věty o spojitosti}
+Zeptat se Petrový(je jich strašně moc)
+
+\subsection*{Přírůstek funkce v bodě}
+Definice: Nechť je funkce $f(x)$ definována v jistém okolí bodu $x_0$. Nechť $\Delta x$ je libovolné reálné číslo, takové, že i bod $x_0 + \Delta x$ leží v definičním oboru funkce $f$.
+Přírůstek funkce $f$ v bodě $x_0$ odpovídající přírůstku $\Delta x$ je hodnota:
+\[\Delta f(x_0) = f(x_0 + \Delta x) - f(x_0)\]
+Místo $\Delta x$ se používá i označení proměnnou $h$\\
+Příklad: Zjistěte přírůstek funkce $f(x) = x^2$ v bodě $x = 2$
+\[f(2 + h) = (2 + h)^2 = 4 + 4h + h^2\]
+\[\Delta f = f(2 + h) - f(2)\]
+\[\Delta f = 4 + 4h + h^2 - 4\]
+\[\Delta f = 4h + h^2\]
+Přírůstek v bodě $2$ této funkce je tedy $4h + h^2$, kde h je nějaký druhý bod, ke kterému se přírůstek měří. 
+
+
 
 \end{document}
