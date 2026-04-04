@@ -147,5 +147,51 @@ Důležitý trik je hledání kolmého vektoru k zadanému vektoru v 2D. Mějme 
 y_1)$. Vektor na něj kolmý je $\vec{v} = (-y_1, x_1)$ nebo $\vec{v} = (y_1, -x_1)$.
 
 \subsubsection*{Vektorový součin}
+Vektorový součin je násobení vektorů, které má jako součin vektor. Pro vektory $\vec{u} = (x_1, y_1,
+z_1), \vec{v} = (x_2, y_2, z_2)$ platí $|\vec{w}| = |\vec{u}| \cdot |\vec{v}| \cdot \sin{\varphi}$
+pokud jsou oba vektory nenulové. Vektor $\vec{w}$ je kolmý na oba vektory $\vec{u}$ a $\vec{v}$.
+Predpis vektoru získámé pomocí determinantu matice. Pro vektory $\vec{u} = (x_1, y_1, z_1), \vec{v} =
+(x_2, y_2, z_2)$ platí $\vec{w} = \vec{u} \times \vec{v} = (y_1 z_2 i - z_1 y_2 i, z_1 x_2 j - x_1
+z_2 j, x_1 y_2 k - y_1 x_2 k)$.
+\begin{center}
+\begin{vmatrix}
+    i & j & k \\
+    x_1 & y_1 & z_1 \\
+    x_2 & y_2 & z_2
+\end{vmatrix}
+\end{center}
 
+Vektory $i, j, k$ jsou jednotkové vektory ve směru os $x, y, z$. Po přechodu do souřadnicového systému
+dostaneme $\vec{w} = (y_1 z_2 - z_1 y_2, z_1 x_2 - x_1 z_2, x_1 y_2 - y_1 x_2)$. Jde si to představit,
+jako odčítání dvou diagonaál od sebe znázorněných na těchto maticích.
+\begin{center}
+\begin{vmatrix}
+    \color{purple}{i} & j & k \\
+    x_1 & \color{red}{y_1} & \color{blue}{z_1} \\
+    x_2 & \color{blue}{y_2} & \color{red}{z_2}
+\end{vmatrix}
+\begin{vmatrix}
+    i & \color{purple}{j} & k \\
+    \color{blue}{x_1} & y_1 & \color{red}{z_1} \\
+    \color{red}{x_2} & y_2 & \color{blue}{z_2}
+\end{vmatrix}
+\begin{vmatrix}
+    i & j & \color{purple}{k} \\
+    \color{red}{x_1} & \color{blue}{y_1} & z_1 \\
+    \color{blue}{x_2} & \color{red}{y_2} & z_2
+\end{vmatrix}
+\end{center}
+
+Pomocí vektorového součinu lze vypočítat obsah a objem různých těles. Smíšený součin je součin, ve
+kterém je jak vektorový tak skalární součin.
+
+Rovnoběžník: $S = |\vec{u} \times \vec{v}|$
+
+Trojúhelník: $S = \frac{1}{2}|\vec{u} \times \vec{v}|$
+
+Rovnoběžnostěn: $V = |(\vec{u} \times \vec{v}) \cdot \vec{w}|$
+
+Čtyřstěn: $V = \frac{1}{6}|(\vec{u} \times \vec{v}) \cdot \vec{w}|$
+
+Hranol s trojúhelníkovou podstavou: $V = \frac{1}{2}|(\vec{u} \times \vec{v}) \cdot \vec{w}|$
 \end{document}
