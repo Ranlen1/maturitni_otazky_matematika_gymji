@@ -63,23 +63,7 @@ Následně upravíme absolutní hodnotu:
 \[|2x+1-2a-1| = |2x-2a| = |2(x-a)| = 2|x-a|\leq \epsilon\]
 Ve výrazu máme $|x-a|$, tedy máme výraz pro body z okolí na ose x
 \[|x-a|\leq\frac{\epsilon}{2} = \delta\]
-z tohoto výrazu vyplývá, že když si zvolíme na ose y libovolné $\epsilon$ bodu $f(a)$, stačí, když si uděláme na ose $x$ kolem bodu $a$ okolí s polovičním poloměrem, aby se všechny $x$ z okolí $a$ zobrazily do okolí $f(a)$, tudíž je dokázáno, že funkce je spojitá v každém bodě
-
-Příklad: Dokažte, že funkce $f(x) = x^2 - 2x$ je spojitá
-
-Řešení: Dokazujeme, že pokud $|x - a| < \delta$, potom $|f(x) - f(a)| < \epsilon$\\
-Dosadíme funkci za $|f(x) - f(a)|$ a upravíme:
-\[|(x^2 - 2x)-(a^2 - 2a)|\leq \epsilon\]
-\[|x^2 - a^2 -2x +2a| \leq \epsilon\]
-A vytkneme $|x -a|$, protože o něm víme, že musí být menší, než $\delta$, také využijeme větu o násobení absolutních hodnot.
-\[|(x-a) \cdot (x+a-2)| = |x-a|\cdot |x+a-2|\]
-Určíme si $\delta = 1$, tudíž $|x-a| < 1$
-Poté si výraz $|x+a-2|$ rozepíšeme jako $|(x-a) + 2a - 2|$
-Díky trojúhelníkové nerovnosti $|A + B| \leq |A| +|B|$ víme:
-\[|x+a-2| \leq |x-a| + |2a-2|\]
-A protože $|x - a| < 1$, tak platí:
-\[|x+a-2|<1 + |2a-2|\]
-(\textbf{zeptat se petrový jestli to chce})
+z tohoto výrazu vyplývá, že když si zvolíme na ose y libovolné $\epsilon$ bodu $f(a)$, stačí, když si uděláme na ose $x$ kolem bodu $a$ okolí s polovičním poloměrem, aby se všechny $x$ z okolí $a$ zobrazily do okolí $f(a)$, tudíž je dokázáno, že funkce je spojitá v každém bodě.
 
 \textbf{Spojitost funkce zprava} v bodě $a$ nastává, jestliže ke každému $\epsilon > 0$ existuje $\delta > 0$ tak, že pro všechna reálná $x$ platí: je-li $x\in \langle a;a+\delta)$, pak $|f(x)- f(a)| < \epsilon$
 
@@ -89,7 +73,17 @@ Platí tedy věta: \textbf{Funkce je spojitá v bodě a, právě tehdy když je 
 \textbf{Definice spojitosti na uzavřeném intervalu} $\langle a,b\rangle$: Funkce je spojitá na tomto intervalu, je-li spojitá v $(a,b)$ a v bodě $a$ je spojitá zprava a v bodě $b$ je spojitá zleva\\
 
 \subsection*{Věty o spojitosti}
-Zeptat se Petrový(je jich strašně moc)
+Jsou-li funkce $f,g$ spojité v bodě $a$, pak
+\begin{itemize}[itemsep = 2pt]
+    \item $|f|$ je funkce spojitá v bodě $a$.
+    \item $f + g$ je funkce spojitá v bodě $a$.
+    \item $f-g$ je funkce spojitá v bodě $a$.
+    \item $f \cdot g$ je funkce spojitá v bodě $a$.
+    \item je-li navíc $g(a) \neq 0$, pak i $\frac{f}{g}$ je funkce spjitá v bodě $a$.
+    \item Je-li funkce $g$ spojitá v bodě $a$ a funkce $f$ spojitá v bodě $g(a)$, pak je složená funkce $f\circ g$ spojitá v bodě $a$.
+    \item Je-li funkce $f$ spojitá v uzavřeném intervalu $\langle a,b\rangle$ a $f(a) \neq f(b)$, pak v tomto intervalu nabývá všech hodnot mezi $f(a)$ a $f(b)$
+\end{itemize}
+
 
 \subsection*{Přírůstek funkce v bodě}
 Definice: Nechť je funkce $f(x)$ definována v jistém okolí bodu $x_0$. Nechť $\Delta x$ je libovolné reálné číslo, takové, že i bod $x_0 + \Delta x$ leží v definičním oboru funkce $f$.
@@ -136,6 +130,21 @@ Limita funce $f$ v bodě $a$ existuje, právě tehdy když existují v bodě $a$
 \textbf{Limita v nevlastním bodě} je limita, kterou určujeme v buď v bodě $\infty$, nebo v bodě $-\infty$
 
 \subsection*{Věty o limitách}
+?
+
+\subsection*{Důležité limity}
+\begin{itemize}
+    \item $\lim_{x \to 0} \frac{\sin x}{x} = 1$
+    \item $\lim_{x \to \infty} (1+\frac{1}{x})^x = e$
+\end{itemize}
+
+\section*{Asymptoty}
+\begin{itemize}
+    \item Asymptoty bez směrnice jsou svislé asmyptoty a nastávají, pokud je alespoň jedna jednostranná limita v tomto bodě nevlastní 
+    \item Asymptoty se směrnicí popisují chování funkce v $\pm\infty$ Jsou to přímky ve tvaru $y = ax + b$ a vzorečky pro to jsou:
+    \[a = \lim_{x \to \pm\infty}\frac{f(x)}{x} \qquad b = \lim_{x \to \pm\infty}(f(x)-ax)\]
+    Pokud vyjde $a = 0$, asymptota je vodorovná
+\end{itemize}
 
 
 
