@@ -1,0 +1,76 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+% matematicke package
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+\usetikzlibrary{angles,quotes}
+
+\title{Maturitní otázka číslo 13: Základy planimetrie a konstrukční úlohy}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\section{Základní pojmy}
+\begin{itemize}
+    \item \textbf{Bod, přímka a rovina} jsou nedefinované pojmy(chápeme je intuitivně) a z nich odvozujeme vše ostatní
+    \item \textbf{Úsečka} je část přímky ohraničená 2 body
+    \item \textbf{Polopřímka} je část přímky, která je ohraničená jen jedním bodem, je tedy nekonečná
+    \item \textbf{Polorovina} je část roviny, která je ohraničená jednou přímkou
+    \item \textbf{Úhel} je část roviny vymezená dvěma polopřímkami se společným počátkem.
+    \item \textbf{Vedlejší úhly} jsou úhly, která leží na stejné přímce a vzájemně se doplňují do $180^\circ$
+    \item \textbf{Souhlasné úhly} leží n stejné straně příčky i rovnoběžek, v obrazku jsou to úhly $\alpha , \alpha'$ a $\beta, \beta'$
+    \item \textbf{Střídavé úhly} leží na opačných stranách a jsou shodné
+\end{itemize}
+
+
+\begin{tikzpicture}[>=stealth, scale=1.5]
+    % Definice přímek
+    \draw[thick] (0,2) -- (4,2) node[right] {$p$};
+    \draw[thick] (0,0) -- (4,0) node[right] {$q$};
+    \draw[thick, blue] (1,-1) -- (3,3) node[above] {$s$};
+
+    % Definice bodů (průsečíků)
+    \coordinate (A) at (2.5,2);
+    \coordinate (B) at (1.5,0);
+    \coordinate (P1) at (3.5,2);
+    \coordinate (P2) at (4,5);
+    \coordinate (Q1) at (2.5,0);
+    \coordinate (Q2) at (1,-1);
+    \coordinate (Q3) at (3,0);
+
+    % Vykreslení úhlů
+    % Souhlasné úhly (např. vpravo nahoře)
+    \draw pic [draw, fill=red!30, angle radius=0.6cm, "$\alpha$"] {angle = P1--A--P2};
+    \draw pic [draw, fill=red!30, angle radius=0.6cm, "$\alpha'$"] {angle = Q1--B--A};
+
+    % Střídavé úhly (např. vnitřní)
+    \draw pic [draw, fill=green!30, angle radius=0.5cm, "$\beta$"] {angle = B--A--P1};
+    \draw pic [draw, fill=green!30, angle radius=0.5cm, "$\beta'$"] {angle = Q2--B--Q3};
+
+\end{tikzpicture}
+
+\end{document}
