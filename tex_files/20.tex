@@ -65,6 +65,7 @@ Ve výrazu máme $|x-a|$, tedy máme výraz pro body z okolí na ose x
 \[|x-a|<\frac{\epsilon}{2} = \delta\]
 z tohoto výrazu vyplývá, že když si zvolíme na ose y libovolné $\epsilon$ bodu $f(a)$, stačí, když si uděláme na ose $x$ kolem bodu $a$ okolí s polovičním poloměrem, aby se všechny $x$ z okolí $a$ zobrazily do okolí $f(a)$, tudíž je dokázáno, že funkce je spojitá v každém bodě.
 
+
 \textbf{Spojitost funkce zprava} v bodě $a$ nastává, jestliže ke každému $\epsilon > 0$ existuje $\delta > 0$ tak, že pro všechna reálná $x$ platí: je-li $x\in \langle a;a+\delta)$, pak $|f(x)- f(a)| < \epsilon$
 
 \textbf{Spojitost funkce zleva} v bodě $a$ nastává, jestliže ke každému $\epsilon >0$ existuje $\delta > 0$ tak, že pro všechna reálná $x$ platí: je-li $x\in (a-\delta;a\rangle$, pak $|f(x)- f(a)|<\epsilon$\\
@@ -82,6 +83,7 @@ Jsou-li funkce $f,g$ spojité v bodě $a$, pak
     \item je-li navíc $g(a) \neq 0$, pak i $\frac{f}{g}$ je funkce spojitá v bodě $a$.
     \item Je-li funkce $g$ spojitá v bodě $a$ a funkce $f$ spojitá v bodě $g(a)$, pak je složená funkce $f\circ g$ spojitá v bodě $a$.
     \item Je-li funkce $f$ spojitá v uzavřeném intervalu $\langle a,b\rangle$ a $f(a) \neq f(b)$, pak v tomto intervalu nabývá všech hodnot mezi $f(a)$ a $f(b)$ (Darbouxova věta[čti: darbúova])
+    \item Bolzanova věta \textbf{Chybí}
 \end{itemize}
 
 
@@ -146,12 +148,19 @@ Limita funce $f$ v bodě $a$ existuje, právě tehdy když existují v bodě $a$
 \begin{itemize}
     \item $\lim_{x \to 0} \frac{\sin x}{x} = 1$
     \item $\lim_{x \to \infty} (1+\frac{1}{x})^x = e$
-    \item Doptat se, nemám tucha, jestli chtěj ještě něco
+    \item $\lim_{x \to 0} \frac{\tan x}{x} = 1$
+\end{itemize}
+
+\subsection*{Neurčité limity}
+Nerčitá limita je matematický tvar, který vznikne po dosazení limitní hodnoty do funkce, ale nedává jednoznačný výsledek
+\begin{itemize}
+    \item $\frac{0}{0}$
+    \item $\pm\frac{\infty}{\infty}$
 \end{itemize}
 
 \subsection*{Výpočet limit}
 \begin{itemize}
-    \item L'Hospitalovo se použije, pokud je v limitě neurčitý výraz ve zlomku
+    \item L'Hospitalovo se použije, pokud je v limitě neurčitý výraz ve zlomku. Toto pravidlo předpokládá, že existuje limita zderivovaných funkcí, proto se píše otazník nad zlomek, který by se po úspěšném nalezení limity měl škrtnout
     \item Pokud má \textbf{vedoucí člen} ve jmenovateli vyšší exponent, než vedoucí člen v čitateli, limita \textbf{konverguje} k nule
     \item Pokud má vedoucí člen v čitateli vyšší exponent, než vedoucí člen ve jmenovateli, limita \textbf{diverguje} do $\pm \infty$
     \item Pokud jsou exponenty vedoucích členů stejné, pak limita konverguje k reálnému číslu
