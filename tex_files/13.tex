@@ -41,13 +41,14 @@
     \item \textbf{Polopřímka} je část přímky, která je ohraničená jen jedním bodem, je tedy nekonečná
     \item \textbf{Polorovina} je část roviny, která je ohraničená jednou přímkou
     \item \textbf{Úhel} je část roviny vymezená dvěma polopřímkami se společným počátkem.
-    \item \textbf{Vedlejší úhly} jsou úhly, která leží na stejné přímce a vzájemně se doplňují do $180^\circ$
+    \item \textbf{Vedlejší úhly} jsou úhly, která leží na stejné přímce a vzájemně se doplňují do $180^\circ$, v obrázku jsou to například úhly $\alpha$ a $\omega$
     \item \textbf{Souhlasné úhly} leží n stejné straně příčky i rovnoběžek, v obrazku jsou to úhly $\alpha , \alpha'$ a $\beta, \beta'$
-    \item \textbf{Střídavé úhly} leží na opačných stranách a jsou shodné
+    \item \textbf{Střídavé úhly} leží na opačných stranách a jsou shodné, v obrázku to jsou úhly $\beta$ a $\gamma'$, nebo úhly $\alpha'$ a $\delta $.
+    \item \textbf{Vrcholové úhly} jsou shodné a v obrázku je to například dvojice $\alpha$ a $\delta$.
 \end{itemize}
 
 
-\begin{tikzpicture}[>=stealth, scale=1.5]
+\begin{tikzpicture}[>=stealth, scale=1]
     % Definice přímek
     \draw[thick] (0,2) -- (4,2) node[right] {$p$};
     \draw[thick] (0,0) -- (4,0) node[right] {$q$};
@@ -61,6 +62,9 @@
     \coordinate (Q1) at (2.5,0);
     \coordinate (Q2) at (1,-1);
     \coordinate (Q3) at (3,0);
+    \coordinate (Q4) at (0, 0);
+    \coordinate (P3) at (0, 2);
+    \coordinate (P4) at (4,2);
 
     % Vykreslení úhlů
     % Souhlasné úhly (např. vpravo nahoře)
@@ -70,7 +74,49 @@
     % Střídavé úhly (např. vnitřní)
     \draw pic [draw, fill=green!30, angle radius=0.5cm, "$\beta$"] {angle = B--A--P1};
     \draw pic [draw, fill=green!30, angle radius=0.5cm, "$\beta'$"] {angle = Q2--B--Q3};
+    %gamma uhly
+    \draw pic [draw, fill=blue!30, angle radius = 0.55cm, "$\gamma$"] {angle = P2--A--P3};
+    \draw pic [draw, fill=blue!30, angle radius = 0.55cm, "$\gamma'$"] {angle = P2--B--Q4};
+    %delta uhly
+    \draw pic [draw, fill=yellow!30, angle radius = 0.65cm, "$\delta$"] {angle = P3--A--B};
+    \draw pic [draw, fill=yellow!30, angle radius = 0.65cm, "$\delta'$"] {angle = Q4--B--Q2};
 
 \end{tikzpicture}
+
+\section{Trojúhelník}
+Věty o shodnosti: \textbf{sss, sus, usu, Ssu}, u věty Ssu jsou dva trojúhelníky shodné, pokud se shodují ve dvou stranách a úhlu, který leží proti větší z těchto stran
+Významné body a přímky:
+\begin{itemize}
+    \item \textbf{Těžiště} je průsečík těžnic, dělí těžnici v poměru 2:1
+    \item \textbf{Kuržnice opsaná} protíná všechny tři vrcholy trojúhelníku a střed je průsečík os stran
+    \item \textbf{Kružnice vepsaná} se dotýká stran trojúhelníku a její střed leží v průsečíku os úhlů
+    \item \textbf{Výška}
+    \item \textbf{Thaletova kružnice}
+    \begin{tikzpicture}[>=stealth, scale=1]
+    % Definice přímek
+    \draw[thick] (0,0) -- (0.8,1.6) node[right] {$$$$};
+    \draw[thick] (0.8,1.6) -- (4,0) node[right] {$$};
+    \draw[thick, blue] (0,0) -- (4,0) node[above] {$$};
+    \draw (2,0) circle (2cm);
+
+    % Definice bodů (průsečíků)
+    \coordinate[label = above:$C$] (C1) at (0.8,1.6);
+    \coordinate[label = left:$A$] (A1) at (0,0);
+    \coordinate[label = right:$B$] (B1) at (4,0);
+
+    % Vykreslení úhlů
+    \draw pic [draw, fill=red!30, angle radius = 0.5cm, "$\gamma$"] {angle = A1--C1--B1};
+
+
+    % Střídavé úhly (např. vnitřní)
+
+    %gamma uhly
+
+    %delta uhly
+
+
+\end{tikzpicture}
+
+\end{itemize}
 
 \end{document}
