@@ -90,20 +90,23 @@ Významné body a přímky:
     \item \textbf{Těžiště} je průsečík těžnic, dělí těžnici v poměru 2:1
     \item \textbf{Kuržnice opsaná} protíná všechny tři vrcholy trojúhelníku a střed je průsečík os stran
     \item \textbf{Kružnice vepsaná} se dotýká stran trojúhelníku a její střed leží v průsečíku os úhlů
-    \item \textbf{Výška}
-    \item \textbf{Thaletova kružnice}
+    \item \textbf{Výška} vede z vrcholu trojúhelníku na protější stranu, se kterou je kolmá.
+    \item \textbf{Thaletova kružnice} nad průměrem $AB$ je množina všech bodů $C$ v rovině, z nichž je úsečka $AB$ vidět pod pravým úhlem s výjimkou bodů $AB$. Středem této kružnice je střed úsečky $AB$. Je to speciální případ věty o středovém a obvodovém úhlu.
     \begin{tikzpicture}[>=stealth, scale=1]
     % Definice přímek
     \draw[thick] (0,0) -- (0.8,1.6) node[right] {$$$$};
     \draw[thick] (0.8,1.6) -- (4,0) node[right] {$$};
-    \draw[thick, blue] (0,0) -- (4,0) node[above] {$$};
+    \draw[thick] (0,0) -- (4,0) node[above] {$$};
     \draw (2,0) circle (2cm);
 
     % Definice bodů (průsečíků)
     \coordinate[label = above:$C$] (C1) at (0.8,1.6);
     \coordinate[label = left:$A$] (A1) at (0,0);
     \coordinate[label = right:$B$] (B1) at (4,0);
-
+    %zvýraznení bodů
+    \filldraw (4,0) circle (2pt);
+    \filldraw (0,0) circle (2pt);
+    \filldraw (0.8, 1.6) circle (2pt);
     % Vykreslení úhlů
     \draw pic [draw, fill=red!30, angle radius = 0.5cm, "$\gamma$"] {angle = A1--C1--B1};
 
@@ -117,6 +120,47 @@ Významné body a přímky:
 
 \end{tikzpicture}
 
+    \textbf{Důkaz thaletovy kružnice:}
+    Upravme si původní obrázek takto:\\
+    \begin{tikzpicture}[>=stealth, scale=1.5]
+
+
+    % Definice bodů (průsečíků)
+    \coordinate[label = above:$C$] (C1) at (0.8,1.6);
+    \coordinate[label = left:$A$] (A1) at (0,0);
+    \coordinate[label = right:$B$] (B1) at (4,0);
+    \coordinate[label = above:$S$] (S1) at (2,0);
+
+
+
+    % Vykreslení úhlů
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$\beta$"] {angle = S1--C1--B1};
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$\beta$"] {angle = C1--B1--A1};
+    \draw pic [draw, fill=red!30, angle radius = 0.6 cm, "$\alpha$"] {angle = B1--A1--C1};
+    \draw pic [draw, fill=red!30, angle radius = 0.6 cm, "$\alpha$"] {angle = A1--C1--S1};
+
+        %zvýraznění bodů
+    \filldraw (4,0) circle (2pt);
+    \filldraw (0,0) circle (2pt);
+    \filldraw (0.8, 1.6) circle (2pt);
+    \filldraw (2,0) circle (2pt);
+
+        % Definice přímek
+    \draw[thick] (0,0) -- (0.8,1.6);
+    \draw[thick] (0.8,1.6) -- (4,0);
+    \draw[thick] (0,0) -- (4,0);
+    \draw (2,0) circle (2cm);
+    \draw[thick] (0.8,1.6) -- (2,0);
+
+    
+\end{tikzpicture}
+
+Platí, že trojúhelníky $SCB$ a $ASB$ jsou rovnoramenné, protože mají vždy dvě strany stejně dlouhé. U trojúhelníku $SCB$ jsou to strany $SC$ a $SB$ protože jejich délka je rovna poloměru kružnice a podobně je to u druhého trojúhleníku. Proto platí, že velikost úhlů $\beta$ je stejná a i velikost úhlů $\alpha$ je stejná.
+
+Dále víme, že součet úhlů v trojúhelníku nám musí vždy dát $180^\circ$. Součet úhlů v trojúhelníku $ABC$ pomocí úhlů $\alpha$ a $\beta$ je tedy:
+\[2\alpha + 2\beta = 180^\circ  \qquad \slash \div 2\]
+\[\alpha + \beta = 90^\circ\]
+A důkaz je hotový. Víme, že součet úhlů $\alpha + \beta$ je rovný $90^\circ$ a víme, že tento součet nám dá zkoumaný vnitřní úhel $ACB$.
 \end{itemize}
 
 \end{document}
