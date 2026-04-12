@@ -30,16 +30,63 @@
 
 \subsection*{Geometrie v rovině}
 \subsubsection*{Parametrické vyjádření přímky}
-Přímka se dá určit pomocí dvou bodů, které oba protíná a nebo pomocí bodu s směrového vektoru. To
-využívá parametrické vyjádření. Mějme bod $A = [A_x, A_y]$ a vektoru $\vec{u} = (u_x, u_y)$. Každý
-bod přímky $X$ se dá vyjádřit jako $X = [A_x, A_y] + t \cdot \vec{u}, t \in \mathbb{R}, \vec{u} \ne
-0$. Proměnná t se nazývá parametr. Někdy se také parametrické vyjádření rozepisuje do jednotlivých
+Přímka se dá určit pomocí dvou bodů, které oba protíná a nebo pomocí bodu a směrového vektoru. To
+využívá parametrické vyjádření. Mějme bod $A = [A_x, A_y]$ a směrový vektor $\vec{u} = (u_x, u_y)$.
+Každý bod přímky $X$ se dá vyjádřit jako $X = [A_x, A_y] + t \cdot \vec{u}, t \in \mathbb{R}, \vec{u}
+\ne 0$. Proměnná t se nazývá parametr. Někdy se také parametrické vyjádření rozepisuje do jednotlivých
 souřadnic. Pro $X = [x, y]$ platí $x = A_x + t \cdot u_x$ a $y = A_y + t \cdot u_y$.
 
-Pokud bychom chtěli vyjádřit polopřímku, paramet t by byl v rozmezí od $t \in \mathbb{R}, \langle 0,
+Pokud bychom chtěli vyjádřit polopřímku, parametr t by byl v rozmezí od $t \in \mathbb{R}, \langle 0,
 \infty)$ nebo $(- \infty, 0 \rangle$. Pro vyjádření úsečky by byl parametr $t \in \mathbb{R}, \langle
 0, 1 \rangle$. kde by bylo bod $X = [A_x, A_y] + \vec{u}$ druhým bodem úsečky.
 
 \subsubsection*{Obecná rovnice přímky}
+Obecná rovnice přímky je definována rovnicí $ax + by + c = 0$ přičemž $a, b, c \in \mathbb{R}$ a
+alespoň jedno z čísel $a, b$ je nenulové. Z obecné rovnice se lehce zísává normálový vektor přímky,
+což je vektor, který je kolný ke směrovému vektoru přímky. Pro normálový vektor $\vec{n} =
+(n_1, n_2)$ platí $n_1 = a, n_2 = b$.
 
+\subsubsection*{Směrnivový a úsekový tvar přímky}
+Směrnicový tvar přímky je dán rovnicí $y = kx + q$ a platí $k, q \in \mathbb{R}$. Číslo $k$ se nazývá směrnice. Pokud máme směrový
+vektor $\vec{u} = (u_x, u_y)$ získáme směrnici $k = \frac{u_y}{u_x}$. Směrnicový tvar nedokáže
+popisovat přímky kolmé k ose $x$. To plyne i ze vzorce pro směrnici. Směrový vektor přímky kolmé k
+ose $x$ má tvar $\vec{u} = (0, u_y)$. Po dosazení bychom dělili nulou.
+
+Úsekový tvar přímky je dán rovnicí $\frac{x}{p} + \frac{y}{q} = 1$ přičemž $p, q \ne 0, p, q \in
+\mathbb{R}$. Číslo $p$ je průsečík s osou $x$ a číslo $q$ s osou $y$.
+
+\subsubsection*{Převody mezi rovnicemi přímky}
+Nejdůležitější je převod mezi parametrickou a obecnou rovnicí přímky. Mějme parametrickou rovnici
+$x = A_x + u_x \cdot t, y = A_y + u_y \cdot t$. Existují dvě hlavní metody převoud. První z nich
+využívá normálový vektor. Z parametrické rovnice víme směrový vekotr $\vec{u} = (u_x, u_y)$ a
+souřadnice bodu $A = [A_x, A_y]$. Normálový vektor vytvoříme trikem prohozením složek směrového
+vekotru a získáme například $\vec{n} = (-u_y, u_x)$. Z toho už poskládáme rovnici $-u_y \cdot x +
+u_x \cdot y + c = 0$. Následně za $x, y$ dosadíme hodnoty bodu $A$ a dopočítáme $c$. Druhá
+metoda využívá soustavu rovnic. V zadání máme dvě rovnice o třech neznámých $x, y, t$. Neznámou
+t si z jedné rovnice vyjádříme a získáme jednu rovnici s neznámími $x, y$. To už je ovšem obecná
+rovnice, takže po úpravě dojdeme k požadovanému tvaru $ax + by + c = 0$.
+
+Pro převod z obecné rovnice použijeme znovu normálový vektor. Z něho vytvoříme směrový vektor.
+Následně získáme nějaký bod, který leží na přímce dosazením za $x$ nebo $y$ většinou nuly. Tím
+získáme dvě potřebné části parametrické rovnice a to bod a směrový vekotr.
+
+Pro převod do směrnivového tvaru využijeme úpravy obecné rovnice.
+
+\[
+\begin{aligned}
+    ax + by + c &= 0 \\
+    -ax -c &= by \\
+    -\frac{a}{b}x -\frac{c}{b} &= y
+\end{aligned}
+\]
+
+Pro převod do úsekového tvaru použijeme to stejné.
+
+\[
+\begin{aligned}
+    ax + by + c &= 0 \\
+    -ax -by &= c \\
+    -\frac{a}{c}x -\frac{b}{c}y &= 1
+\end{aligned}
+\]
 \end{document}
