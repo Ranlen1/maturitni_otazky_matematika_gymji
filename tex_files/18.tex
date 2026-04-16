@@ -31,14 +31,14 @@
 \subsection*{Geometrie v rovině}
 \subsubsection*{Parametrické vyjádření přímky}
 Přímka se dá určit pomocí dvou bodů, které oba protíná a nebo pomocí bodu a směrového vektoru. To
-využívá parametrické vyjádření. Mějme bod $A = [A_x, A_y]$ a směrový vektor $\vec{u} = (u_x, u_y)$.
-Každý bod přímky $X$ se dá vyjádřit jako $X = [A_x, A_y] + t \cdot \vec{u}, t \in \mathbb{R}, \vec{u}
+využívá parametrické vyjádření. Mějme bod $A = [a_x, a_y]$ a směrový vektor $\vec{u} = (u_x, u_y)$.
+Každý bod přímky $X$ se dá vyjádřit jako $X = [a_x, a_y] + t \cdot \vec{u}, t \in \mathbb{R}, \vec{u}
 \ne 0$. Proměnná t se nazývá parametr. Někdy se také parametrické vyjádření rozepisuje do jednotlivých
-souřadnic. Pro $X = [x, y]$ platí $x = A_x + t \cdot u_x$ a $y = A_y + t \cdot u_y$.
+souřadnic. Pro $X = [x, y]$ platí $x = a_x + t \cdot u_x$ a $y = a_y + t \cdot u_y$.
 
-Pokud bychom chtěli vyjádřit polopřímku, parametr t by byl v rozmezí od $t \in \mathbb{R}, \langle 0,
-\infty)$ nebo $(- \infty, 0 \rangle$. Pro vyjádření úsečky by byl parametr $t \in \mathbb{R}, \langle
-0, 1 \rangle$. kde by bylo bod $X = [A_x, A_y] + \vec{u}$ druhým bodem úsečky.
+Pokud bychom chtěli vyjádřit polopřímku, parametr t by byl v rozmezí od $t \in \langle 0,
+\infty)$ nebo $(- \infty, 0 \rangle$. Pro vyjádření úsečky by byl parametr $t \in \langle
+0, 1 \rangle$, kde by byl bod $X = [a_x, a_y] + \vec{u}$ druhým koncem úsečky.
 
 \subsubsection*{Obecná rovnice přímky}
 Obecná rovnice přímky je definována rovnicí $ax + by + c = 0$ přičemž $a, b, c \in \mathbb{R}$ a
@@ -46,7 +46,7 @@ alespoň jedno z čísel $a, b$ je nenulové. Z obecné rovnice se lehce zísáv
 což je vektor, který je kolný ke směrovému vektoru přímky. Pro normálový vektor $\vec{n} =
 (n_1, n_2)$ platí $n_1 = a, n_2 = b$.
 
-\subsubsection*{Směrnivový a úsekový tvar přímky}
+\subsubsection*{Směrnicvový a úsekový tvar přímky}
 Směrnicový tvar přímky je dán rovnicí $y = kx + q$ a platí $k, q \in \mathbb{R}$. Číslo $k$ se nazývá směrnice. Pokud máme směrový
 vektor $\vec{u} = (u_x, u_y)$ získáme směrnici $k = \frac{u_y}{u_x}$. Směrnicový tvar nedokáže
 popisovat přímky kolmé k ose $x$. To plyne i ze vzorce pro směrnici. Směrový vektor přímky kolmé k
@@ -57,20 +57,20 @@ ose $x$ má tvar $\vec{u} = (0, u_y)$. Po dosazení bychom dělili nulou.
 
 \subsubsection*{Převody mezi rovnicemi přímky}
 Nejdůležitější je převod mezi parametrickou a obecnou rovnicí přímky. Mějme parametrickou rovnici
-$x = A_x + u_x \cdot t, y = A_y + u_y \cdot t$. Existují dvě hlavní metody převoud. První z nich
-využívá normálový vektor. Z parametrické rovnice víme směrový vekotr $\vec{u} = (u_x, u_y)$ a
-souřadnice bodu $A = [A_x, A_y]$. Normálový vektor vytvoříme trikem prohozením složek směrového
-vekotru a získáme například $\vec{n} = (-u_y, u_x)$. Z toho už poskládáme rovnici $-u_y \cdot x +
+$x = a_x + u_x \cdot t, y = a_y + u_y \cdot t$. Existují dvě hlavní metody převodu. První z nich
+využívá normálový vektor. Z parametrické rovnice víme směrový vektor $\vec{u} = (u_x, u_y)$ a
+souřadnice bodu $A = [a_x, a_y]$. Normálový vektor vytvoříme trikem prohozením složek směrového
+vektoru a získáme například $\vec{n} = (-u_y, u_x)$. Z toho už poskládáme rovnici $-u_y \cdot x +
 u_x \cdot y + c = 0$. Následně za $x, y$ dosadíme hodnoty bodu $A$ a dopočítáme $c$. Druhá
 metoda využívá soustavu rovnic. V zadání máme dvě rovnice o třech neznámých $x, y, t$. Neznámou
-t si z jedné rovnice vyjádříme a získáme jednu rovnici s neznámími $x, y$. To už je ovšem obecná
+t si z jedné rovnice vyjádříme a získáme jednu rovnici s neznámými $x, y$. To už je ovšem obecná
 rovnice, takže po úpravě dojdeme k požadovanému tvaru $ax + by + c = 0$.
 
 Pro převod z obecné rovnice použijeme znovu normálový vektor. Z něho vytvoříme směrový vektor.
 Následně získáme nějaký bod, který leží na přímce dosazením za $x$ nebo $y$ většinou nuly. Tím
-získáme dvě potřebné části parametrické rovnice a to bod a směrový vekotr.
+získáme dvě potřebné části parametrické rovnice a to bod a směrový vektor.
 
-Pro převod do směrnivového tvaru využijeme úpravy obecné rovnice.
+Pro převod do směrnicového tvaru využijeme úpravy obecné rovnice.
 
 \[
 \begin{aligned}
@@ -86,7 +86,98 @@ Pro převod do úsekového tvaru použijeme to stejné.
 \begin{aligned}
     ax + by + c &= 0 \\
     -ax -by &= c \\
-    -\frac{a}{c}x -\frac{b}{c}y &= 1
+    \frac{x}{-\frac{c}{a}} + \frac{y}{-\frac{c}{b}} &= 1
 \end{aligned}
 \]
+\subsubsection*{Polohy, odchylky a vzdálenosti přímek}
+Dvě přímky $p, q$ mohou být buď rovnoběžné, různoběžné nebo totžné. Rovnoběžnost přímek se nejlépe
+zjišťuje v parametrickém tvaru. Mějme přímky $p(P, \vec{u}), q(Q, \vec{v})$. Tyto přímky jsou
+rovnoběžné, je-li vektoru $\vec{u}$ nenulovým násobkem $\vec{v}$, tedy $k \cdot \vec{u} = \vec{v},
+k \ne 0$. Tyto přímky by byly totožné, pokud by byly rovnoběžné a zároveň libovolný bod jedné
+přímky ležel na druhé přímce. To zda například bod $Q$ leží na přímce $p(P, \vec{u})$ se zjišťuje
+pomocí soustavy rovnic. Vytvoříme si dvě rovnice a následně do nich dosadíme.
+\[
+\begin{aligned}
+    x &= P_x + t \cdot u_x \\
+    y &= P_y + t \cdot u_y \\
+    \hline \\
+    Q_x &= P_x + t \cdot u_x \\
+    Q_y &= P_y + t \cdot u_y
+\end{aligned}
+\]
+
+Pokud v obou rovnicích vyjde neznámá $t$ stejně, bod $Q$ leží na přímce a jsou tedy totožné.
+
+Odchylka přímek se počítá stejným vzorečkem jako odchylka vektorů $\cos \varphi = \frac{|\vec{u}
+\cdot \vec{v}|}{|\vec{u}| \cdot |\vec{v}|}$.
+
+Vzdálenost bodu $M[m_x, m_y]$ a přímky $p: ax + by + c = 0$ se vypočítá pomocí vzorce $|Mp| = 
+\frac{|am_x + bm_y + c|}{\sqrt{a^2 + b^2}}$. Dá se to také počítat elegantněji pomocí normálového
+vektoru. Mějme bod $M[m_x, m_y]$ a přímku $p: [a_x, a_y] + t \cdot (u_x, u_y)$. Víme že přímka
+$q: [m_x, m_y] + s \cdot (-u_y, u_x)$ prochází bodem $M$ a je kolmá na přímku $p$. Následě chceme
+najít průsečík těchto přímek pomocí dvojice rovnic o dvou neznámých. $m_x + s \cdot -u_y =
+a_x + t \cdot u_x$ a rovnice $m_y + s \cdot u_x = a_y + t \cdot u_y$. Po získání neznámých
+je můžeme dosadit do původní rovnice přímky a získat průsečík. Následne pak jen použijeme
+vzorec pro vzdálenost dvou bodů tedy bodu $M$ a průsečíku a získáme jejich vzdálenost.
+
+Pokud bychom měli získat vzdálenost dvou rovnoběžných přímek, můžeme si najít nějaký bod který
+náleží jedné z přímek a využít stejný proces.
+\subsection*{Geometrie v prostoru}
+\subsubsection*{Parametrické vyjádření přímky a roviny}
+Parametricé vyjádření přímky v prostoru funguje stejně jako v rovině. Mějme bod $A[a_x, a_y, a_z]$ a
+směrový vektor $\vec{u} = (u_x, u_y, u_z)$. Rovnice má tvar $X = [a_x, a_y, a_z] + t \cdot
+(u_x, u_y, u_z)$.
+
+Rovina se dá vyjadřit mnoha způsoby, třemi body které nejsou kolineární, dvěmi přímkami které jsou
+buď rovnoběžné nebo různoběžné a nebo bodem a dvěma vektory. Parametrické vyjádření využívá poslední
+metodu. Mějme bod $A[a_x, a_y, a_z]$ a směrové vektory $\vec{u} = (u_x, u_y, u_z), \vec{v} = (v_x,
+v_y, v_z)$. Rovnice má tvar $X = [a_x, a_y, a_z] + t \cdot (u_x, u_y, u_z) + s \cdot (v_x, v_y, v_z)$.
+
+\subsubsection*{Obecná rovnice roviny}
+Obecná rovnice roviny má tvar $ax + by + cz + d = 0$ a platí $a, b, c, d \in \mathbb{R}$. Normálový
+vektor $\vec{n}$ je kolmý ke všem vektorům roviny a má tvar $\vec{n} = (a, b, c)$.
+
+Z obecného tvaru rovnice můžeme znovu jednodušše vytvořit úsekový tvar rovnice který je
+$\frac{x}{p} + \frac{y}{q} + \frac{z}{r} = 1$ a platí $p \cdot q \cdot r \ne 0, p, q, r \in 
+\mathbb{R}$. Rovnici v úsekovém tvaru můžeme psát pokud není rovina rovnoběžná s žádnou osou a
+neprochází počátkem.
+
+\subsubsection*{Převody mezi rovnicemi roviny}
+Pro převod z parametrické do obecné rovnice požijeme vektorový součin pomocí jehož najdeme normálový
+vektor $\vec{n} = \vec{u} \times \vec{v}$. To následně dosadíme do rovnice $n_xx + n_yy + n_zz + d
+= 0$. Poté dosadíme nějaký bod roviny do rovnice abychom získali $d$.
+
+Pokud chceme získat parametrickou rovnici z obecné, najdeme si dosazováním nějaké tři body $A, B, C$.
+Z nich vytvoříme dva vektory $\vec{u} = B - A, \vec{v} = C - A$ a tím získáme vše potřebné pro
+vytvoření parametrické rovnice.
+
+\subsubsection*{Vzájemná poloha přímek a rovin}
+U přímek rozlišujeme čtyři vzájemné polohy. Pokud mají přímky jeden společný bod, jsou různoběžné.
+Pokud mají všechny body totožné, jsou totožné. Pokud nemají žádný společný bod, jsou buď mimoběžné
+nebo rovnoběžné. Jsou rovnběžné pokud platí $\vec{u} = k \cdot \vec{v}, k \ne 0$
+
+U přímky rozlišujeme tři vzájemné polohy. Pokud leží všechny body přímky v rovině, přímka leží v
+rovině. Pokud přímka protíná rovinu právě v jednom bodě, jsou různoběžné. Pokud spolu nemají žádý
+společný bod, jsou rovnoběžné. To zda jsou přímka a rovina rovnoběžné se určuje pomocí skalárního
+součinu směrového vektoru přímky a normálového vektoru roviny. Pokud $\vec{u} \cdot \vec{n} = 0$, jsou
+rovnoběžné. Průsečík různoběžné přímky a roviny se určuje dosazením do obecné rovnice.
+
+\[
+\begin{aligned}
+    x &= a_x + t \cdot u_x \\
+    y &= a_y + t \cdot u_y \\
+    z &= a_z + t \cdot u_z \\
+    0 &= ax + by + cz +d \\
+    \hline \\
+    0 &= a(a_x + t \cdot u_x) + b(a_y + t \cdot u_y) + c(a_z + t \cdot u_z) + d
+\end{aligned}
+\]
+Z toho získáme parametr $t$, který dosadíme do rovnice přímky a získáme průsečík.
+
+U dvou rovin rozlišujeme tři vzájemné polohy. Pokud nemají žádny společný bod, jsou rovnoběžné. Pokud
+je jejich průnikem přímka, která se nazývá průsečnice, jsou různoběžné. Pokud mají všechny body
+totožné, jsou totožné. Rovnoběžnost zjistíme, pokud pro jejich normálové vektory platí $n_1 = k \cdot
+n_2$. Pokud toto platí ale zároveň platí $k(a_1x + b_1y + c_1z + d_1) = a_2x + b_2y +c_2z + d_2$, jsou
+totožné. Rovnici průsečnice můžeme zjistit vektorovým součinem normálových vektorů obou rovin $\vec{u}
+= \vec{n_1} \times \vec{n_2}$.
 \end{document}
