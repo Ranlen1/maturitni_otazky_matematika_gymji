@@ -1,0 +1,99 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+
+% matematicke package
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+
+\title{Maturitní otázka číslo 4: Algebraické rovnice, nerovnice a jejich soustavy}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection*{Definice ronvice, nerovnice, definiční obor a množina kořenů}
+Mějme dva výrazy $L(x), P(x)$ s proměnnou $x$. Určují se hodnoty z číselného oboru $M$ pro něž platí
+rovnost u rovnic nebo nerovnost u nerovnic. $L(x)$ se nazývá levá strana rovnice(nerovnice) a $R(x)$
+pravá. V některých případech může být neznámá pouze v jednom z výrazů. Proměnná $x$ se nazývá neznámá.Hodnoty neznámé pro něž je rovnice(nerovnice) splněna se nazývá kořenem. Číselný obor $M$ je základní
+množina čísel, ve které hledáme kořeny rovnice. Podmnožina číselného oboru, v níž jsou definované
+oba výrazy $L(x), P(x)$ se nazývá definicční obor a značí se $D$. Množina všech kořenů rovnic a
+nerovnic se nazývá množina všech kořenů a značí se $K$.
+\subsection*{Úpravy rovnic a nerovnic}
+\subsubsection*{Úprávy rovnic}
+Úpravy rovnic se dělí na ekvivalentní a neekvivalentní. Ekvivalentní upráva rovnice nezmění rovnost
+rovnice. Tedy po úpravě výrazu $L(x)$ na $L_1(x)$ a $R(x)$ na $R_1(x)$, pořád platí $L_1(x) = P_1(x)$.
+Neekvivalentní úpravy vytvoří také novou rovnost, ale může se změnit množina kořenů, jako například
+přidáním falešného kořenu nebo odebráním realného kořenu. Tyto úpravy se mohou provádět pokud si
+uvědomujeme jejich rizika a předem uděláme kroky k zaručení ekvivalence.
+
+První operací je prohození stran rovnice. Jelikož se obě strany rovnají, mohu je bezpečně prohodit.
+
+Další operací je u rovnic sčítání a odčítání. Přičteš nebo odečteš stejné číslo nebo výraz
+k oboum stranám rovnice.
+\[
+\begin{aligned}
+    x - 5 &= -2 \\
+    x &= 3
+\end{aligned}
+\]
+Další operací je násobení a dělení. Při násobení a dělení se násobí a dělí všechny členy
+výrazu. Dá se to představit jako bychom dali celý výraz do závorek a provedli tuto operaci na této
+závorce.
+
+\[
+\begin{aligned}
+    \frac{3x}{7} &= 9 \\
+    \frac{x}{7} &= 3 \\
+    x &= 21
+\end{aligned}
+\]
+Násobení nulou je neekvivalentní úprava. Dělení nulou není definované. Pozor si musíme dát při
+násobení a dělení neznámými.
+\[
+\begin{aligned}
+    x^2 &= 5x \\
+    x &= 5
+\end{aligned}
+\]
+Po vydělení celé rovnice $x$ máme jedno řešení, ovšem nula je také řešením.
+
+Další operací je umocňování a odmocňování, které se také prvádí pro celý výraz. Tyto operace ovšem
+nejsou vždy ekvivalentní. Umocňování sudým číslem může převrátit znaménka. Pokud chceme aby umocňování
+sudým číslem bylo ekvivalentní, musí být obě strany rovnice nezáporné.
+\[
+\begin{aligned}
+    x &= 3 \\
+    x^2 &= 9
+\end{aligned}
+\]
+Toto umocnění vytvořilo falešný kořen $-3$.
+
+Odmocnění je vždy ekvivalentní pokud odmocňujeme lichým číslem. Pokud odmocňujeme sudým číslem,
+musíme dát část výrazu s neznámou do absolutních hodnot.
+\[
+\begin{aligned}
+    4x^2 &= 64 \\
+    \sqrt{4x^2} &= 8 \\
+    2|x| &= 8 \\
+    |x| &= 4
+\end{aligned}
+\]
+Pokud bychom nedali $x$ do absolutních hodnot, ztratily bychom řešení $-4$.
+\end{document}
