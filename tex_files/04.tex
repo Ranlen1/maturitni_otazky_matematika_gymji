@@ -54,8 +54,8 @@ k oboum stranám rovnice.
 \end{aligned}
 \]
 Další operací je násobení a dělení. Při násobení a dělení se násobí a dělí všechny členy
-výrazu. Dá se to představit jako bychom dali celý výraz do závorek a provedli tuto operaci na této
-závorce.
+výrazu obou stran nějakým číslem nebo výrazem. Dá se to představit jako bychom dali celý výraz do
+závorek a provedli tuto operaci na této závorce.
 
 \[
 \begin{aligned}
@@ -74,9 +74,9 @@ násobení a dělení neznámými.
 \]
 Po vydělení celé rovnice $x$ máme jedno řešení, ovšem nula je také řešením.
 
-Další operací je umocňování a odmocňování, které se také prvádí pro celý výraz. Tyto operace ovšem
-nejsou vždy ekvivalentní. Umocňování sudým číslem může převrátit znaménka. Pokud chceme aby umocňování
-sudým číslem bylo ekvivalentní, musí být obě strany rovnice nezáporné.
+Další operací je umocňování a odmocňování, které se také provádí pro celé výrazy obou stran rovnice.
+Tyto operace ovšem nejsou vždy ekvivalentní. Umocňování sudým číslem může převrátit znaménka. Pokud
+chceme aby umocňování sudým číslem bylo ekvivalentní, musí být obě strany rovnice nezáporné.
 \[
 \begin{aligned}
     x &= 3 \\
@@ -96,4 +96,152 @@ musíme dát část výrazu s neznámou do absolutních hodnot.
 \end{aligned}
 \]
 Pokud bychom nedali $x$ do absolutních hodnot, ztratily bychom řešení $-4$.
+\subsubsection*{Úpravy nerovnic}
+Pokud chcme u nerovnic prohodit strany, musíme také prohodit znaménko nerovnosti, jinak se nejedná
+o ekvivalentní úpravu.
+
+Přičítání a odečítání funguje stejně jako u rovnic a jedná se o ekvivalentní úpravu.
+
+Pokud násobíme nebo dělíme nerovnici kladným číslem, jde o ekvivalentní úpravu. Pokud to je ovšem
+záporným číslem, musíme prohodit znaménko nerovnosti. Násobení a dělení nulou funguje stejně jako
+u rovnic. Pozor si musíme dát na násobení a dělení neznámou či výrazem s neznámou. V ten moment
+se nerovnice rozdělí na dvě a to na první ve které je neznámá nebo výraz kladný a na druhou kde
+je záporný. Sjednocení kořenů těchto dvou nerovnic je pak finální řešení.
+
+Umocňování a odmocňování se většinou u nerovnic neprovádí, jelikož je ošetřování nerovnice poměrně
+zdlouhavé.
+\subsubsection*{Zkoužka}
+Pokud nalezneme nějaké řešení rovnice nebo nerovnice, je dobré zjistit, zda je opravdu správné.
+Mějme rovnici $L(x) = P(x)$ a řešení $x_0$. Po dosazení $x_0$ do levé i pravé strany zjišťujeme, zda
+rovnost pořád platí.
+\subsection*{Polynomy, nulové body a grafické řešení rovnic}
+Polynom je výraz ve tvaru $a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0$. Čísla $a_n, a_{n-1}, \dots,
+a_0$ se nazývají koeficienty.
+
+Pokud máme nějakou rovnici, lze jí vždy upravit tak, že budeme mít na pravé straně nulu. Pokud
+bychom si představili, že výraz na levé straně je funkce, řešením této rovnice budou body protínající
+osu $x$ neboli nulové body. To je jedna z možností jak řešit rovnice graficky. Další možností je
+si představit, že obě strany rovnice jsou vlastně funkce a Řešením jsou průsečíky těchto dvou funkcí.
+
+U nerovností je grafické řešení podobné. Také si přestavíme že výrazy na obou stranách jsou vlastně
+funkce a pozorujeme, kdy je jedna funkce menší než druhá. Narozdíl od rovnic bude výsledkem interval.
+\subsection*{Řešení lineárních a kvadratických rovnic a nerovnic}
+Řešení lineárních rovnic a nerovnic je pouze využívaní možných úprav k izolování neznámé.
+Může občas vyjít speciální případy a to nekonečně mnoho řešení a žádné řešení. Pokud po úpravě vyjde
+$0 = 0$ rovnice má nekonečno mnoho řešení. Pokud vyjde $0 = k, k \in mathbb{R}$, rovnice nemá žádné
+řešení. Příkladem můžou být rovnice $x = x$ pro nekonečně mnoho řešení a rovnice $x = x+1$ pro žádné
+řešení.
+
+Pro řešení kvadratických rovnic a nerovnic se nejdříve převede vše doleva aby na pravé straně zbyla
+nula. Následně se využije jedna z metod a to vytýkání, Vietovy vztahy, doplnění na čtverec nebo pomocí
+diskriminantu. Kvadratické rovnice mají v oboru realných čísel dvě, jedno nebo žádné řešení. Mějme
+levou stranu $ax^2 + bx + c$.
+
+Vytíkání se využívá, pokud chybí absolutní člen, tedy člen $c$. Vytknutím $ax$ dostaneme
+$ax (x + \frac {b}{a})$ což nám už dává nulové body a to $x_1 = 0, x_2 = - \frac{b}{a}$.
+
+Vietovy vztahy nám říkají, že $x_1 + x_2 = -\frac{b}{a}, x_1 \cdot x_2 = \frac{c}{a}$. Vzorce se
+nejlépe využívá pokud je kvadratický člen roven jedné.
+
+Doplnění na čtverec hledá vzorec $(a \pm b^2)$. V polynomu se nachází začátek vzorce $x^2 \pm 2xy +
+y^2$ a mi si k prvním dovu částem uměle dotvoříme tento vzorec. Z doplnění na čtverec vznikl známý
+vzorec pro diskriminant tím, že se použije doplnění na čvterec na základní předpis funkce.
+
+Zjištění kořenů pomocí diskriminantu se využívá pokud jsou kořeny rovnice na které nejde lehce přijít.
+Diskriminat získáme vzorcem $D = b^2 - 4ac$. Pokud je $D$ kladné, rovnice má dvě řešení, pokud je
+roven nule, rovnice má jedno řešení a je to dvojnásobný reálný kořen. Pokud je záporný, rovnice nemá
+v oboru reálných čísel řešení. Kořeny získáme ze vzorce $x_{1,2} = \frac{-b \pm \sqrt{D}}{2a}$.
+
+Ukažme si všechny možnosti řešení kromě vytknutí v praxi na rovnici $x^2 - 6x + 8 = 0$
+\[
+\begin{aligned}
+    (x - 4)(x - 2) &= 0 \\
+    4 + 2 = 6, -4 \cdot -2 &= 8 \\
+    \hline \\
+    x^2 -6x +9 -9 +8 &= 0 \\
+    (x - 3)^2 -9 + 8 &= 0 \\
+    (x - 3)^2 &= 1 \\
+    |x - 3| &= 1 \\
+    \hline \\
+    \frac{6 \pm \sqrt{36 - 4 \cdot 1 \cdot 8}}{2} &= x_{1,2} \\
+    3 \pm 1 &= x_{1,2}
+\end{aligned}
+\]
+Řešení se může zapsat dvěmi způsoby a to $K = \{2, 4\}$ nebo $x \in \{2, 4\}$
+
+Pokud bychom měli nerovnici $x^2 - 6x + 8 < 0$ nejdříve bychom zjistili nulové body uplně stejným
+způsobem, čímž bychom si rozdělili definiční obor na tři části $(-\infty, 2), (2, 4), (4, \infty)$.
+Následně bychom z každého intervaly vybrali číslo a dosadili ho do nerovnice.
+\[
+\begin{aligned}
+    8 &< 0 \\
+    \hline \\
+    3^2 - 18 + 8 &< 0 \\
+    -1 &< 0 \\
+    \hline \\
+    10^2 - 60 + 8 &< 0 \\
+    48 &< 0
+\end{aligned}
+\]
+Z toho nám vychází že řešení je $K = (2, 4)$. Pokud by místo ostré nerovnosti byla v zadání neostrá,
+byli by nulové body součástí řešení, tedy $K = \langle 2, 4 \rangle$.
+
+\subsection*{Rovnice a nerovnice s parametrem}
+Rovnice s parametrem se řeší tím, že si necháme jenom proměnou na jedné stranně a zbytek dáme
+na druhou, následně vytvoříme tabulku s tím jaké hodnoty získáme pro jaký parametr. Mějme rovnici
+\[
+\begin{aligned}
+    a^2x - a &= x + 1 \\
+    x(a^2 - 1) &= a + 1 \\
+    x &= \frac{a+1}{(a-1)(a+1)} \\
+    x &= \frac{1}{a-1}
+\end{aligned}
+\]
+A následně se všechna řešení dají do tabulky. Pro $a \ne 1, -1, x = \frac{1}{a-1}$. Pokud dosadíme
+$a = 1$ do původní rovnice, dostaneme $0 = 2$, tedy $x$ nemá řešení. Pro $a = -1$ získáme $0 = 0$,
+tedy $x$ je jakékoliv realné číslo.
+
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+$a$ & $x$ \\
+\hline
+$a \ne 1, -1$ & $x = \frac{1}{a-1}$ \\
+\hline
+$a = 1$ & $x \in \emptyset$ \\
+\hline
+$a = -1$ & $x \in \mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Pokud bychom měli kvadratickou rovnici $x^2 -ax + a + 3 = 0$, rozdělili bychom řešení podle toho jak
+vychází diskriminant.
+\[
+\begin{aligned}
+    D &= (-a)^2 - 4 \cdot 1 \cdot (a+3) \\
+    D &= (a-6)(a+2)
+\end{aligned}
+\]
+Diskriminant je záporný v rozmezí od $(-2, 6)$, takže rovnice nemá řešení. Diskriminant je roven nule
+pro $a = 6, a = -2$. Tyto hodnoty můžeme dosadit do zbytku vzorce pro řešení $\frac{-b}{2a}$ a pro
+$a = 6$ dostaneme $3$ a pro $a = -2$ dostaneme $-1$. Diskriminant je klady v useku $(-\infty, -2) 
+\cup (6, \infty)$ a rovnice má řešení $x_{1,2} = \frac{a \pm \sqrt{a^2 - 4a -12}}{2}$.
+\begin{center}
+\renewcommand{\arraystretch}{1.5} 
+\begin{tabular}{|l|l|}
+    \hline
+    $m$ & $x$ \\
+    \hline
+    $m \in (-2; 6)$ & $x \in \emptyset$ \\
+    \hline
+    $m = 6$ & $x = \{3\}$ \\
+    \hline
+    $m = -2$ & $x = \{-1\}$ \\
+    \hline
+    $m \in (-\infty; -2) \cup (6; \infty)$ & $x = \left\{ \frac{m \pm \sqrt{m^2 - 4m - 12}}{2} \right\}$ \\
+    \hline
+\end{tabular}
+\end{center}
+S nerovniemi to funguje uplně stejně, ale pracuje se většinou s velkým množstvím štěpení nerovnice.
 \end{document}
