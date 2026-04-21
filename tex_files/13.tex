@@ -91,7 +91,25 @@ Významné body a přímky:
     \item \textbf{Kružnice opsaná} protíná všechny tři vrcholy trojúhelníku a střed je průsečík os stran
     \item \textbf{Kružnice vepsaná} se dotýká stran trojúhelníku a její střed leží v průsečíku os úhlů
     \item \textbf{Výška} vede z vrcholu trojúhelníku na protější stranu, se kterou je kolmá.
-    \item \textbf{Thaletova kružnice} nad průměrem $AB$ je množina všech bodů $C$ v rovině, z nichž je úsečka $AB$ vidět pod pravým úhlem s výjimkou bodů $AB$. Středem této kružnice je střed úsečky $AB$. Je to speciální případ věty o středovém a obvodovém úhlu.
+\end{itemize}
+
+\section*{Čtyřúhelníky}
+Celkový součet úhlů u konvexních čtyřúhelníků je vždy $360^\circ$
+\begin{itemize}
+    \item \textbf{Rovnoběžníky:} Čtverec, obdélník, kosočtverec, kosodélník (u všech se půlí úhlopříčky)
+    \item \textbf{Lichoběžníky:} Mají jednu dvojici rovnoběžných stran(základny) a druhou dvojicí různoběžnou(ramena).
+    \item \textbf{Rovnoramenný lichoběžník:} Ramena jsou shodná, je to tětivový čtyřúhelník (lze mu opsat kružnici). Úhlopříčky jsou shodné.
+    \item \textbf{Pravoúhlý lichoběžník:} Jedno rameno je kolmé k základnám (je zároveň výškou).
+    \item \textbf{Deltoid:} Úhlopříčky jsou na sebe kolmé, půlí vnitřní úhly a zároveň se půlí. Je to tečnový čtyřúhelník (lze mu vepsat kružnici).
+    \item \textbf{Kosočtverec:} Rovnostranný rovnoběžník, který má všechny čtyří strany stejně dlouhé.
+    \item \textbf{Tětivový trojúhelník:} Lze mu opsat kružnici. Součet protilehlých vnitřních úhlů je $180^\circ$
+    \item \textbf{Tečnový čtyřúhelník:} Součty délek protilehlých stran jsou si rovny(čtverec, kosočtverec, deltoid)
+\end{itemize}
+
+\section*{Úhly v kružnici a kružnice}
+Kužnice se zapíše pomocí $k(S;r)$, kružnice je pouze množina bodů jejichž vzdálenost od $S$ je $r$
+\subsection*{Thaletova kružnice}
+Thaletova kružnice nad průměrem $AB$ je množina všech bodů $C$ v rovině, z nichž je úsečka $AB$ vidět pod pravým úhlem s výjimkou bodů $AB$. Středem této kružnice je střed úsečky $AB$. Je to speciální případ věty o středovém a obvodovém úhlu.
     \begin{tikzpicture}[>=stealth, scale=1]
     % Definice přímek
     \draw[thick] (0,0) -- (0.8,1.6) node[right] {$$$$};
@@ -120,8 +138,9 @@ Významné body a přímky:
 
 \end{tikzpicture}
 
-    \textbf{Důkaz thaletovy kružnice:}
-    Upravme si původní obrázek takto:\\
+\textbf{Důkaz thaletovy kružnice:} Upravme si původní obrázek takto:\\
+
+
     \begin{tikzpicture}[>=stealth, scale=1.5]
 
 
@@ -161,19 +180,168 @@ Dále víme, že součet úhlů v trojúhelníku nám musí vždy dát $180^\cir
 \[2\alpha + 2\beta = 180^\circ  \qquad \slash \div 2\]
 \[\alpha + \beta = 90^\circ\]
 A důkaz je hotový. Víme, že součet úhlů $\alpha + \beta$ je rovný $90^\circ$ a víme, že tento součet nám dá zkoumaný vnitřní úhel $ACB$.
+\subsection*{Věta o středovém a obvodovém úhlu}
+\begin{itemize}
+    \item Znění: Velikost středového úhlu je rovna dvojnásobku velikosti obvodového úhlu příslušného témuž oblouku
+    \item \textbf{Obovodový úhel} je úhel, jehož vrchol $V$ leží na delším oblouku kružnice, která je rozdělena nějakými body $A,B$ a ramena procházejí body $A,B$. Pro jakýkoliv bod $V$, který leží na oblouku této kružnice platí, že $|\angle AVB| = \alpha$.
+    \item \textbf{Středový úhel} je úhel mezi body $\angle ASB$ a platí pro něj $2 \cdot |\angle AVB| = |\angle ASB|$
+    \item \textbf{Úsekový úhel} je úhel mezi tečnou na kružnici v bodě $A$ a tětivou $AB$. Tento úhel je stejný jako obvodový
 \end{itemize}
 
-\section*{Čtyřúhelníky}
-Celkový součet úhlů u konvexních čtyřúhelníků je vždy $360^\circ$
+    \begin{tikzpicture}[>=stealth, scale=1.5]
+
+
+    % Definice bodů (průsečíků)
+    \coordinate[label = left:$A$] (A1) at (0.3,-1.05);
+    \coordinate[label = right:$B$] (B1) at (3.7,-1.05);
+    \coordinate[label = above:$S$] (S1) at (2,0);
+    \coordinate[label = above:$V$] (V1) at (0.8, 1.6);
+    \coordinate[label = below:$p$] (X1) at (1.35, -2.75);
+
+
+
+
+    % Vykreslení úhlů
+    
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$\alpha$"] {angle = A1--C1--B1};
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$\alpha$"] {angle = X1--A1--B1};
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$2\alpha$"] {angle = A1--S1--B1};
+
+        %zvýraznění bodů
+    \filldraw (0.3,-1.05) circle (2pt);
+    \filldraw (3.7,-1.05) circle (2pt);
+
+        % Definice přímek
+    \draw[thick] (0.3,-1.05) -- (3.7,-1.05);
+    \draw[thick] (0.3,-1.05) -- (0.8,1.6);
+    \draw[thick] (3.7,-1.05) -- (0.8,1.6);
+    \draw (2,0) circle (2cm);
+    \draw[thick] (1.35,-2.75) -- (-0.75, 0.65);
+    \draw[thick] (0.3,-1.05) -- (2,0);
+    \draw[thick] (2,0) -- (3.7,-1.05);
+
+    
+\end{tikzpicture}
+
+\subsection*{Ekvigonála}
+Je množina všech bodů roviny z nich je daná úsečka $AB$ vidět pod konstantním úhlem $\alpha$ a tvoří ji dva shodné oblouky kružnic, které jsou v následujícím obrázku.
+
+\begin{tikzpicture}[>=stealth, scale=1.5]
+
+
+    % Definice bodů (průsečíků)
+    \coordinate[label = left:$A$] (A1) at (0.3,-1.05);
+    \coordinate[label = right:$B$] (B1) at (3.7,-1.05);
+    \coordinate[label = above:$S_1$] (S1) at (2,0);
+    \coordinate[label = above:$V_1$] (V1) at (0.8, 1.6);
+    \coordinate[label = below:$S_2$] (S2) at (2,-2.1);
+    \coordinate[label = right:$V_2$] (V2) at (4, -2.1);
+
+
+
+
+    % Vykreslení úhlů
+    
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$\alpha$"] {angle = A1--C1--B1};
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$2\alpha$"] {angle = A1--S1--B1};
+        \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$\alpha$"] {angle = B1--V2--A1};
+        %zvýraznění bodů
+    \filldraw (0.3,-1.05) circle (1pt);
+    \filldraw (3.7,-1.05) circle (1pt);
+    \filldraw (2,0) circle (1pt);
+    \filldraw (2,-2.1) circle (1pt);
+
+        % Definice přímek
+    \draw[thick] (0.3,-1.05) -- (3.7,-1.05);
+    \draw[thick] (0.3,-1.05) -- (0.8,1.6);
+    \draw[thick] (3.7,-1.05) -- (0.8,1.6);
+    \draw (2,0) circle (2cm);
+    \draw (2,-2.1) circle (2cm);
+    \draw[thick] (0.3,-1.05) -- (2,0);
+    \draw[thick] (2,0) -- (3.7,-1.05);
+
+    %druhý vrcholový úhel
+    \draw[thick] (0.3, -1.05) -- (4,-2.1);
+    \draw[thick] (3.7, -1.05) -- (4,-2.1);
+    
+    
+\end{tikzpicture}
+Musíme znát důkaz pro tyto úhly, kdyžtak je na wikipedii
+
+\subsection*{Kruh}
+\textbf{Kruh} je množina všech bodů uvnitř kružnice, včetně kružnice samotné.
+
+
+\textbf{Kruhová výseč} je část kruhu příslušná určitému středovému úhlu $\phi$. Výseč příslušná přímému úhlu se nazývá půlkruh.
+
+\textbf{Kruhová úseč} je část kruhu vymezená tětivou a kruhovým obloukem vzniklá rozdělením kruhu sečnou. Obsah kruhové úseče je $S = \frac{r^2}{2}(\arcsin\alpha - \sin\alpha)$ V tabulkách je to zvláštně zapsaný, tak pozor.
+
+\section*{Vzájemná poloha útvarů}
+\subsection*{Přímka a kružnice}
 \begin{itemize}
-    \item \textbf{Rovnoběžníky:} Čtverec, obdélník, kosočtverec, kosodélník (u všech se půlí úhlopříčky)
-    \item \textbf{Lichoběžníky:} Mají jednu dvojici rovnoběžných stran(základny) a druhou dvojicí různoběžnou(ramena).
-    \item \textbf{Rovnoramenný lichoběžník:} Ramena jsou shodná, je to $tětivový čtyřúhelník$(lze mu opsat kružnici). Úhlopříčky jsou shodné.
-    \item \textbf{Pravoúhlý lichoběžník:} Jedno rameno je kolmé k základnám (je zároveň výškou).
-    \item \textbf{Deltoid:} Úhlopříčky jsou na sebe kolmé, půlí vnitřní úhly a zároveň se půlí. Je to tečnový čtyřúhelník (lze mu vepsat kružnici).
-    \item \textbf{Kosočtverec:} ??
-    \item \textbf{Tětivový trojúhelník:} Lze mu opsat kružnici. Součet protilehlých vnitřních úhlů je $180^\circ$
-    \item \textbf{Tečnový čtyřúhelník:} Součty délek protilehlých stran jsou si rovny(čtverec, kosočtverec, deltoid)
+    \item \textbf{Tečna} má jeden společný bod dotyku $T$ a tečna je vždy kolmá na poloměr $ST$
+    \item \textbf{Sečna} má dva společné body, kde se část uvnitř kružnice nazývá tětiva
+    \item \textbf{Vnější přímka} nemá žádný společný bod
 \end{itemize}
+
+\subsection*{Dvě kružnice}
+Jejich poloha závisí na vzdálenosti středů $d = |S_1 S_2|$
+\begin{itemize}
+    \item Bez společných bodů: $d> r_1 + r_2$
+    \item Vnější dotyk: $d = r_1 + r_2$
+    \item Protínají se: $|r_1 - r_2| < d < r_1 + r_2$
+    \item Vnitřní dotyk: $d = |r_1 - r_2|$
+    \item Jedna uvnitř druhé $d<|r_1 - r_2|$, pokud je $d = 0$, tak jsou soustředné
+\end{itemize}
+
+\section{Konstrukce tečen}
+Při konstrukci z vnějšího bodu $M$ využíváme thaletovu kružnici
+
+Nejprve najdeme střed úsečky $SM$, označme $O$
+
+Poté sestrojíme thaletovu kružnici $\tau(O;|OS|)$
+
+Průsečíky $\tau \cap k$ jsou body dotyku $T_1, T_2$.
+
+Přímky $MT_1$ a $MT_2$ jsou hledané tečny. Takto by konstrukce vypadala:
+
+\begin{tikzpicture}[>=stealth, scale=1.5]
+
+
+    % Definice bodů (průsečíků)
+    \coordinate[label = below:$S$] (S1) at (0,0);
+    \coordinate[label = above:$M$] (M1) at (6,0);
+    \coordinate[label = above:$T_1$] (T1) at (0.66, 1.89);
+    \coordinate[label = below:$T_2$] (T2) at (0.66, -1.89);
+    \coordinate[label = below:$O$] (0) at (3,0);
+
+
+
+
+
+    % Vykreslení úhlů
+    
+    \draw pic [draw, fill=red!30, angle radius = 0.7 cm, "$\cdot$"] {angle =  S1--T1--M1};
+        %zvýraznění bodů
+    \filldraw (0,0) circle (2pt);
+    \filldraw (0.66, 1.89) circle (2pt);
+    \filldraw (6, 0) circle (2pt);
+    \filldraw (0.66, -1.89) circle (2pt);
+    \filldraw (3,0) circle (2pt);
+
+
+        % Definice přímek
+    \draw[thick] (7,-0.315) -- (-2,2.79);
+    \draw[thick] (7,0.315) -- (-2,-2.79);
+    \draw[thick] (0,0) -- (0.66,1.89);
+    \draw (0,0) circle (2cm);
+    \draw (3,0) circle (3cm);
+    \draw[thick] (-3,0) -- (7,0);
+
+
+    
+    
+\end{tikzpicture}
+Mnohoúhelníky
 
 \end{document}
