@@ -1,0 +1,137 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+% matematicke package
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{angles,quotes}
+
+\title{Maturitní otázka číslo 16: Polohové a metrické úlohy ve stereometrii }
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Základní pojmy}
+\begin{itemize}
+    \item \textbf{Kolineární body} jsou body ležící v jedné přímce
+    \item \textbf{Příčka mimoběžek} je úsečka, jejíž krajní body leží na daných mimoběžkách, \textbf{Osa mimoběžek} je jediná příčka, která je k oběma mimoběžkám kolmá, její délka je zároveň nejkratší vzdáleností
+    \item \textbf{Svazek rovin} je množina všech rovin, které procházejí jednou společnou přímkou (osou svazku)
+    \item \textbf{Trs rovin} je množina všech rovin, které procházejí jedním společným bodem (středem trsu)
+\end{itemize}
+
+\section{Vzájemná poloha bodů, přmek a rovin}
+Přímky $p, q$
+\begin{itemize}
+    \item \textbf{Rovnoběžné ($p \| q$)}: mohou být buď různé (žádný společný bod, kolienární vektory), nebo totožné (nekonečně společných bodů)
+    \item \textbf{Různoběžné}: právě jeden společný bod, leží v jedné rovině
+    \item \textbf{Mimoběžné}: Žádný společný bod, neleží v jedné rovině a směrové vektory nejsou kolineární
+\end{itemize}
+
+Přímka $p$ a rovina $\rho$
+\begin{itemize}
+    \item \textbf{Leží v rovině ($p \in \rho)$}: Každý bod přímky je bodem roviny
+    \item \textbf{Rovnoběžná ($p \| \rho$)}: žádný společný bod
+    \item \textbf{Různoběžná}: právě jeden společný bod. speciálním případem je kolmost $p \perp \rho$.
+\end{itemize}
+
+Dvě roviny $\rho , \sigma$
+\begin{itemize}
+    \item  \textbf{Rovnoběžné}: buď různé (žádný společný bod), nebo totožné (nekonečně mnoho společných bodů)
+    \item \textbf{Různoběžné:} Společné body tvoří přímku (průsečnici) 
+\end{itemize}
+
+\section{Kritéria rovnoběžnosti}
+\begin{itemize}
+    \item \textbf{Rovnoběžnost přímky a roviny}: Přímka $p$ je rovnoběžná s rovinou $\rho$ právě tehdy, když je rovnoběžná s alespoň jednou přímkou $q$, která v rovině $\rho$ leží.
+    \item \textbf{Rovnoběžnost dvou rovin}: Rovina $\rho$ je rovnoběžná s rovinou $\sigma$, pokud $\rho$ obsahuje dvě různé různoběžky $a, b$, které jsou obě rovnoběžné s $\sigma$
+\end{itemize}
+\section{Průsečík s rovinou a průsečnice dvou rovin}
+Při hledání průsečnice dvou rovin hledáme dva společné body těchto rovin, pokud je nemáme přímo, používáe metodu pomocných rovin (rozvést, dodělat)
+
+U průsečíku přímky s rovinou (např. v tělese) přímku proložíme pomocnou rovinou, najdeme průsečnici této pomocné roviny s cílovou rovinou a tam, kde průsečnice protne původní přímku, leží hledaný bod.
+Ukážeme si to na příkladu: Najděte průsečíky přímky $PQ$ s krychlí.
+
+
+
+\begin{tikzpicture}[
+    % Nastavení zkoseného promítání (volné rovnoběžné promítání)
+    x={(1cm,0cm)}, 
+    y={(0.5cm,0.5cm)}, 
+    z={(0cm,1cm)}, 
+    scale=1] % Zvětšení celého obrázku
+
+    % 1. Definice vrcholů krychle (strana a = 2)
+    \coordinate (A) at (0,0,0);
+    \coordinate (B) at (2,0,0);
+    \coordinate (C) at (2,2,0);
+    \coordinate (D) at (0,2,0);
+    \coordinate (E) at (0,0,2);
+    \coordinate (F) at (2,0,2);
+    \coordinate (G) at (2,2,2);
+    \coordinate (H) at (0,2,2);
+    \coordinate (P) at (2,2,3);
+    \coordinate (Q) at (0,0,-1);
+
+    % 2. Vykreslení neviditelných (zadních) hran čárkovaně
+    \draw[dashed, thick] (A) -- (D);
+    \draw[dashed, thick] (D) -- (C);
+    \draw[dashed, thick] (D) -- (H);
+
+    % 3. Vykreslení řezu (např. rovina procházející body A, F, H)
+    % opacity = průhlednost, aby byly vidět i hrany za ním
+
+    % 4. Vykreslení viditelných hran
+    \draw[thick] (A) -- (B) -- (C) -- (G) -- (F) -- (E) -- cycle;
+    \draw[thick] (E) -- (H) -- (G);
+    \draw[thick] (A) -- (E);
+    \draw[thick] (B) -- (F);
+    \draw[thick] (G) -- (2,2,3.5);
+    \draw[thick] (A) -- (0,0,-1.5);
+    \draw[blue, thick] (P) -- (Q);
+
+    \filldraw[fill=red!30, draw=red, thick, opacity=0.5] (E) -- (G) -- (C) -- (A) -- cycle;
+
+    % 5. (Volitelné) Popisky vrcholů
+    \node[cross out, draw=black, thick, minimum size=6pt, inner sep=0pt, label=right:{$P$}] at (P) {};
+    \node[below left] at (A) {A};
+    \node[below right] at (B) {B};
+    \node[right] at (C) {C};
+    \node[above left] at (D) {D};
+    \node[left] at (E) {E};
+    \node[right] at (F) {F};
+    \node[above right] at (G) {G};
+    \node[above left] at (H) {H};
+    \node[cross out, draw=black, thick, minimum size=6pt, inner sep=0pt, label=left:{$Q$}] at (Q) {};
+    
+
+\end{tikzpicture}
+
+V příkladu je červeně naznačená pomocná rovina a řešením bude bod, kde se protíná úsečka $PQ$ a úsečka $EG$ a druhým průsečíkem s krychlí bude průsečík $AC$ a $PQ$. To jsou body, kde přímka $PQ$ "vchází" a "vychází" z krychle.
+%%rozvést trsy(napsat Petrový)
+
+\end{document}
