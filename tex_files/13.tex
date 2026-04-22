@@ -41,7 +41,7 @@
     \item \textbf{Polopřímka} je část přímky, která je ohraničená jen jedním bodem, je tedy nekonečná. Zapisuje se $\leftarrow AB$, kde $A$ je počáteční bod a prochází bodem $B$
     \item \textbf{Polorovina} je část roviny, která je ohraničená jednou přímkou. Zapisuje se $\leftarrow pA$, je to polorovina s hraniční přímkou $p$ obsahující bod $A$. 
     \item \textbf{Úhel} je část roviny vymezená dvěma polopřímkami se společným počátkem.
-    \item \textbf{Vedlejší úhly} jsou úhly, která leží na stejné přímce a vzájemně se doplňují do $180^\circ$, v obrázku jsou to například úhly $\alpha$ a $\omega$
+    \item \textbf{Vedlejší úhly} jsou úhly, která leží na stejné přímce a vzájemně se doplňují do $180^\circ$, v obrázku jsou to například úhly $\alpha$ a $\gamma$
     \item \textbf{Souhlasné úhly} leží n stejné straně příčky i rovnoběžek, v obrazku jsou to úhly $\alpha , \alpha'$ a $\beta, \beta'$
     \item \textbf{Střídavé úhly} leží na opačných stranách a jsou shodné, v obrázku to jsou úhly $\beta$ a $\gamma'$, nebo úhly $\alpha'$ a $\delta $.
     \item \textbf{Vrcholové úhly} jsou shodné a v obrázku je to například dvojice $\alpha$ a $\delta$.
@@ -97,13 +97,13 @@ Významné body a přímky:
 Celkový součet úhlů u konvexních čtyřúhelníků je vždy $360^\circ$
 \begin{itemize}
     \item \textbf{Rovnoběžníky:} Čtverec, obdélník, kosočtverec, kosodélník (u všech se půlí úhlopříčky)
-    \item \textbf{Lichoběžníky:} Mají jednu dvojici rovnoběžných stran(základny) a druhou dvojicí různoběžnou(ramena).
+    \item \textbf{Lichoběžníky:} Mají jednu dvojici rovnoběžných stran (základny) a druhou dvojicí různoběžnou (ramena).
     \item \textbf{Rovnoramenný lichoběžník:} Ramena jsou shodná, je to tětivový čtyřúhelník (lze mu opsat kružnici). Úhlopříčky jsou shodné.
     \item \textbf{Pravoúhlý lichoběžník:} Jedno rameno je kolmé k základnám (je zároveň výškou).
     \item \textbf{Deltoid:} Úhlopříčky jsou na sebe kolmé, půlí vnitřní úhly a zároveň se půlí. Je to tečnový čtyřúhelník (lze mu vepsat kružnici).
     \item \textbf{Kosočtverec:} Rovnostranný rovnoběžník, který má všechny čtyří strany stejně dlouhé.
     \item \textbf{Tětivový trojúhelník:} Lze mu opsat kružnici. Součet protilehlých vnitřních úhlů je $180^\circ$
-    \item \textbf{Tečnový čtyřúhelník:} Součty délek protilehlých stran jsou si rovny(čtverec, kosočtverec, deltoid)
+    \item \textbf{Tečnový čtyřúhelník:} Součty délek protilehlých stran jsou si rovny (čtverec, kosočtverec, deltoid)
 \end{itemize}
 
 \section*{Úhly v kružnici a kružnice}
@@ -266,6 +266,7 @@ Je množina všech bodů roviny z nich je daná úsečka $AB$ vidět pod konstan
     
     
 \end{tikzpicture}
+
 Musíme znát důkaz pro tyto úhly, kdyžtak je na wikipedii
 
 \subsection*{Kruh}
@@ -342,6 +343,32 @@ Přímky $MT_1$ a $MT_2$ jsou hledané tečny. Takto by konstrukce vypadala:
     
     
 \end{tikzpicture}
-Mnohoúhelníky
+
+\section*{Mnohoúhelníky}
+Je to uzavřená lomená čára tvořená $n$ body a $n$ úsečkami, které se neprotínají.
+\begin{itemize}
+    \item Konvexní mnohoúhelník: leží vždy v jedné polorovině určené přímkou, na níž leží libovolná jeho strana. Všechny vntřní úhly jsou menší než $180^\circ$. Každá úhlopříčka leží uvnitř
+    \item Nekonvexní mnohoúhlník: Existuje alespoň jeden vnitřní úhel větší než $180^\circ$. Alespoň jedna úhlopříčka leží částečně vně útvaru.
+\end{itemize}
+Součet vnitřních úhlu: pro každý konvexní n-úhelník platí, že součet jeho vntřních úhlů je $\sum\alpha = (n-2)\cdot 180^\circ$. Lze odvodit rozkladem na $n-2$ trojúhelníků
+\subsection*{Pravidelné n-úhelníky}
+Má všechny strany i všechny vnitřní strany shodné. Každému pravidelnému n-úhelníku lze opsat i vepsat kružnici (jejich středy splývají).
+
+\section*{Konstrukční úlohy}
+Konstrukční úloha se skládá ze čtyř fází: \textbf{Rozbor, konstrukce, důkaz, diskuze (počet řešení)}
+\subsection*{Metoda geometrických míst bodů}
+Hledáme body, které splňují určité vlastnosti současně (průnik množin)
+\begin{itemize}
+    \item Množina bodů dané vzdálenosti od bodu: Kružnice
+    \item Množina bodů dané vzdálenosti od přímky: Dvě rovnoběžky
+    \item Osa úsečky: Body mající stejnou vzdálenost od dvou bodů
+    \item Osa úhlu: Body mající stejnou vzdálenost od dvou ramen úhlu
+    \item Thaletova kružnice: Body, z nichž je úsečka vidět pod úhlem $90^\circ$
+\end{itemize}
+
+\subsection*{Konstrukce na základě výpočtu}
+\begin{itemize}
+    \item Konstrukce $\sqrt{n}$: Pomocí Euklidových vět nebo Pythagorovy věty
+\end{itemize}
 
 \end{document}
