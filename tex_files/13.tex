@@ -26,6 +26,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{mathrsfs}
+\usetikzlibrary{shapes.misc}
 \usetikzlibrary{angles,quotes}
 
 %%dodělat co patří do rozboru a udělat nějakej ukázkovej příklad
@@ -112,6 +113,7 @@ Celkový součet úhlů u konvexních čtyřúhelníků je vždy $360^\circ$
 Kužnice se zapíše pomocí $k(S;r)$, kružnice je pouze množina bodů jejichž vzdálenost od $S$ je $r$
 \subsection*{Thaletova kružnice}
 Thaletova kružnice nad průměrem $AB$ je množina všech bodů $C$ v rovině, z nichž je úsečka $AB$ vidět pod pravým úhlem s výjimkou bodů $AB$. Středem této kružnice je střed úsečky $AB$. Je to speciální případ věty o středovém a obvodovém úhlu.
+
     \begin{tikzpicture}[>=stealth, scale=1]
     % Definice přímek
     \draw[thick] (0,0) -- (0.8,1.6) node[right] {$$$$};
@@ -140,9 +142,7 @@ Thaletova kružnice nad průměrem $AB$ je množina všech bodů $C$ v rovině, 
 
 \end{tikzpicture}
 
-\textbf{Důkaz thaletovy kružnice:} Upravme si původní obrázek takto:\\
-
-
+\textbf{Důkaz thaletovy kružnice}: Upravme si původní obrázek takto:\\
     \begin{tikzpicture}[>=stealth, scale=1.5]
 
 
@@ -308,7 +308,7 @@ Průsečíky $\tau \cap k$ jsou body dotyku $T_1, T_2$.
 
 Přímky $MT_1$ a $MT_2$ jsou hledané tečny. Takto by konstrukce vypadala:
 
-\begin{tikzpicture}[>=stealth, scale=1.5]
+\begin{tikzpicture}[>=stealth, scale=1]
 
 
     % Definice bodů (průsečíků)
@@ -341,9 +341,6 @@ Přímky $MT_1$ a $MT_2$ jsou hledané tečny. Takto by konstrukce vypadala:
     \draw (3,0) circle (3cm);
     \draw[thick] (-3,0) -- (7,0);
 
-
-    
-    
 \end{tikzpicture}
 
 \section*{Mnohoúhelníky}
@@ -353,11 +350,78 @@ Je to uzavřená lomená čára tvořená $n$ body a $n$ úsečkami, které se n
     \item Nekonvexní mnohoúhlník: Existuje alespoň jeden vnitřní úhel větší než $180^\circ$. Alespoň jedna úhlopříčka leží částečně vně útvaru.
 \end{itemize}
 Součet vnitřních úhlu: pro každý konvexní n-úhelník platí, že součet jeho vntřních úhlů je $\sum\alpha = (n-2)\cdot 180^\circ$. Lze odvodit rozkladem na $n-2$ trojúhelníků
+
+(dodělat)
 \subsection*{Pravidelné n-úhelníky}
-Má všechny strany i všechny vnitřní strany shodné. Každému pravidelnému n-úhelníku lze opsat i vepsat kružnici (jejich středy splývají).
+Má všechny strany i všechny vnitřní strany shodné. Každému pravidelnému n-úhelníku lze opsat i vepsat kružnici (středy kružnic splývají).
 
 \section*{Konstrukční úlohy}
-Konstrukční úloha se skládá ze čtyř fází: \textbf{Rozbor, konstrukce, důkaz, diskuze (počet řešení)}
+Konstrukční úloha se skládá ze čtyř fází: Rozbor, postup konstrukce,konstrukce, diskuze (počet řešení)
+
+Vzorový rozbor od pana Pazourka (můj náčrtek neodpovídá velikostem v zadání, červeně jsou údaje, které známe, modře ty, které potřebujeme pro vyřešení úlohy pro přehlednost): Sestrojte $\triangle ABC$, jehož strana $a = 7cm, v_b = 4cm, v_c = 5cm$
+
+\begin{tikzpicture}[>=stealth, scale=2]
+
+
+    % Definice bodů (průsečíků)
+    \coordinate[label = below:$A$] (A) at (0,0);
+    \coordinate[label = above:$B$] (B) at (3,0);
+    \coordinate[label = above:$C$] (C) at (1.8, 1.8);
+    \coordinate[label = right:$S$] (S1) at (2.4, 0.9);
+    \coordinate[label = below:$P_c$] (Pc) at (1.8,0);
+    \coordinate[label = 105:$P_b$] (Pb) at (1.5,1.5);
+
+    \draw plot[mark=x, mark size=4pt] coordinates {(S1)};
+    
+    % Vykreslení úhlů
+    
+    \draw pic [draw, angle radius = 0.4 cm, "$\cdot$"] {angle =  A--Pb--B};
+    \draw pic [draw, angle radius = 0.4 cm, "$\cdot$"] {angle =  C--Pc--A};
+        %zvýraznění bodů
+
+        % Definice přímek
+    \draw[thick] (A) -- (B);
+    \draw[thick] (A) -- (C);
+    \draw[thick, red] (C) -- (B);
+    \draw [blue] (S1) circle (1.0816653826cm);
+    \node[blue, label=right:{$\tau_{BC}$}] at (3.4,0.9) {};
+    %([shift={(počáteční_úhel:poloměr)}]Střed)
+    % Následující kód nakreslí oblouk se středem S, poloměrem 3, od 45° do 135°
+    \draw[thin, blue] ([shift={(250:1.8)}]C) arc[start angle=250, end angle=290, radius=1.8];
+    \node[blue, label=above:{$k_2$}] at (1,1) {};
+
+    \draw[thin, blue] ([shift={(110:2.1213203436)}]B) arc[start angle=110, end angle=160, radius=2.1213203436];
+    \node[blue, label=above:{$k_1$}] at (1.2,0) {};
+
+    %popis výšek
+    \node[font = \tiny, label=right:{$v_c = 5cm$}] at (1.8, 0.6) {};
+    \node[font = \tiny, label=above:{$v_b = 4cm$}] at (2,1) {};
+    \node[font = \tiny, label= right:{$a = 7cm$}] at (2.2, 1.1) {};
+
+    %výšky
+    \draw[thin, red] (Pc) -- (C);
+    \draw[thin, red] (Pb) -- (B);
+
+
+    
+    
+\end{tikzpicture}
+
+Je dáno: $B, C$\\
+Hledáme: $A, P_c, P_b$\\
+$A: A\in \leftrightarrow BP_c \cap  \leftrightarrow CP_b$\\
+$P_b: P_b\in \tau_{BC} \cap k(B;4cm)$\\
+$P_c: P_c \in \tau_{BC} \cap k(C;5cm)$\\
+
+Každý bod potřebuje 2 různé údaje pro určení, takže je dobré si vždycky vypsat vše co o útvaru víme do rozboru, pak uvažovat o tom, jak tyto údaje použít. Úloha má mimochodem 4 různá řešení, to se zjišťuje až při rýsování, naříklad je dobré rýsovat kružnici celou, kdyby měla průsečík ještě někde jinde než ho očekáváme (v rozboru to není nutné).
+
+\subsection{Polohové a nepolohové úlohy}
+\begin{itemize}
+    \item Polohová úloha je taková, která má zadaný nějaký bod, úsečku, či jiný útvar předem pevně na papíře. Polohový je třeba příklad: Je dáná úsečka $BS_1, |BS_1| = 6cm$. Sestrojte všechny trojúhelníky $ABC$, pro které je úsečka $BS_1$ těžnicí $t_b$ a pro které dále platí $\alpha = 45^\circ, b = 5 cm$. Na začátku vidíme, že je dána nějaká úsečka $BS_1$.
+    
+    Důležité pro tento typ úloh je počet řešení. Za řešení se počítá jakýkoliv útvar, který splňuje zadání, i když je jen otočený.
+    \item Nepolohová úloha je taková, kde není na počátku daný pevný bod, nebo jiný útvar, je to například úloha řešená výše. Tam se za rozdílná řešení nepočítají shodné nebo otočené útvary.
+\end{itemize}
 \subsection*{Metoda geometrických míst bodů}
 Hledáme body, které splňují určité vlastnosti současně (průnik množin)
 \begin{itemize}
