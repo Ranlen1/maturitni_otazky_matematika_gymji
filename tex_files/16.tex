@@ -136,9 +136,71 @@ V příkladu je červeně naznačená pomocná rovina a řešením bude bod, kde
 \section*{Řezy těles}
 \textbf{Pravidla pro řezy:}
 \begin{itemize}
-    \item Leží li dva body v jedné stěně, spojíme je úsečkou
-    \item Jsou li dvě stěny rovnoběžné, jsou řezy v nich (průsečnice) rovnoběžné.
-    \item Osová afinita wtf??
+    \item Leží-li dva body v jedné stěně, spojíme je úsečkou
+    \item Jsou-li dvě stěny rovnoběžné, jsou řezy v nich (průsečnice) rovnoběžné.
+    \item Trsy rovin: Vezměme tři roviny: Rovinu řezu $\rho$, rovinu přední stěny $\alpha$ a rovinu boční stěny $\beta$ (rovina řezu nesmí být rovnoběžná s rovinami krychle).
+    
+    Víme o nich, že roviny stěn $alpha$ a $\beta$ se protínají v jedné přímce (hrana krychle, označme ji $p$) a že rovina řezu $\rho$ protíná stěnu $\alpha$ v nějaké přímce (čára řezu, označme ji $h$).
+
+    Pokud protáhnu čáru řezu $h$ a hranu krychle $p$, tak se někde protnou, protože leží v jedné rovině a nejsou rovnoběžné. Vezměme tedy bod $X$, který leží na čáře řezu $h$, patří tedy do roviny řezu $\rho$, bod $X$ zároveň leží na přímce hrany $h$, tudíž patří i do roviny boční stěny $\beta$, mohu tedy propojit bod $X$ s dalším bodem pratřícím do řezu v rovině $\beta$.
+    
+    Příklad: narýsujte rovinu řezu procházející body PQF
+
+    \begin{tikzpicture}[
+    % Nastavení zkoseného promítání (volné rovnoběžné promítání)
+    x={(1cm,0cm)}, 
+    y={(0.5cm,0.5cm)}, 
+    z={(0cm,1cm)}, 
+    scale=1] % Zvětšení celého obrázku
+
+    % 1. Definice vrcholů krychle (strana a = 2)
+    \coordinate (A) at (0,0,0);
+    \coordinate (B) at (4,0,0);
+    \coordinate (C) at (4,4,0);
+    \coordinate (D) at (0,4,0);
+    \coordinate (E) at (0,0,4);
+    \coordinate (F) at (4,0,4);
+    \coordinate (G) at (4,4,4);
+    \coordinate (H) at (0,4,4);
+    \coordinate (Q) at (4,4,2);
+    \coordinate (P) at (2,0,0);
+    \coordinate (X) at (4,8,0);
+
+    % 2. Vykreslení neviditelných (zadních) hran čárkovaně
+    \draw[dashed, thick] (A) -- (D);
+    \draw[dashed, thick] (D) -- (C);
+    \draw[dashed, thick] (D) -- (H);
+
+    % 3. Vykreslení řezu (např. rovina procházející body A, F, H)
+    % opacity = průhlednost, aby byly vidět i hrany za ním
+
+    % 4. Vykreslení viditelných hran
+    \draw[thick] (A) -- (B) -- (C) -- (G) -- (F) -- (E) -- cycle;
+    \draw[thick] (E) -- (H) -- (G);
+    \draw[thick] (A) -- (E);
+    \draw[thick] (B) -- (F);
+    \draw[thin] (Q) -- (F);
+    \draw[thin, dashed] (Q) -- (4,10,-1);
+    \draw[dashed, thin] (C) -- (4,9,0);
+    \draw[dashed, thin] (X) -- (P);
+
+    % 5. (Volitelné) Popisky vrcholů
+    \node[cross out, draw=black, thick, minimum size=6pt, inner sep=0pt, label=right:{$P$}] at (P) {};
+    \node[below left] at (A) {A};
+    \node[below right] at (B) {B};
+    \node[right] at (C) {C};
+    \node[above left] at (D) {D};
+    \node[left] at (E) {E};
+    \node[above] at (F) {F};
+    \node[above right] at (G) {G};
+    \node[above left] at (H) {H};
+    \node[below] at (X) {X};
+    \node[cross out, draw=black, thick, minimum size=6pt, inner sep=0pt, label=above right:{$Q$}] at (Q) {};
+    
+
+\end{tikzpicture}
+
+Nejdříve jsem propojil body $F, Q$, protože leží na stejné straně. Poté už je nutné použít trs rovin. Rovina $BFC$ a $ABC$ mají společnou průsečnici $BC$ a v rovině $BFC$ leží i čára hledaného řezu. Proto se po prodloužení těchto úseček musí protnout ve společném bodě těchto tří rovin. Bod $X$ tedy leží ve stejné rovině jako bod $P$ a mohu je spojit pro získání další čáry řezu.
 \end{itemize}
 
 %%rozvést trsy(napsat Petrový)
