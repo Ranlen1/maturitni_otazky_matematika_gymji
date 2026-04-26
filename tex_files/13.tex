@@ -26,6 +26,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{mathrsfs}
+\usetikzlibrary{arrows}
 \usetikzlibrary{shapes.misc}
 \usetikzlibrary{angles,quotes}
 
@@ -41,14 +42,17 @@
 \begin{itemize}
     \item \textbf{Přímka} se zapisuje buď malým písmenem, nebo $\leftrightarrow AB$
     \item \textbf{Úsečka} je část přímky ohraničená 2 body. Zapisuje se jako $AB$, nebo pokud chceme její velkost, tak $|AB|$
-    \item \textbf{Polopřímka} je část přímky, která je ohraničená jen jedním bodem, je tedy nekonečná. Zapisuje se $\leftarrow AB$, kde $A$ je počáteční bod a prochází bodem $B$
-    \item \textbf{Polorovina} je část roviny, která je ohraničená jednou přímkou. Zapisuje se $\leftarrow pA$, je to polorovina s hraniční přímkou $p$ obsahující bod $A$. 
+    \item \textbf{Polopřímka} je část přímky, která je ohraničená jen jedním bodem, je tedy nekonečná. Zapisuje se $\mapsto AB$, kde $A$ je počáteční bod a bod $B$ je vnitřní bod
+    \item \textbf{Polorovina} je část roviny, která je ohraničená jednou přímkou. Zapisuje se $\mapsto pA$, je to polorovina s hraniční přímkou $p$ obsahující bod $A$. 
     \item \textbf{Úhel} je část roviny vymezená dvěma polopřímkami se společným počátkem.
     \item \textbf{Vedlejší úhly} jsou úhly, která leží na stejné přímce a vzájemně se doplňují do $180^\circ$, v obrázku jsou to například úhly $\alpha$ a $\gamma$
     \item \textbf{Souhlasné úhly} leží n stejné straně příčky i rovnoběžek, v obrazku jsou to úhly $\alpha , \alpha'$ a $\beta, \beta'$
     \item \textbf{Střídavé úhly} leží na opačných stranách a jsou shodné, v obrázku to jsou úhly $\beta$ a $\gamma'$, nebo úhly $\alpha'$ a $\delta $.
     \item \textbf{Vrcholové úhly} jsou shodné a v obrázku je to například dvojice $\alpha$ a $\delta$.
+    \item Úhel $0^\circ < |\angle AVB| < 90^\circ$ je ostrý, úhel $90^\circ < |\angle AVB| < 180^\circ$ je tupý.
+    \item Konvexní úhel je $0^\circ \leq |\angle AVB| \leq 180^\circ$ a nekonvexní úhel je $180^\circ <|\angle AVB| < 360^\circ$.
 \end{itemize}
+
 
 
 \begin{tikzpicture}[>=stealth, scale=1]
@@ -87,7 +91,7 @@
 \end{tikzpicture}
 
 \section{Trojúhelník}
-Věty o shodnosti: \textbf{sss, sus, usu, Ssu}, u věty Ssu jsou dva trojúhelníky shodné, pokud se shodují ve dvou stranách a úhlu, který leží proti větší z těchto stran
+Věty o shodnosti: \textbf{sss, sus, usu, Ssu}, u věty Ssu jsou dva trojúhelníky shodné, pokud se shodují ve dvou stranách a úhlu, který leží proti větší z těchto stran. Věta o podobonosti trojúhelníku je \textbf{uu}
 Významné body a přímky:
 \begin{itemize}
     \item \textbf{Těžiště} je průsečík těžnic, dělí těžnici v poměru 2:1
@@ -297,7 +301,7 @@ Jejich poloha závisí na vzdálenosti středů $d = |S_1 S_2|$
     \item Jedna uvnitř druhé $d<|r_1 - r_2|$, pokud je $d = 0$, tak jsou soustředné
 \end{itemize}
 
-\section{Konstrukce tečen}
+\section*{Konstrukce tečen}
 Při konstrukci z vnějšího bodu $M$ využíváme thaletovu kružnici
 
 Nejprve najdeme střed úsečky $SM$, označme $O$
@@ -354,6 +358,65 @@ Součet vnitřních úhlu: pro každý konvexní n-úhelník platí, že součet
 (dodělat)
 \subsection*{Pravidelné n-úhelníky}
 Má všechny strany i všechny vnitřní strany shodné. Každému pravidelnému n-úhelníku lze opsat i vepsat kružnici (středy kružnic splývají).
+\subsubsection*{Konstrukce pravidelných n-úhelníků}
+\begin{itemize}
+    \item Pro n = 4,8,16\dots tak stačí opakovaně dělit úhly (strany čtverce vepsaného ve kružnici rozdělím napůl...)
+    \item Pro n = 5 \\
+    \definecolor{qqccqq}{rgb}{0,0.8,0}
+\definecolor{ttffqq}{rgb}{0.2,1,0}
+\definecolor{wwffqq}{rgb}{0.4,1,0}
+\definecolor{qqttcc}{rgb}{0,0.2,0.8}
+\definecolor{ttttff}{rgb}{0.2,0.2,1}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqcc}{rgb}{0,0,0.8}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\definecolor{wewdxt}{rgb}{0.43137254901960786,0.42745098039215684,0.45098039215686275}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-5.287313437648328,-3.437493121600489) rectangle (5.304536078541923,3.6627953815093472);
+\draw [line width=2pt] (0,0) circle (3cm);
+\draw [line width=1.2pt] (-3,0)-- (3,0);
+\draw [line width=1.2pt] (0,3)-- (0,-3);
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=qqqqcc] (-1.5,0)-- (0,3);
+\draw [shift={(-1.5,0)},line width=1.6pt,dash pattern=on 1pt off 1pt,color=ffqqqq]  plot[domain=-0.40328148171883615:1.4973092665073091,variable=\t]({1*3.3541019662496856*cos(\t r)+0*3.3541019662496856*sin(\t r)},{0*3.3541019662496856*cos(\t r)+1*3.3541019662496856*sin(\t r)});
+\draw [shift={(0,3)},line width=2pt,dotted,color=ttttff]  plot[domain=5.112021611551151:5.796871555395096,variable=\t]({1*3.5267115137548393*cos(\t r)+0*3.5267115137548393*sin(\t r)},{0*3.5267115137548393*cos(\t r)+1*3.5267115137548393*sin(\t r)});
+\draw [shift={(0,3)},line width=1.6pt,dotted,color=qqttcc]  plot[domain=3.5977591054033713:3.881379319988365,variable=\t]({1*3.526711513754839*cos(\t r)+0*3.526711513754839*sin(\t r)},{0*3.526711513754839*cos(\t r)+1*3.526711513754839*sin(\t r)});
+\draw [shift={(-2.853169548885461,0.9270509831248424)},line width=2pt,dotted,color=ttttff]  plot[domain=4.7611709587453515:5.190895851935519,variable=\t]({1*3.526711513754839*cos(\t r)+0*3.526711513754839*sin(\t r)},{0*3.526711513754839*cos(\t r)+1*3.526711513754839*sin(\t r)});
+\draw [shift={(2.853169548885461,0.9270509831248418)},line width=2pt,dotted,color=ttttff]  plot[domain=4.233694692093994:4.526178104832188,variable=\t]({1*3.5267115137548393*cos(\t r)+0*3.5267115137548393*sin(\t r)},{0*3.5267115137548393*cos(\t r)+1*3.5267115137548393*sin(\t r)});
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=wwffqq] (-1.7633557568774196,-2.4270509831248424)-- (1.7633557568774185,-2.427050983124843);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=wwffqq] (1.7633557568774185,-2.427050983124843)-- (2.853169548885461,0.9270509831248418);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=ttffqq] (2.853169548885461,0.9270509831248418)-- (0,3);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=ttffqq] (0,3)-- (-2.853169548885461,0.9270509831248424);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=qqccqq] (-2.853169548885461,0.9270509831248424)-- (-1.7633557568774196,-2.4270509831248424);
+\begin{scriptsize}
+\draw [fill=wewdxt] (0,0) circle (2pt);
+\draw[color=wewdxt] (0.09062785431110255,0.22395928305598584) node {$O$};
+\draw [fill=ududff] (3,0) circle (2.5pt);
+\draw[color=ududff] (3.090089664205687,0.2473925784457873) node {$B$};
+\draw [fill=wewdxt] (-3,0) circle (2pt);
+\draw[color=wewdxt] (-2.9088339555834817,0.22395928305598584) node {$C$};
+\draw[color=black] (0.04376126353149967,-0.04552361392673071) node {$f$};
+\draw [fill=wewdxt] (0,3) circle (2pt);
+\draw[color=wewdxt] (0.09062785431110255,3.2234210929505704) node {$D$};
+\draw [fill=wewdxt] (0,-3) circle (2pt);
+\draw[color=wewdxt] (0.09062785431110255,-2.7755025268385984) node {$E$};
+\draw[color=black] (-0.14370509958691186,0.14194274919168082) node {$g$};
+\draw [fill=wewdxt] (-1.5,0) circle (2pt);
+\draw[color=wewdxt] (-1.4091030506361897,0.22395928305598584) node {$S$};
+\draw [fill=wewdxt] (1.8541019662496856,0) circle (2pt);
+\draw[color=wewdxt] (1.953574837800317,0.22395928305598584) node {$X$};
+\draw [fill=wewdxt] (2.853169548885461,0.9270509831248418) circle (2pt);
+\draw[color=wewdxt] (2.9494898918668784,1.1612910986480436) node {$W$};
+\draw [fill=wewdxt] (-2.853169548885461,0.9270509831248424) circle (2pt);
+\draw[color=wewdxt] (-2.756517535549772,1.1612910986480436) node {$G$};
+\draw [fill=wewdxt] (-1.7633557568774196,-2.4270509831248424) circle (2pt);
+\draw[color=wewdxt] (-1.6668692999240056,-2.2013867897884634) node {$H$};
+\draw [fill=wewdxt] (1.7633557568774185,-2.427050983124843) circle (2pt);
+\draw[color=wewdxt] (1.8598416562411113,-2.2013867897884634) node {$I$};
+\draw[color=qqccqq] (-2.440168047787453,-0.6665059417564689) node {$n$};
+\end{scriptsize}
+\end{tikzpicture}
+    \item Pro n=6, rozdělit rovnostranný trojúhelník
+\end{itemize}
 
 \section*{Konstrukční úlohy}
 Konstrukční úloha se skládá ze čtyř fází: Rozbor, postup konstrukce,konstrukce, diskuze (počet řešení)
@@ -413,9 +476,9 @@ $A: A\in \leftrightarrow BP_c \cap  \leftrightarrow CP_b$\\
 $P_b: P_b\in \tau_{BC} \cap k(B;4cm)$\\
 $P_c: P_c \in \tau_{BC} \cap k(C;5cm)$\\
 
-Každý bod potřebuje 2 různé údaje pro určení, takže je dobré si vždycky vypsat vše co o útvaru víme do rozboru, pak uvažovat o tom, jak tyto údaje použít. Úloha má mimochodem 4 různá řešení, to se zjišťuje až při rýsování, naříklad je dobré rýsovat kružnici celou, kdyby měla průsečík ještě někde jinde než ho očekáváme (v rozboru to není nutné).
+Každý bod potřebuje 2 různé údaje pro určení, takže je dobré si vždy vypsat vše co o útvaru víme do rozboru, pak uvažovat o tom, jak tyto údaje použít. Úloha má mimochodem 4 různá řešení, to se zjišťuje až při rýsování, například je dobré rýsovat kružnici celou, kdyby měla průsečík ještě někde jinde než ho očekáváme (v rozboru to není nutné).
 
-\subsection{Polohové a nepolohové úlohy}
+\subsection*{Polohové a nepolohové úlohy}
 \begin{itemize}
     \item Polohová úloha je taková, která má zadaný nějaký bod, úsečku, či jiný útvar předem pevně na papíře. Polohový je třeba příklad: Je dáná úsečka $BS_1, |BS_1| = 6cm$. Sestrojte všechny trojúhelníky $ABC$, pro které je úsečka $BS_1$ těžnicí $t_b$ a pro které dále platí $\alpha = 45^\circ, b = 5 cm$. Na začátku vidíme, že je dána nějaká úsečka $BS_1$.
     
