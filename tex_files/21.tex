@@ -1,0 +1,110 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+
+% matematicke package
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+
+\title{Maturitní otázka číslo 21: Diferenciální počet}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\subsection*{Derivace}
+\subsubsection*{Derivace v bodě}
+Derivace v bodě $x$ nějaké funkce $f$ je rovna směrnici tečny, která se dotýká daného bodu. Zapisuje
+se $f'(x) = a, a \in \mathbb{R}$. Směrnice přímky je koeficient $a$ v lineární funkci $y = ax + b$ a
+udává jak rychle daná přímka stoupá nebo klesá. Pokud máme nějakou lineární funkci, její směrnice
+se dá získat ze dvou bodů této funkce. Mějme dva body $X_1 = [2,1], X_2 = [3,1.5]$. Směrnice
+se počítá vzorcem $a = \frac{f(x_2) - f(x_1)}{x_2 - x_1} = \frac{1.5 - 1}{3 - 2} = 0.5$. Z obrázku
+můžeme vidět že jde opravdu o funkci $y = \frac{1}{2}x$.
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+\draw[->] (-1,0) -- (4.5,0) node[right] {$x$};
+\draw[->] (0,-1) -- (0,2.5) node[above] {$f(x)$};
+\draw[thick, blue] (-1,-0.5) -- (4.0, 2.0);
+\coordinate (P1) at (2.0, 1.0);
+\filldraw (P1) circle (2pt);
+\draw[dashed] (P1) -- (2.0,0) node[below] {$x_1$};
+\draw[dashed] (P1) -- (0,1.0) node[left] {$f(x_1)$};
+\coordinate (P2) at (3.0, 1.5);
+\filldraw (P2) circle (2pt);
+\draw[dashed] (P2) -- (3.0,0) node[below] {$x_2$};
+\draw[dashed] (P2) -- (0,1.5) node[left] {$f(x_2)$};
+\end{tikzpicture}
+\end{center}
+My ovšem chceme určit derivaci pouze v jedno bodě. Mějme funkci $f$ nějaký bod $x_0$. Uděláme
+sečnu s bodem $x$. Čím více se tento bod bude blížit bodu $x_0$, tím blíže bude
+sečna podobná požadované tečně. Chceme přiblížit bod $x$ co nejblíže bodu $x_0$ tak aby $x \ne x_0$.
+Pro tohle přiblížení použijeme limitu, tedy $a = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} =
+\lim_{x \to x_0} \frac{\Delta y}{\Delta x}$. Tato limita se občas také píše pomocí diference kdy $d = x - x_0$ a vzorec
+vypadá $a = \lim_{d \to 0} \frac{f(x_0 + d) - f(x_0)}{d}$.
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=2.5]
+    \def\xstart{-0.2}
+    \def\xend{3.5}
+    \def\xzero{1}
+    \def\yzero{1}
+    \def\xone{3}
+    \def\yone{1.732}
+    \def\xtwo{2}
+    \def\ytwo{1.414}
+    \draw[->] (-0.5,0) -- (4,0) node[right] {$x$};
+    \draw[->] (0,-0.2) -- (0,2.5) node[above] {$f(x)$};
+    \draw[thick, blue, samples=100, domain=0:\xend] plot (\x, {sqrt(\x)});
+    \def\kone{(\yone-\yzero)/(\xone-\xzero)}
+    \draw[red!40, thick] (\xstart, {\kone*(\xstart-\xzero)+\yzero}) -- (\xend, {\kone*(\xend-\xzero)+\yzero}) node[right, black, scale=0.8] {sečna $x_1$};
+    \filldraw[red!40] (\xone, \yone) circle (0.8pt);
+    \draw[dashed, red!40] (\xone, 0) node[below, black] {$x_1$} -- (\xone, \yone) -- (0, \yone) node[left, black] {$f(x_1)$};
+    \def\ktwo{(\ytwo-\yzero)/(\xtwo-\xzero)}
+    \draw[red, thick] (\xstart, {\ktwo*(\xstart-\xzero)+\yzero}) -- (\xend, {\ktwo*(\xend-\xzero)+\yzero}) node[right, black, scale=0.8] {sečna $x_2$};
+    \filldraw[red] (\xtwo, \ytwo) circle (0.8pt);
+    \draw[dashed, red] (\xtwo, 0) node[below, black] {$x_2$} -- (\xtwo, \ytwo) -- (0, \ytwo) node[left, black] {$f(x_2)$};
+    \draw[green!60!black, very thick] (\xstart, {0.5*(\xstart-\xzero)+\yzero}) -- (\xend, {0.5*(\xend-\xzero)+\yzero}) node[right] {tečna};
+    \filldraw[black] (\xzero, \yzero) circle (1pt);
+    \draw[dashed, gray] (\xzero,0) node[below, black] {$x_0$} -- (\xzero,\yzero) -- (0,\yzero) node[left, black] {$f(x_0)$};
+\end{tikzpicture}
+\end{center}
+Derivace v bodě existuje, pokud existuje vlastní limita a obě jednostranné derivace se rovnají.
+Ty se zapisují se jako  $f'_-(x_0)$ a $f'_+(x_0)$. Limita se bude pro ně počítat zleva a zprava, tedy
+$a = \lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0}$ a $a = \lim_{x \to x_0^+} \frac{f(x) - f(x_0)}
+{x - x_0}$. 
+
+Jednostranné derivace se nerovnají například u funkce $f(x) = |x|$ v bodě nula. Její derivace zleva se
+počítá takto $f'_-(0) = \lim_{x \to 0^-} \frac{|x| - |0|}{x - 0} = \lim_{x \to 0^-} \frac{-x}{x} =
+-1$. Derivace zprava je $f'_+(0) = \lim_{x \to 0^+} \frac{x - 0}{x - 0} = 1$. Pokud existují obě
+jednostranné derivace a funkce je v tomto bodě spojitá, říká se danému bodu hrot.
+
+Dalším specialním bodem je bod vratu. Ten například existuje u funkce $f(x) = \sqrt{|x|}$ v bodě
+$x = 0$.
+Vzniká pokud je funkce v daném bodě spojitá a jedna z jednostranných derivací jde do nekonečna a
+druhá do mínus nekonečna. Ve vratu derivace neexistuje, ale tečna existuje a je rovnoběžná s osou $y$.
+
+Pokud vyjdou obě jednostranné derivace jako nekonečno se stejným znaménkem a graf je v bodě
+spojitý, jde o nevlastní derivaci. Graf má v tomto bodě tečnu rovnoběžnou s osou $y$.
+To nastává například u derivace funkce $f(x) = \sqrt[3]{x}$ v bodě $x = 0$.
+
+Má-li funkce v bodě derivaci, je spojitá. Funkce je spojitá, pokud platí $\lim_{x \to a}f(x) = f(a)$.
+To se dokazuje přímo. $\lim_{x \to a} f(x) - f(a) = \lim_{x \to a} \frac{f(x) - f(a)}{(x - a)} \cdot
+(x-a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \cdot \lim_{x \to a}(x-a) = f'(a) \cdot 0 = 0$.
+\subsubsection*{Derivace na intervalu}
+\subsubsection*{Derivace funkce}
+
+\end{document}
