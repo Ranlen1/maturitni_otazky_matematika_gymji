@@ -129,6 +129,10 @@ Samodružným bodem stejnolehlosti je střed stejnolehlosti pro $\kappa \ne 1$ n
 pro $\kappa = 1$. Samodružné přímky jsou všechny přímky procházející středem stejnolehlosti pro
 $\kappa \ne -1$ nebo celá rovina pro $\kappa = -1$.
 
+V nějakých bodech se využíva pojem nepřístupný bod. To je bod, který víme kde zhruba leží, ale
+nemůžeme ho využít pro konstrukci. Dá se to představit jako kdybychom načrtli dvě různoběžné přímky,
+kterých průsečík je mimo papír na který rýsujeme.
+
 \subsection*{Metrické vzorce využívající zobrazení}
 \subsubsection*{Pythagorova věta}
 Pythagorova věta říká, že v pravoúhlém trojúhelníku $ABC$ je obsah čtverce nad přeponou rovna součtu
@@ -242,7 +246,6 @@ ymax=3.0,
 clip=true
 ]
 \definecolor{ududff}{rgb}{0.30,0.30,1}
-
 \draw [line width=0.8pt] (-1.82,-0.78) circle (1.cm);
 \draw [line width=0.8pt] (2.14,0.26) circle (2.0cm);
 \draw [line width=0.8pt,domain=-10:10] plot(\x,{(--3.7376-1.8413*\x)/-0.7805});
@@ -250,7 +253,6 @@ clip=true
 \draw [line width=0.8pt,domain=-10:10] plot(\x,{(-3.4152-1.9606*\x)/-4.3502});
 \draw [line width=0.8pt,domain=-10:10] plot(\x,{(--1.196-1.04*\x)/-3.96});
 \draw [line width=0.8pt,domain=-10:10] plot(\x,{(-0.3223--3.8020*\x)/5.1308});
-
 \begin{scriptsize}
 \fill [ududff] (-1.82,-0.78) circle (2.0pt) node[above right, fill=white, inner sep=0.2pt, xshift=3pt, yshift=2pt] {$S_1$};
 \fill [ududff] (2.14,0.26) circle (2.0pt) node[above right, fill=white, inner sep=0.2pt, xshift=3pt, yshift=2pt] {$S_2$};
@@ -263,10 +265,45 @@ clip=true
 \end{axis}
 \end{tikzpicture}
 \end{center}
-
 Dvě kružnice mají dvě stejnolehlosti, vnější a vnitřní. Střed vnější stejnolehlosti je $S_{t1}$ a
 střed vnitřní stejnolehlosti je $S_{t2}$. Koeficient stejnolehlosti získáme poměrem poloměrů kružnic a
 pro vnější stejnolehlost bude kladný a pro vnitřní záporný. Stejnolehlost kružnic se využívá pro
 vytvoření tečny pro obě kružnice zároveň. Vytvoří se středy stejnolehlosti a následně se použije
 metoda vytvoření tečny ke kružnici z bodu využitím Thaletovy kružnice.
+\subsubsection*{Stejnolehlost úseček}
+Dalším častým úkolem je najít středy stejnolehlosti dvou úseček, které leží na jedné přímce.
+Tato úloha se dá řešit například vytvořením rovnostranných trojúhelníků. Také to lze řešit
+sestrojením dvou kružnic se středy v středech daných úseček a průměrem délky dané úsečky. Středy
+stejnolehlosti by se hleadaly stejně jako u hledání tečny ke kružnicím.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.7, >=stealth]
+\draw (-2,0) -- (13,0) node[right] {$p$};
+\coordinate (A) at (2.5,0);
+\coordinate (B) at (4.5,0);
+\draw[ultra thick, blue] (A) -- (B);
+\fill[blue] (A) circle (2pt) node[below] {$A$};
+\fill[blue] (B) circle (2pt) node[below] {$B$};
+\coordinate (C) at (6,0);
+\coordinate (D) at (11,0);
+\draw[ultra thick, red] (C) -- (D);
+\fill[red] (C) circle (2pt) node[below] {$C$};
+\fill[red] (D) circle (2pt) node[below] {$D$};
+\coordinate (Vab) at (3.5, 1.73); 
+\draw[thin, gray] (A) -- (Vab) -- (B);
+\fill (Vab) circle (2pt) node[above] {$V_{AB}$};
+\coordinate (Vcd) at (8.5, 4.33); 
+\draw[thin, gray] (C) -- (Vcd) -- (D);
+\fill (Vcd) circle (2pt) node[above] {$V_{CD}$};
+\coordinate (Vcd2) at (8.5, -4.33);
+\draw[thin, lightgray] (C) -- (Vcd2) -- (D);
+\fill[black] (Vcd2) circle (2pt) node[below] {$V'_{CD}$};
+\coordinate (S1) at (0.16,0); 
+\draw[dashed, blue] (Vcd) -- (S1);
+\fill[orange] (S1) circle (3pt) node[below=5pt] {$S_1$};
+\coordinate (S2) at (4.93,0); 
+\draw[dashed, red] (Vab) -- (Vcd2);
+\fill[green!60!black] (S2) circle (3pt) node[below=5pt] {$S_2$};
+\end{tikzpicture}
+\end{figure}
 \end{document}
