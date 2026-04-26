@@ -104,6 +104,12 @@ To nastává například u derivace funkce $f(x) = \sqrt[3]{x}$ v bodě $x = 0$.
 Má-li funkce v bodě derivaci, je spojitá. Funkce je spojitá, pokud platí $\lim_{x \to a}f(x) = f(a)$.
 To se dokazuje přímo. $\lim_{x \to a} f(x) - f(a) = \lim_{x \to a} \frac{f(x) - f(a)}{(x - a)} \cdot
 (x-a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \cdot \lim_{x \to a}(x-a) = f'(a) \cdot 0 = 0$.
+
+Hodnota derivace $f'(x_0)$ je rovna tangensu úhlu, který tato tečna svírá s kladnou poloosou. Ve
+fyzice nám derivace bodu udává okamžitou rychlost změny nějakého procesu. Dalším využitím je pokud
+máme například rychlost jako funkci času v(t). Její derivace v nějakém čase $t_0$ nám říká, jak
+se rychlost mění. Pokud je derivace kladná, ojekt zrychluje. Pokud je záporná objekt zpomaluje a pokud
+je nulová, rychlost je konstantní.
 \subsubsection*{Derivace na intervalu}
 Funkce $f$ má derivaci na otevřeném intervalu $(a, b)$, pokud každé $x \in (a,b)$ existuje derivace.
 Pokud bychom měli uzavřený interval $\langle a, b \rangle$. Aby měla funkce derivaci na celém
@@ -130,6 +136,34 @@ $(f \cdot g)'(x_0) = f'(x_0)g(x_0) + f(x_0)g'(x_0)$
 $(\frac{f}{g})'(x_0) = \frac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{(g(x_0))^2}$
 
 $(f(g(x_0)))' = f'(g(x_0)) \cdot g'(x_0)$
+\subsubsection*{L'Hospitalovo pravidlo}
+Pokud chceme zjistit limitu podílu dvou funkcí v $f, g$, a platí buď $\lim_{x \to a}f(x) = lim_{x \to
+a}g(x) = 0$ nebo $\lim_{x \to a}f(x) = \pm \infty$ a $\lim_{x \to a}g(x) = \pm \infty$, můžeme využít
+L'Hospitalovo pravidlo. To udává že $\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a}
+\frac{f'(x)}{g'(x)}$. Toto pravidlo lze použít pouze pokud v daném bodu derivace existuje.
 
+\subsection*{Vyšetřování průběhu funkce}
+\subsubsection*{První derivace}
+První derivace určuje jak rychle graf roste nebo klesá. Pokud je derivace $f'(x) > 0$, funkce roste,
+pokud je $f'(x) < 0$, funkce klesá. Bodu ve kterém se $f'(x) = 0$ se nazývá stacionární bod. Pokud
+se ve stacionárním bodě mění směr, je tento stacionární bod extrém. Pokud funkce klesala a po
+stacionárním bodě roste, jedná se o lokální minimum. Pokud je to prohozené, jde o lokální maximum.
+Pokud se ve stacionárním bodě nemění směr funkce, nazývá se tento stacionární bod sedlovým bodem.
+Pro zjišťování na jakých intervalech se jak funkce chová se využívají nulové body.
+\subsubsection*{Druhá derivace}
+Druhá derivace určuje rychlost změny rychlosti růstu. Pokud je druhá derivace $f''(x) > 0$, funkce
+je v daném místě konvexní. Pokud je druhá derivace $f''(x) < 0$, funkce je v daném bodě konkávní.
+Bodu ve kterém se $f''(x) = 0$ a mění zakřivení z konvexnosti na konkávnost nebo naopak se říka
+inflexní bod.
+\subsection*{Derivace v optimalizačních úlohách}
+V těchto úlohách většinou hledáme nějaké maximum nebo minimum, které získáváme pomocí derivace.
+Většinou se jedná o geometrické nebo finanční slovní úlohy. Ukažme si to na příkladě.
 
+Chceme vykopat bazén s obdélníkovým dnem o objemu $V = 32 m^3$. Jak hluboký má být bazén, aby se
+využilo co nejméně kachliček. Víme že povrch bazénu je $S(x, h) = x^2 + 4(x \cdot h)$. Musíme se
+zbavit jedné neznámé, například $h = \frac{32}{x^2}$. Tím získáme funkci $S(x) = x^2 + 4(x \cdot
+\frac{32}{x^2}) = x^2 + \frac{128}{x}$. Tuto funkci zderivujeme $S'(x) = 2x - \frac{128}{x^2}$.
+Stacionární bod získáme rovnicí $x^3 - 64 = 0$. To nám dává že $x = 4$ a $h = \frac{32}{4^2} = 2$.
+Ověření že se opravdu jedná o minimum se dělá například dosazením do intervalů $(-\infty, 4)$ a
+$(4, \infty)$.
 \end{document}
