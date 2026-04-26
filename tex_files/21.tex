@@ -105,6 +105,31 @@ Má-li funkce v bodě derivaci, je spojitá. Funkce je spojitá, pokud platí $\
 To se dokazuje přímo. $\lim_{x \to a} f(x) - f(a) = \lim_{x \to a} \frac{f(x) - f(a)}{(x - a)} \cdot
 (x-a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \cdot \lim_{x \to a}(x-a) = f'(a) \cdot 0 = 0$.
 \subsubsection*{Derivace na intervalu}
+Funkce $f$ má derivaci na otevřeném intervalu $(a, b)$, pokud každé $x \in (a,b)$ existuje derivace.
+Pokud bychom měli uzavřený interval $\langle a, b \rangle$. Aby měla funkce derivaci na celém
+uzavřeném intervalu, musí každý bod uvintř intervalu mít derivaci a karjní bod $a$ mít derivaci
+zprava a krajní bod $b$ mít derivaci zleva. Polouzavřený interval bude muset mít krajní derivaci
+v bodě kde je uzavřený, aby měl derivaci na celém intervalu.
 \subsubsection*{Derivace funkce}
+Pokud místo derivování jednoho konkrétního bodu zderivujeme funkci, získáme jinou funkci, ze které
+po dosazení nějakého bodu získáme přímo derivaci pro tento bod. Mějme například funkci $f: y = x^2$.
+Budeme derivovat pro nějaké obecné $x$ $f'(x) = \lim_{x \to x_0}\frac{f(x) - f(x_0)}{x - x_0} =
+\lim_{x \to x_0} \frac{x^2 - x_0^2}{x - x_0} = x + x_0 = 2x_0$. Pokud dosadím libovolný bod $x$, jeho
+derivace bude $2x$. Tabulka derivací elementárních funkcí je v tabulkách.
+
+Máme-li dvě funkce $f, g$ a konstantu $c \in \mathbb{R}$, platí pro ně:
+
+$(f+g)'(x_0) = f'(x_0) + g'(x_0)$
+
+$(f-g)'(x_0) = f'(x_0) - g'(x_0)$
+
+$(c \cdot f)'(x_0) = c \cdot f'(x_0)$
+
+$(f \cdot g)'(x_0) = f'(x_0)g(x_0) + f(x_0)g'(x_0)$
+
+$(\frac{f}{g})'(x_0) = \frac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{(g(x_0))^2}$
+
+$(f(g(x_0)))' = f'(g(x_0)) \cdot g'(x_0)$
+
 
 \end{document}
