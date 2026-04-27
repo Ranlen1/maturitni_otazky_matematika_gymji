@@ -1,0 +1,60 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+% matematicke package
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{angles,quotes}
+
+\title{Maturitní otázka číslo 9: Kombinatorika}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Základní kombinatorická pravidla}
+\subsection*{Kombinatorické pravidlo součinu}
+Definice: Počet všech uspořádaných k-tic, jejichž první člen lze vybrat $n_1$ způsoby, druhý člen po výběru prvního členu $n_2$ způsobu atd. až k-tý člen po výběru všech předcházejících členů $n_k$ způsoby, je roven $n_1 \cdot n_2 \cdot ... \cdot n_k$.
+
+Příklad: U stánku nabízejí tři různé zmrzliny a čtyři různé polevy. Kolik druhů zmrzliny s polevou můžeme vytvořit, pokud nebudeme míchat polevy ani druhy zmrzliny?
+
+Řešení: Ke každému ze tří druhů zmrzliny můžeme přiřadit čtyři polevy, můžeme tedy vytvořit $3 \cdot 4 = 12$ různých zmrzlin s polevou.
+
+Převedeno na pojmy z definice bude $k = 2, n_1 = 3, n_2 = 4, n_1\cdot n_2 = 12$.
+
+\subsection*{Kombinatorické pravidlo součtu}
+Definice: Jsou-li $A_1, A_2, ..., A_n$ konečné množiny, které mají po řadě $p_1, p_2, ..., p_n$ prvků, a jsou-li každé dvě disjunktní, pak počet prvků množiny $A_1 \cup A_2 \cup ... \cup A_n$ roven $p_1 + p_2 + ... + p_n$.
+
+\section*{Variace}
+Definice: k-členná variace z $n$ prvků je uspořádaná k-tice sestavená z těchto prvků tak, že každý se v ní vyskytuje nejvýše jednou.
+\[V(k,n) = \frac{n!}{(n-k)!}\]
+Příklad: Závod běžel Petr, Roman, Simona a Jamal. Kolika různými způsoby mohli obsadit stupně vítězů?
+
+Řešení: Na prvním místě mohl doběhnout kterýkoliv z těch čtyř, tudíž máme 4 možnosti. Na druhé místo můžeme dosadit už jen 3 různé, protože jeden už je na prvním místě, na třetí místo máme na výběr jen ze 2\\
+Podle pravidla kombinatorického součinu je tedy $4 \cdot 3 \cdot 2 = 24$ možností, jak mohli doběhnout. V tomto příkladě bude $k = 3$ a $n = 4$
+
+\end{document}
