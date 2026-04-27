@@ -37,41 +37,52 @@
 \maketitle
 
 \section*{Základní pojmy}
-\begin{itemize}
+\begin{itemize} [itemsep = 2pt]
+    \item \textbf{Hrana} je úsečka, ve které se protínají dvě stěny, rozdělujeme na \textbf{podstavné hrany} (tvoří obvod podstavy) a \textbf{boční hrany} (spojují podstavy, nebo tvoří "rohy" stěn)
+    \item \textbf{Boční stěna} je jakákoliv stěna, která není podstavou.
+    \item \textbf{Plášť} je sjednocení všech bočních stěn
+    \item \textbf{Podstava} je spodní a u hranolů i horní stěna tělesa
+    \item \textbf{Vrchol} je bod, ve kterém se stýkejí hrany
     \item \textbf{Kolineární body} jsou body ležící v jedné přímce
     \item \textbf{Příčka mimoběžek} je úsečka, jejíž krajní body leží na daných mimoběžkách, \textbf{Osa mimoběžek} je jediná příčka, která je k oběma mimoběžkám kolmá, její délka je zároveň nejkratší vzdáleností
     \item \textbf{Svazek rovin} je množina všech rovin, které procházejí jednou společnou přímkou (osou svazku)
     \item \textbf{Trs rovin} je množina všech rovin, které procházejí jedním společným bodem (středem trsu)
 \end{itemize}
 
+\subsection*{Úhlopříčky}
+\begin{itemize} [itemsep = 2pt]
+    \item \textbf{Stěnová úhlopříčka} je spojnice dvou nesousedních vrcholů ležících ve stejné stěně.
+    \item \textbf{Tělesová úhlopříčka} je spojnice dvou vrcholů, které neleží ve stejné stěně. Prochází vnitřkem tělesa.
+\end{itemize}
+
 \section*{Vzájemná poloha bodů, přmek a rovin}
 Přímky $p, q$
-\begin{itemize}
+\begin{itemize} [itemsep = 2pt]
     \item \textbf{Rovnoběžné ($p \| q$)}: mohou být buď různé (žádný společný bod, kolienární vektory), nebo totožné (nekonečně společných bodů)
     \item \textbf{Různoběžné}: právě jeden společný bod, leží v jedné rovině
     \item \textbf{Mimoběžné}: Žádný společný bod, neleží v jedné rovině a směrové vektory nejsou kolineární
 \end{itemize}
 
 Přímka $p$ a rovina $\rho$
-\begin{itemize}
+\begin{itemize} [itemsep = 2pt]
     \item \textbf{Leží v rovině ($p \in \rho)$}: Každý bod přímky je bodem roviny
     \item \textbf{Rovnoběžná ($p \| \rho$)}: žádný společný bod
     \item \textbf{Různoběžná}: právě jeden společný bod. Speciálním případem je kolmost $p \perp \rho$.
 \end{itemize}
 
 Dvě roviny $\rho , \sigma$
-\begin{itemize}
+\begin{itemize} [itemsep = 2pt]
     \item  \textbf{Rovnoběžné}: buď různé (žádný společný bod), nebo totožné (nekonečně mnoho společných bodů)
     \item \textbf{Různoběžné:} Společné body tvoří přímku (průsečnici) 
 \end{itemize}
 
 \section*{Kritéria rovnoběžnosti}
-\begin{itemize}
+\begin{itemize} [itemsep = 2pt]
     \item \textbf{Rovnoběžnost přímky a roviny}: Přímka $p$ je rovnoběžná s rovinou $\rho$ právě tehdy, když je rovnoběžná s alespoň jednou přímkou $q$, která v rovině $\rho$ leží.
     \item \textbf{Rovnoběžnost dvou rovin}: Rovina $\rho$ je rovnoběžná s rovinou $\sigma$, pokud $\rho$ obsahuje dvě různé různoběžky $a, b$, které jsou obě rovnoběžné s $\sigma$
 \end{itemize}
 \section*{Průsečík s rovinou a průsečnice dvou rovin}
-Při hledání průsečnice dvou rovin hledáme dva společné body těchto rovin, pokud je nemáme přímo, používáe metodu pomocných rovin (rozvést, dodělat)
+Při hledání průsečnice dvou rovin hledáme dva společné body těchto rovin
 
 U průsečíku přímky s rovinou (například v tělese) přímku proložíme pomocnou rovinou, najdeme průsečnici této pomocné roviny s cílovou rovinou a tam, kde průsečnice protne původní přímku, leží hledaný bod.
 Ukážeme si to na příkladu: Najděte průsečíky přímky $PQ$ s krychlí.
@@ -135,7 +146,7 @@ V příkladu je červeně naznačená pomocná rovina a řešením bude bod, kde
 
 \section*{Řezy těles}
 \textbf{Pravidla pro řezy:}
-\begin{itemize}
+\begin{itemize} [itemsep = 2pt]
     \item Leží-li dva body v jedné stěně, spojíme je úsečkou
     \item Jsou-li dvě stěny rovnoběžné, jsou řezy v nich (průsečnice) rovnoběžné.
     \item Trsy rovin: Vezměme tři roviny: Rovinu řezu $\rho$, rovinu přední stěny $\alpha$ a rovinu boční stěny $\beta$ (rovina řezu nesmí být rovnoběžná s rovinami krychle).
@@ -200,8 +211,90 @@ V příkladu je červeně naznačená pomocná rovina a řešením bude bod, kde
 
 \end{tikzpicture}
 
-Nejdříve jsem propojil body $F, Q$, protože leží na stejné straně. Poté už je nutné použít trs rovin. Rovina $BFC$ a $ABC$ mají společnou průsečnici $BC$ a v rovině $BFC$ leží i čára hledaného řezu. Proto se po prodloužení těchto úseček musí protnout ve společném bodě těchto tří rovin. Bod $X$ tedy leží ve stejné rovině jako bod $P$ a mohu je spojit pro získání další čáry řezu.
+Nejdříve jsem propojil body $F, Q$, protože leží na stejné straně. Poté už je 
+nutné použít trs rovin. Rovina $BFC$ a $ABC$ mají společnou průsečnici $BC$ a 
+v rovině $BFC$ leží i čára hledaného řezu. Proto se po prodloužení těchto úseček 
+musí protnout ve společném bodě těchto tří rovin. Bod $X$ tedy leží ve stejné 
+rovině jako bod $P$ a mohu je spojit pro získání další čáry řezu.
 \end{itemize}
+
+\section*{Odchylky v prostoru}
+Vždy hledáme odchylku $\phi$ v intervalu $\langle 0, 90^\circ \rangle$
+
+\subsubsection*{Odchylka přímek}
+U přímek různoběžných je potřeba najít rovinu ve které obě leží, poté už můžeme dopočítat
+
+U různoběžných přímek nejprve najdeme rovinu se kterou jsou rovnoběžné (nejjednodušeji se najde tam, kde se přímky po posunutí protínají) a pak je obě do té roviny posunout jako je to uděláno na obrázku, kde je posunuta přímka $q$ do $q'$.
+
+\begin{tikzpicture}[scale=1.4, line join=round, line cap=round]
+    % Definice vrcholů pomocí 3D souřadnic (x, y, z)
+    \coordinate (A) at (-1.5, 0,  1.5);
+    \coordinate (B) at ( 1.5, 0,  1.5);
+    \coordinate (C) at ( 1.5, 0, -1.5);
+    \coordinate (D) at (-1.5, 0, -1.5);
+    \coordinate (S) at ( 0,   0,  0);   % Střed podstavy
+    \coordinate (V) at ( 0,   3,  0);   % Vrchol jehlanu
+    \coordinate (Q1) at (-1.5, 0, 2.5);
+    \coordinate (Q2) at (-1.5, 0, -2.5);
+    \coordinate (P1) at (2.25, -1.5, 2.25);
+    \coordinate (P2) at (-0.75, 4.5, -0.75);
+
+    \coordinate (Q3) at (1.5, 0, 2.5);
+    \coordinate (Q4) at (1.5, 0, -2.5);
+
+    % Skryté hrany podstavy a zadní boční hrana (čárkovaně)
+    \draw[dashed, thick] (A) -- (D) -- (C);
+    \draw[dashed, thick] (D) -- (V);
+    
+    % Úhlopříčky podstavy a výška jehlanu (volitelné, pro názornost)
+    \draw[dashed, thin, gray] (A) -- (C);
+    \draw[dashed, thin, gray] (B) -- (D);
+    \draw[dashed, thick, red] (S) -- (V) node[midway, right] {$v$};
+
+    % Viditelné hrany (plnou čarou)
+    \draw[thick] (A) -- (B) node[midway, below] {$a$};
+    \draw[thick] (B) -- (C) node[midway, below right] {$a$};
+    \draw[thick] (A) -- (V);
+    \draw[thick] (B) -- (V);
+    \draw[thick] (C) -- (V);
+
+    %přímky
+    \draw[thin] (Q1) -- (Q2);
+    \draw[thin] (P1) -- (P2);
+    \draw[thin, blue] (Q3) -- (Q4);
+
+    % Vykreslení bodů a popisků
+    \fill (A) circle (1pt) node[above left]  {$A$};
+    \fill (B) circle (1pt) node[below right] {$B$};
+    \fill (C) circle (1pt) node[right]       {$C$};
+    \fill (D) circle (1pt) node[above left]  {$D$};
+    \fill (S) circle (1pt) node[below]       {$S$};
+    \fill (V) circle (1.5pt) node[above]     {$V$};
+    
+    \node[below left] at (Q1) {$q$};
+    \node[above right] at (P1) {$p$};
+    \node[below left] at (Q3) {$q'$};
+\end{tikzpicture}
+
+\subsubsection*{Odchylka přímky a roviny}
+Definice: úhel mezi přímkou $p$ a jejím kolmým průmětem do této roviny (kolmý průmět je jako kdybychom se na to dívali zvrchu).
+
+\subsubsection*{Odchylka rovin}
+Odchylka dvou různoběžných rovin je úhel, který sírají jejich průsečnice s třetí rovinou, jež je kolmá k rovinám, tedy i k průsečnici.
+
+\section*{Kolmost}
+Přímka je kolmá k rovině, pokud je kolmá ke všem přímkám v dané rovině, které procházejí jejím průsečíkem. Pro ověření kolmosti stačí dokázat, že je přímka kolmá ke dvěma různobžkám ležícím v této rovině (u krychle prostě řeku, že je kolmá k tomu a kolmá k tomu, je tudíž kolmá  nějaké rovině)
+
+Rovina $\rho$ je kolmá k rovině $\sigma$, pokud $\rho$ obsahuje přímku $p$, která je kolmá k rovině $\sigma$ nebo obráceně.
+
+\section*{Vzdálenosti (metrické úlohy)}
+\subsubsection{Vzdálenost dvou přímek}
+\begin{itemize}
+    \item Různoběžné: vzdálenost je 0
+    \item Rovnoběžné: zvolíme libovolný bod na přímce a spočítáme jeho vzdálenost od druhé přímky
+    \item Mimoběžné: počítáme jejich nejkratší vzdálenost, která se nazývá osa mimoběžek
+\end{itemize}
+
 
 %%rozvést trsy(napsat Petrový)
 
