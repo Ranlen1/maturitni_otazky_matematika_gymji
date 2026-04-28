@@ -96,11 +96,44 @@ Důkaz: \[\binom{n}{n-k} = \frac{n!}{(n-k)![n-(n-k)]!} = \frac{n!}{(n-k)!k!} = \
 Vlastnosti kombinačních čísel:
 \[\binom{n}{0} = \binom{n}{n} = 1\]
 \[\binom{n}{1} = n\]
+\[\binom{n}{k}+ \binom{n}{k+1} = \binom{n+1}{k+1} \quad \text{Pascalovo pravidlo}\]
 
-\section{Variace s opakováním}
+\textbf{Důkaz Pascalova pravidla}
+\[\binom{n}{k} + \binom{n}{k+1} = \frac{n!}{(n-k)!k!} + \frac{n!}{(n-(k+1))!(k+1)!} = \frac{n!(k+1)!}{(k+1)!(n-k)!} + \frac{n!(n-k)}{(k+1)!(n-k)!}=\]
+\[=\frac{n!(k+1)! + n!(n-k)}{(k+1)!(n-k)!} = \frac{n!(n+1+k-k)}{(k+1)!(n-k)!} = \frac{(n+1)!}{(k+1)!(n+1-(k+1))!} = \binom{n+1}{k+1} \]
+
+\section*{Variace s opakováním}
 Prvky se mohou ve výběru opakovat a záleží na pořadí
 
 Definice: $k$-členná variace s opakováním z $n$ prvků je uspořádaná $k$-tice sestavená z těchto prvků tak, že každý se v ní vyskytuje nejvýše $k$-krát.
-Značí se $V'(k,n)$
+Vzorec: $V'(k,n) = n^k$
+
+Příklad: Vyberme 4 pastelky z krabice se žlutými, z krabice s modrými a z krabice s červenými. Kolik různých čtveřic pastelek můžeme vytvrořit, pokud je dáme za sebe na stůl? Na první místo můžeme dát 3 různé pastelky, na druhé místo také, protože se mohou opakovat atd.
+Můžeme tedy vytvořit podle kombinatorického pravidla součinu $3^4 = 81$ různých pořadí pastelek, které se mohou opakovat.
+
+\section*{Permutace s opakováním}
+Definice: Permutace s opakováním z $n$ prvků je uspořádaná $k$-tice sestavená z těchto prvků tak, že každý se v ní vyskytuje alespoň jednou.
+
+Přirozené číslo $n$ udává počet různých prvků.\\
+Jednotlivé prvky se mohou opakovat a je zvykem označovat počet opakování prvního prvku $k_1$, počet opakování druhého $k_2$ atd. Přirozené číslo $k$ označuje počet všech prvků, jejichž různá pořadí zkoumáme, proto platí $k = k_1 + k_2 + \dots + k_n$.
+
+Příklad: Mějme 3 krabice s pastelkami(žlutá, modrá, červená) a permutaci, ve které se žlutá bude opakovat $k_1 = 4$, modrá $k_2 = 3$ a červená $k_3 = 5$. Počet různých variant, pokud by každá pastelka byla rozdílná by byl $(k_1 + k_2 + k_3)! = 12!$ (variace). Počet $k_1$ pastelek které lze na 4 místa na kterých jsou doplnit různými způsoby je celkem $k_1! = 4!$, modré jde doplnit na jejich místo celkem $k_2 = 3!$ způsoby atd.\\
+Počet různých permutací s opakováním bude tedy $\frac{(4 + 3 + 5)!}{4!3!5!}$
+
+Obecný vzorec je tedy:
+\[P'(k_1, k_2, \dots, k_n) = \frac{(k_1 + k_2 +\dots + k_n)!}{k_1!k_2!\dots k_n!}\]
+
+\section*{Kombinace s opakováním}
+Definice: $k$-členná kombinace s opakováním z $n$ prvků je neuspořádaná $k$-tice sestavená z těchto prvků tak, že každý se v ní vyskytuje nejvýše $k$-krát.
+
+Příklad: Určete kolika způsoby je možné rozmístit 3 kuličky do čtyř krabiček.
+
+Řešení: Třikrát vybíráme jednu ze čtyř krabiček, jde tedy o tříčlennou kombinaci s opakováním ze čtyř prvků. $k = 3, n = 4$
+Jedna z možných kombinací tedy bude $.|..||$, kde $|$ odděluje jednotlivé krabičky od sebe (1. krabička má 1 kuličku, 2. krabička má 2 a třetí je prázdná). Počet možných pořadí uvedených 6 symbolů můžeme určit pomocí permutace $P'(3,3) = \frac{(3+3)!}{3!3!} = 20$\\
+Pokud zobecníme úlohu tak, že budeme hledat počet způsobů jak rozmísit $k$ stejných kuliček do $n$ krabiček, byly by to $(k+n-1)$-tice ve kterých je tečka $k$-krát a symbol $|$ $(n-1)$-krát (počet oddělení krabiček). Můžeme to zapsat jako permutaci 
+\[P'(k,n-1) = \frac{(k+n-1)!}{k!(n-1)!} = \frac{n+k-1}{k!(n-1)!} = \binom{n+k-1}{k}\]\\
+To je výsledný vzorec pro kombinace s opakováním, které se značí $K'(k,n)$
+
+\section*{Binomická věta}
 
 \end{document}
