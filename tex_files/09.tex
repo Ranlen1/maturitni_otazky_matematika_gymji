@@ -49,12 +49,58 @@ Převedeno na pojmy z definice bude $k = 2, n_1 = 3, n_2 = 4, n_1\cdot n_2 = 12$
 \subsection*{Kombinatorické pravidlo součtu}
 Definice: Jsou-li $A_1, A_2, ..., A_n$ konečné množiny, které mají po řadě $p_1, p_2, ..., p_n$ prvků, a jsou-li každé dvě disjunktní, pak počet prvků množiny $A_1 \cup A_2 \cup ... \cup A_n$ roven $p_1 + p_2 + ... + p_n$.
 
-\section*{Variace}
+\section*{Faktoriál}
+Faktoriál se značí $!$ za číslem. Faktoriál $0! = 1$, pro středoškolskou matematiku je faktoriál definovaný pouze na přirozených číslech s $0$
+\section*{Variace bez opakování}
 Definice: k-členná variace z $n$ prvků je uspořádaná k-tice sestavená z těchto prvků tak, že každý se v ní vyskytuje nejvýše jednou.
 \[V(k,n) = \frac{n!}{(n-k)!}\]
 Příklad: Závod běžel Petr, Roman, Simona a Jamal. Kolika různými způsoby mohli obsadit stupně vítězů?
 
-Řešení: Na prvním místě mohl doběhnout kterýkoliv z těch čtyř, tudíž máme 4 možnosti. Na druhé místo můžeme dosadit už jen 3 různé, protože jeden už je na prvním místě, na třetí místo máme na výběr jen ze 2\\
+Řešení: Na prvním místě mohl doběhnout kterýkoliv z těch čtyř, tudíž máme 4 možnosti.
+ Na druhé místo můžeme dosadit už jen 3 různé, protože jeden už je na prvním místě, na třetí místo máme na výběr jen ze 2\\
 Podle pravidla kombinatorického součinu je tedy $4 \cdot 3 \cdot 2 = 24$ možností, jak mohli doběhnout. V tomto příkladě bude $k = 3$ a $n = 4$
+
+\section*{Permutace}
+Permutace je zvláštní případ variace, kde $k=n$, tudíž ze zadaných prvků postupně vybereme všechny.
+
+Definice: Permutace z $n$ prvků je uspořádaná $n-tice$ sestavená z těchto prvků tak, že každý se v ní vyskytuje právě jednou\\
+\[P(n) = n!\]
+
+Příklad: Určete kolika způsoby se může $9$ žáků seřadit tak aby Milan a Lumír nestáli
+ vedle sebe.
+
+Řešení: Počet celkových seřazení je $9!$ (i těch kde stojí Lumír a Milan vedle sebe). 
+Počet způsobů jak je seřadit tak, aby Lumír a Milan stáli vedle sebe je $8!$, protože 
+je prostě spojíme do dvojice (jednoho prvku). V každém seřazení se ale ještě ti dva 
+mohou prohodit a pořád budou stát vedle sebe, tudíž celkový počet možností, kde stojí 
+vedle sebe je $2\cdot 8!$. Výsledek tedy bude: $9! - 2\cdot8! = 9 \cdot 8! - 2\cdot 8! = 7\cdot 8!$
+
+\section*{Kombinace}
+U kombinací nezáleží na pořadí prvků, pokud tedy vybíráme z množiny $A = \{1,2,3,4\}$ tři prvky, kombinace $\{1,2,3\}$ a $\{3,2,1\}$ jsou stejné (jsou vybrané stejné prvky)
+
+Definice: $k$-členná kombinace z $n$ prvků je neuspořádaná $k$-tice sestavená z těchto prvků tak, že každý se v ní vyskytuje nejvýše jednou.
+\[K(k,n) = \frac{n!}{k!(n-k)!}\]
+Příklad: Ve třídě je 26 žíáků, kolika způsoby můžeme vybrat 2 zástupce třídy
+
+Řešení: $K(2,26) = \frac{26!}{2!\cdot24!} = 325$
+
+\subsection*{Kombinační číslo}
+Kombinační číslo se zapisuje jako $\binom{n}{k}$, čteme ho jako $n$ nad $k$.
+
+Platí také tento vztah pro všechna nezáporná čísla $n, k, k\leq n\quad$ $\binom{n}{n-k} = \binom{n}{k}$ 
+To proto, že pokud vybíráme například z $10$ prvkové množiny $4$ prvky, tak těch 
+zbývajících $6$ bude stejných, jako kdybychom vybírali $6$ prvků.
+
+Důkaz: \[\binom{n}{n-k} = \frac{n!}{(n-k)![n-(n-k)]!} = \frac{n!}{(n-k)!k!} = \binom{n}{k}\]
+
+Vlastnosti kombinačních čísel:
+\[\binom{n}{0} = \binom{n}{n} = 1\]
+\[\binom{n}{1} = n\]
+
+\section{Variace s opakováním}
+Prvky se mohou ve výběru opakovat a záleží na pořadí
+
+Definice: $k$-členná variace s opakováním z $n$ prvků je uspořádaná $k$-tice sestavená z těchto prvků tak, že každý se v ní vyskytuje nejvýše $k$-krát.
+Značí se $V'(k,n)$
 
 \end{document}
