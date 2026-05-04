@@ -297,7 +297,7 @@ Pokud nalezneme všechny kořeny, tak se její řešení dá zapsat jako součin
 \cdot (x - x_{n-1}) \dots (x - x_2) \cdot (x - x_1) = 0$.
 Platí $x_1 \cdot x_2 \dots x_n = (-1)^n \cdot \frac{a_0}{a_n}$. Pro kořeny rovnice platí $x =
 \frac{p}{q}, p \mid a_0, q \mid a_n$. V hádání kořenů nám velmi pomůže Hornerovo schéme.
-Mějme rovnici $x^3 - 6x^2 + 11x - 6$.
+Mějme rovnici $x^3 - 6x^2 + 11x - 6 = 0$.
 Vidíme, že možné kořeny jsou $\pm 1, \pm 2, \pm 3, \pm 6$. Pro Horneovo schéma si
 vytvoříme tabulka, která má v prvním řádku koeficienty rovnice. Pak zkusíme například kořen $-1$.
 Vezmeme první koeficient a vynásobíme ho kořenem který testujeme, a to přičteme k dalšímu
@@ -318,11 +318,23 @@ $(x-1)(x^2 -5x + 6) = 0$
 \hline
 \end{tabular}
 \end{center}
+To, že horneovo schéma funguje se ukazuje na upravení zápisu rovnice. Mějme původní rovnici $x^3
+-6x^2 + 11x - 6 = 0$. Ta se dá ověem přepsat jako $((x - 6)x + 11)x -6 = 0$. Pokud bychom za $x$
+dosadili nějaké číslo a postupně počítali co nám levá strana rovnice dá, postupovali bychom úplně
+stejně jako v tabulce.
+
+Bolzanova věta, říká, že pokud je stupeň polynomu lichý, rovnice má alespoň jedno reálné
+řešení. Víme, že polynomiální funkce jsou spojité. Pokud je člen koeficient vedoucího členu
+kladné číslo, nevlastní limity jsou $\lim_{x \to \infty} f(x) = +\infty$ a $\lim_{x \to
+-\infty} f(x) \dots = -\infty$. Pokud by byl záporný, znaménka u nekonečen by se prohodila.
+Tím že je funkce spojitá a funkce jde do obou nekonečen, platí, že $H(f) = \mathbb{R}$. Což také
+znamená, že funkce protíná osu $x$ a tedy rovnice má vždy alespoň jedno reálné řešení.
+
 \subsection*{Soustavy rovnic a nerovnic}
 Soustavy rovnic jsou množiny dvou a více rovnic se stejnými neznámými, které musí platit současně.
 Aby bylo možné vyřešit soustavu s $n$ neznámými, potřebujeme alespoň $n$ rovnic. Pro jejich řešení
 se využívají techniky zvané sčítací, dosazovací a srovnávací. Mějme dvě rovnice $x + y = 5$ a $2x - y
-= 1$.
+= 1$. 
 \[
 \begin{aligned}
     \text{sčítací} \\
