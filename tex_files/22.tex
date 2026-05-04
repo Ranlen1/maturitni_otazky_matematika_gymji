@@ -1,0 +1,98 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+
+% matematicke package
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+
+\title{Maturitní otázka číslo 22: Integrální počet}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\subsection*{Co to je integrace}
+Mějme nějakou funkci $f$. Proces integrace je hledání takové funkce $F$, že po jejím zderivování
+získáme původní funkci $f$, tedy $F'(x) = f(x)$. Funkce $F$ se nazývá primitivní funkce a funkce
+$f$ se nazývá integrand. Při
+integrování se využívá integrační konstanta $C$. Pokud bychom integrovali funkci $\int 2x \ dx$,
+primitivní funkcí by mohla být například funkce $f(x) = 2x$. Také by to ovšem mohla být funkce $f(x)
+= 2x + 12$. Jelikož derivování nějakého realného čísla dá vždy nulu, nelze určit jak funkce vypadala
+přesně před derivací. Proto se zavádí konstanta $C$, která představuje nějaké realné číslo, tedy
+primitivní funkcí je $f(x) = 2x + C$. $dx$ se nazývá inegrační proměnná a udává, jaké písmeno je
+ve funkci proměnná.
+
+Integrály elementárních funkcí se nachází v tabulkách.
+\subsection*{Integrační metody}
+První z metod řešení integrálů je integrál součtu a rozdilu. Pokud máme například $\int x + 1 \ dx$,
+tak platí $\int x + 1 \ dx =  \int x dx + \int 1 dx$. Pro rozdíl to funguje stejně.
+
+Další možností je vytýkáni konstanty. Mějme nějakou konstantu $a \in \mathbb{R}$. Pak pro integrál
+platí $\int a \cdot f(x) \ dx = a \cdot \int f(x) \ dx$.
+
+Substituce je metoda, která nám umožňuje přepsat integrál který neumíme hned zpočítat na jiný, který
+umíme. Nejlépe asi vysvětlit na příkladu. Mějme integrál $\int x \cdot e^{x^2} \ dx$. Provedeme
+substituci, tedy $t = x^2$. Následně musíme přpočítat diferenciál $dx$. To se dělá tím, že
+zderivujeme obě strany $t = x^2$, tedy $\frac{dt}{dx} = 2x$. Tato derivace nám udává, jak se mění
+jedna proměnná oproti druhé. Vyjádříme si $dx$, abychom ho mohli nahradit v původním integrálu
+$dx = \frac{dt}{2x}$. Integrál následně vypadá takto $\int x \cdot e^t \ \frac{dt}{2x}$. To se upraví
+na $\frac{1}{2} \int e^t \ dt$ tento integrál už umíme zintegrovat. $\frac{1}{2} e^t + C$ a následně
+musíme zpět dosadit původní proměnou $\frac{1}{2} e^{x^2} + C$. U substituce si musíme dát pozor
+na to, ať po provedení substituce nezbyde ani jediná původní proměnná v integrálu, jinak bychom
+nedošli k žádnému řešení.
+
+Per partes využívá klasický vzorec o derivacích.
+
+\[
+\begin{aligned}
+    (u \cdot v)' &= u' \cdot v + u \cdot v' \\
+    \int(u \cdot v)' &= \int u' \cdot v + \int u \cdot v' \\
+    u \cdot v &= \int u' \cdot v + \int u \cdot v' \\
+    \int u \cdot v' &= u \cdot v - \int u' \cdot v \\
+\end{aligned}
+\]
+Mějme například integrál $\int x \cdot \sin{x} \ dx$. Nejdříve si musíme zvolit co bude v našem vzorci
+$u$ a co $v$. $v$ musí být něco, co umíme zintegrovat, což jsou v tomto případě oba činitele. Po
+použití per partes dostaneme $x \cdot -\cos{x} - \int 1 \cdot -\cos{x} \ dx $. Což se upraví na
+$-x \cdot \cos(x) + \sin(x) + C$.
+
+Poslední metodou je rozklad na parciální zlomky. Nejlépe se to ukáže na příkladě. Mějme integrál $
+\int \frac{x+3}{x^2+x-2} \ dx$. Budeme pracovat s výrazem v integrálu do kterého poté upravený
+výraz dosadíme.
+\[
+\begin{aligned}
+    \frac{x+3}{x^2 + x -2} = \frac{x+3}{(x-1)(x+2)} = \frac{A}{x-1} + \frac{B}{x+2} \\
+    \\
+    x + 3 = A(x+2) + B(x-1)
+\end{aligned}
+\]
+Z tohohle dostaneme soustavu rovnic.
+\[
+\begin{aligned}
+    x = Ax + Bx \\
+    3 = 2A - B
+\end{aligned}
+\]
+Po vyřešení soustavy rovnic získáme $A = \frac{4}{3}, B = -\frac{1}{3}$. Takže dostáváme $\frac{x+3}
+{x^2 + x -2} = \frac{4}{3(x-1)} - \frac{1}{3(x+2)}$. Tento upravený výraz můžeme vrátit do integrálu
+$\int (\frac{4}{3(x-1)} - \frac{1}{3(x+2)}) \ dx$. Vytkneme a integrál rozdělíme $\frac{4}{3} \int
+\frac{1}{x-1} \ dx - \frac{1}{3} \int \frac{1}{x+2} \ dx$. Pak už jen použijeme vzoreček a získáme
+$\frac{4}{3} \ln{|x-1|} -\frac{1}{3} \ln{|x+2|} + C$.
+\subsection*{Určitý integrál}
+\end{document}
