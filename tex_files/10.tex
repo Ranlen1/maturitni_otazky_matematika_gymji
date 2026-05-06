@@ -1,0 +1,84 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+% matematicke package
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{angles,quotes}
+
+\title{Maturitní otázka číslo 10: Pravděpodobnost}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Základní pojmy}
+
+\begin{itemize}[itemsep = 2pt]
+    \item \textbf{Náhodný pokus} je proces, nebo pozorování, jehož výsledek nelze předem určit. Je prováděn
+    za stále stejných, předem stanovených podmínek (hod kostkou)
+    \item \textbf{Množina všech možných výsledků ($\Omega$)} je neprázdná množina všech výsledků, které mohou při náhodném pokusu nastat
+    \item \textbf{Jev} je podmnožina možných výsledků náhodného pokusu, o které lze následně říci, jestli nastala, či nikoliv
+    \item \textbf{Jistý jev} je jev, který nastane při každém pokusu
+    \item \textbf{Nemožný jev} je jev, který nikdy nenastane ($\Omega = \{\empty\}$)
+\end{itemize}
+
+\subsection*{Množinové operace s jevy}
+\begin{itemize}[itemsep = 2pt]
+    \item Sjednocení ($A \cup B$): Nastává jev, pokud nastane alespoň jeden z jevů  $A$ nebo $B$.
+    \item Průnik ($A \cap B$): Nastává jev, pokud nastanou jevy $A$ a $B$ současně
+    \item Doplňek / opačný jev ($A'$): Nastává jev, že jev $A$ nenastane.
+    \item $B \subset A$: $B$ je podjev jevu $A$ 
+\end{itemize}
+
+\section*{Klasická definice pravděpodobnosti}
+Pokud má všech $m$ možných výsledků náhodného pokusu stejnou pravděpodobnost vzniku a jev $A$ je tvořen $m(A)$ příznivými výsledky, pak  pravděpodobnost, že nastane jev $A$ je: 
+\[P(A) = \frac{m(A)}{M}\]
+
+\subsection*{Operace s pravděpodobnostmi}
+\subsubsection*{Pravdpodobnost opačného jevu}
+Jelikož jev $A$ a jeho doplněk $A'$ tvoří celou množinu $\Omega$, pak platí:
+\[P(A') = 1-P(A)\]
+
+\subsubsection*{Pravděpodobnost sjednocení jevů}
+Pokud jsou jevy $A$ a $B$ neslučitelné (nemohou se stát zároveň, $A \cap B = \emptyset$), pak platí:
+\[P(A\cup B) = P(A) + P(B)\]
+
+Pokud jsou jevy slučitelné ($A \cap B \neq \emptyset$), pak platí:
+\[P(A\cup B) = P(A) + P(B) - P(A\cap B)\]
+
+\section*{Nezávislé jevy}
+Dva jevy $A$ a $B$ jsou nezávislé, pokud výskyt jednoho jevu neovliňuje pravděpodobnost výskytu jevu druhého.
+ Např. hod mincí, pravděpodobnost jejich průniku je součinem jejich pravděpodobností.
+$P(A\cap B) = P(A) \cdot P(B)$.
+
+\subsection*{Opakované nezávislé pokusy}
+Jde o situaci, kdy provádíme týž pokus vícekrát za stejných podmínek a výsledky jendotlivých pokusů se navzájem neovliňují.
+
+
+\end{document}
