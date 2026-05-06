@@ -16,6 +16,7 @@
 
 % matematicke package
 \usepackage{tikz-cd}
+\usepackage{tikz}
 \usetikzlibrary{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -135,5 +136,64 @@ Pokud zobecníme úlohu tak, že budeme hledat počet způsobů jak rozmísit $k
 To je výsledný vzorec pro kombinace s opakováním, které se značí $K'(k,n)$
 
 \section*{Binomická věta}
+Používá se pro umocnění dvojčlenu $a + b$ na přirozené číslo $n$.
+
+Pro všechna čísla $a,b$ a každé přirozené číslo $n$ platí:
+\[(a+b)^n = \binom{n}{0}a^n +  \binom{n}{1}a^{n-1}b^1 + \dots + \binom{n}{k}a^{n-k}b^k + \dots + \binom{n}{n-1}ab^{n-1} + \binom{n}{n}b^n\]
+Musíme umět důkaz, ale je docela dlouhý, takže si myslím že ho budou chtít maximálně naznačit. Je hezky zpracovaný tady: \href{https://www2.karlin.mff.cuni.cz/~portal/kombinatorika/index.php?page=04binomicka_veta}{\color{blue}důkaz}
+
+Příklad (z Petákové): Kolik racionálních členů obsahuje binomický rozvoj čísla $(\sqrt{2} - \sqrt[3]{3})^{50}$?
+
+Řešení: Pro řešení použijeme vzorec pro obecný $k$-tý člen binomického rozvoje $(a + b)^n$
+\[T_k = \binom{n}{k}a^{n-k}b^k, \qquad k\in\{0,1,2,\dots,n\}\]
+
+Nejprve převedu odmocniny na mocniny se zlomkovým exponentem:
+\[T_k = \binom{50}{k}(2^\frac{1}{2})^{50-k}(-3^\frac{1}{3})^k = 
+\binom{50}{k}(2^\frac{1}{2})^{50-k}\cdot(-1)^k\cdot(3^\frac{1}{3})^k = 
+\binom{50}{k}2^{\frac{50-k}{2}}\cdot(-1)^k\cdot 3^{\frac{k}{3}}\]
+
+Aby z tohoto výrazu vznikl racionální člen, musíme se zbavit odmocnin, 
+tudíž $50-k$ musí být sudé, takže $k$ musí být sudé a zároveň $k$ musí být 
+dělitelné $3$. Obě tyto podmínky splňují násobky šesti. Do $50$ (maximální 
+hodnoty $k$) jsou to tyto násobky: $k \in \{0,6,12,18,24,30,36,42,48\}$, tudíž 
+je v tomto binomickém rozvoji celkem 9 racionálních členů.
+
+\subsection*{Použití binomické věty v důkazu}
+Příklad(z Petákové): Dokažte užitím binomické věty , že platí $\forall n \in \mathbb{N}$ je číslo $\frac{4^{2n}-1}{15}$ celé číslo.
+
+Řešení: V podstatě musíme dokázat, že výraz $4{2n} -1$ je dělitelný $15$. Upravíme si tedy tento výraz na $16^n -1 = (15 + 1)^n - 1$, následně použiji binomickou větu.
+\[(15 + 1)^n -1 = (\binom{15}{0}15^{15}1^0 + \binom{15}{1}15^{14}1^1 + \text{\dots} + \binom{15}{14}15^1 1^{14} + \binom{15}{15} 15^0 1^{15}) - 1 = \]
+\[\binom{15}{0}15^{15} + \binom{15}{1}15^{14} + \text{\dots} + \binom{15}{14}15 + 1 - 1 = \]
+Z celého výrazu můžeme vytknout $15$, tudíž je dělitelný 15
+\[15\cdot (\binom{15}{0}15^{14} + \binom{15}{1}15^{13} + \text{\dots} + \binom{15}{14})\]
+Celý výraz tedy bude přirozené číslo. Důkaz je hotový.
+
+\section*{Pascalův trojúhelník}
+Je to uspořádání binomických koeficientů do tvaru trojúhelníku. Strany jsou vyplněny jedničkami a ostaní buňky jsou vyplněny tak, že se sečtou dvě položky nad ní. Je to vyjádřeno pomocí této rovnice:
+\[\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}\]
+Kde $n,k$ jsou nezáporná celá čísla a $k\leq n$
+\begin{center}
+\begin{tikzpicture}
+  % Define the number of rows you want (0-indexed)
+  \def\numrows{4}
+  
+  % Loop through the rows
+  \foreach \n in {0,...,\numrows} {
+    % Loop through the elements in the current row
+    \foreach \k in {0,...,\n} {
+      % Calculate the binomial coefficient using factorials: n! / (k! * (n-k)!)
+      \pgfmathtruncatemacro{\binomval}{factorial(\n) / (factorial(\k) * factorial(\n-\k))}
+      
+      % Place the node
+      \node at (\k - \n/2, -\n) {\binomval};
+    }
+  }
+\end{tikzpicture}
+\end{center}
+Používá se pro určení koeficientů binomického rozvoje. Například řádek pro $n = 2$ osahuje koeficienty $1, 2, 1$ pro $(x+y)^2 = x^2 + 2xy + y^2$.
+Je symetrický podle osy souměrnosti, to je dané následující vlastností kombinatorických čísel:
+\[\binom{n}{k} = \binom{n}{n-k}\]
+Také je druhé a předposlední číslo v řádku rovno $n$.
+
 
 \end{document}
