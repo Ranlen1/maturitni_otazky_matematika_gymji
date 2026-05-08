@@ -58,7 +58,7 @@
 
 \section*{Klasická definice pravděpodobnosti}
 Pokud má všech $m$ možných výsledků náhodného pokusu stejnou pravděpodobnost vzniku a jev $A$ je tvořen $m(A)$ příznivými výsledky, pak  pravděpodobnost, že nastane jev $A$ je: 
-\[P(A) = \frac{m(A)}{M}\]
+\[P(A) = \frac{m(A)}{m}\]
 
 \subsection*{Operace s pravděpodobnostmi}
 \subsubsection*{Pravdpodobnost opačného jevu}
@@ -74,11 +74,18 @@ Pokud jsou jevy slučitelné ($A \cap B \neq \emptyset$), pak platí:
 
 \section*{Nezávislé jevy}
 Dva jevy $A$ a $B$ jsou nezávislé, pokud výskyt jednoho jevu neovliňuje pravděpodobnost výskytu jevu druhého.
- Např. hod mincí, pravděpodobnost jejich průniku je součinem jejich pravděpodobností.
+ Např. hod mincí, pravděpodobnost jejich průniku je součinem jejich pravděpodobností (stanou se oba dva).
 $P(A\cap B) = P(A) \cdot P(B)$.
 
 \subsection*{Opakované nezávislé pokusy}
 Jde o situaci, kdy provádíme týž pokus vícekrát za stejných podmínek a výsledky jendotlivých pokusů se navzájem neovliňují.
+
+\subsubsection*{Binomické rozdělení pravděpodobnosti (Bernoulliho vzorec)}
+Používá se pro výpočet pravděpodobnosti, kde při $n$ opakovaných nezávislých pokusech nastane jev $A$ právě $k$-krát. Jeho znění je následovné:
+\[P_n(k) = \binom{n}{k}\cdot p^k \cdot q^{n-k}\]
+$p$ je pravděpodobnost úspěchu v jednom dílčím pokusu a $q$ je pravděpodobnost neúspěchu v jednom pokusu ($q = 1-p$)
+
+
 
 
 \end{document}
