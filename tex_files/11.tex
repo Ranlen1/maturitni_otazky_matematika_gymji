@@ -42,9 +42,77 @@
 \begin{itemize} [itemsep = 2pt]
     \item \textbf{Statistický soubor} je množina všech objektů, které jsou předmětem zkoumání. 
     Musí být přesně vymezen z hlediska věcného, prostorového a časového. Počet prvků 
-    v souboru označujeme jako $n$.
-    \item \textbf{Staticstická jednotka} je jednotlivý prvek statistického souboru.
-    \item \textbf{Statistické znaky} jsou vlastnosti, které u jednotek sledujeme. Dělí se na kvantitativní (vyjádřené číslem) a kvalitativní (vyjádřené slovně)
+    v souboru označujeme jako $n$. Je to konečná množina.
+    \item \textbf{Statistická jednotka} je jednotlivý prvek statistického souboru.
+    \item \textbf{Statistické znaky ($x$)} jsou vlastnosti, které u jednotek sledujeme. Dělí se na kvantitativní (vyjádřené číslem) a kvalitativní (vyjádřené slovně)
+    Každý znak nabývá \textbf{hodnoty znaku}: $x_1, x_2, \text{\dots}, x_r \quad (r \leq n)$, tyto hodnoty jsou navzájem neslučitelné a pro každou statistickou jednotku musí jedna z těchto hodnot nastat. Označení hodnoty znaku $x$ pro statistickou jednotku $i$ je $x_i$.
+    \item \textbf{Rozsah souboru} je počet statistických jednotek ve statistickém souboru.
+    \item \textbf{Skupinové rozdělení četností} se používá u spojitýh znaků, nebo velkých souborů. Hodnoty se třídí do \textbf{itntervalů}. Každý interval je pak reprezentován jeho středem.
 \end{itemize}
+
+\subsection*{Četnosti}
+\begin{itemize} [itemsep = 2pt]
+    \item \textbf{Absolutní četnost ($n_j$)} je počet jednotek, které mají danou hodnotu znaku $x_i$. Platí, že $\sum_{j=1}^{r} n_j = n$
+    \item \textbf{Relativní četnost ($\nu_j$)} je podíl absolutní četnosti k rozsahu souboru ($\nu_i = \frac{n_i}{n} )$ a platí, že: $\sum_{j=1}^{r} \nu_j = 1$
+    \item \textbf{Kumulativní četnost} je postupný součet četností (absolutních či relativních) seřazených hodnot.
+\end{itemize}
+
+\subsubsection*{Grafické znázornění rozdělení četností}
+Existuje více způsobů rozdělení četností hodnot znaku $x$.
+
+Prvním z nich je tabulka, kde v prvním řádku jsou hodnoty znaku $x$ a v druhém odpovídající četnosti.
+
+Druhým způsobem je spojnicový diagram. To je lomená čára spojující body, jejichž první souřadnice jsou hodnoty znaku $x$ a druhé souřadnice jsou odpovídající četnosti (pouze pro kvantitativní znaky).
+
+Třetí způsob je sloupkový diagram, kde základny sloupků znázorňují jednnotlivé hodnoty znaku $x$, popřípadě intervaly o nichž jsou tyto hodnoty sdruženy. Výšky sloupků znázorňují odpovídající četnosti (zejména pro kvantitativní znaky).
+
+Čtvrtý je kruhový diagram, kde jednotlivé hodnoty znaku $x$ jsou znázorňeny kruhovými výsečemi, jejichž středové úhly jsou přímo úměrné odpovídajícím četnostem. (zejmnéna pro kvalitativní znaky)
+
+\section*{Charakteristiky polohy kvantitativního znaku}
+\begin{itemize}[itemsep = 2pt]
+    \item \textbf{Aritmetický průměr ($\overline{x}$)} je citlivý na extrémní hodnoty, jeho vzorec je \\
+    $\overline{x} = \frac{1}{n} \sum_{i=1}^{n} x_i = \frac{1}{n} \sum_{r}^{j=1} x_j n_j$
+    \item \textbf{Vážený aritetický průměr ($\overline{x}$)} se používá, pokud mají hodnoty různou váhu (známky na bakalářích), máme-li soubor hodnot a k ni odpovídající váhy $W = \{w_1, \text{\dots}, w_n\}$, pak je vážený průměr dán vzorcem \[\overline{x} = \frac{\sum_{i=1}^{n}w_i x_1}{\sum_{n}^{i = 1}w_i} = \frac{w_1 x_1 + w_2 x_2 +\text{\dots}+ w_n x_n}{w_1 + w_2 + \text{\dots} w_n}\]
+    Pokud jsou všechny váhy stejné, pak je vážený průměr totožný s aritmetickým průměrem.
+    Vážený průměr lze použít pro výpočet průměrné rychlosti (pokud je zadaný čas)
+
+    Příklad: Auto jelo $1$ hodinu rychlostí $50$ km/h a půl hodiny $80$ km/h, jakou mělo auto průměrnou rychlost?
+
+    Řešení: Čas je v tomto případě váha znaku a rychlost je hodnota znaku, takže dosadím do vzorce:
+    \[\overline{x} = \frac{1\cdot 50 + 0.5 \cdot 80}{1 + 0.5} = 60 kmh^{-1}\]
+    \item \textbf{Geometrický průměr} se používá pro míry růstu (inflace, rozmnožování bakterií \dots), jeho vzorec je: 
+    \[\overline{x_g} = \sqrt[n]{x_1 \cdot x_2 \cdot \text{\dots} \cdot x_n} = \sqrt[n]{\prod_{i=1}^{n}x_1}\]
+    \item \textbf{Harmonický průměr} používáme pro data s převrácenými hodnotami, nebo poměry (rychlost, čas, hustota), vzorec je:
+    \[\overline{x_h} = \frac{n}{\sum_{i=1}^{n}\frac{1}{x_i}}\]
+    Použijeme ho pro výpočet průměrné rychlosti na úsecích stejné délky.
+    
+    Příklad: Vypočtěte průměrnou rychlost auta, kterým jsme jeli na výlet. Cestou tam byla průměrná rychlost $80$ km/h a cestou zpět jsme měli průměrnou rychlost $48$ km/h.
+
+    Řešení: Protože se jedná o stejné vzdálenosti, použijeme harmonický průměr. Po dosazení do vzorce to tedy bude:
+    \[\overline{x_h} = \frac{2}{\frac{1}{80} + \frac{1}{48}} = 60 km/h\]
+
+
+    \item \textbf{Modus ($Mod(x)$)} je nejčastější hodnota v souboru
+    \item \textbf{Medián ($Med(x)$)} Je prostřední hodnota v uspořádaném souboru. Pokud je $n$ sudé, je to průměr dvou prostředních hodnot. Není citlivý na extrémní výkyvy.
+    
+\end{itemize}
+
+\section*{Charakteristiky variability}
+Dva soubory mohou mít stejný průměr, ale úplně jiný rozptyl dat (např. známky 3,3,3 a 1,3,5)
+
+\textbf{Rozptyl($s_x^2$)} je průměr čtverců odchylek jednotlivých hodnot od aritmetického průměru. Vzorec je:
+\[s_x^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i - \overline{x})^2\]
+
+Odmocninou z rozptylu je \textbf{směrodatná odchylka($s_x$)}, má stejnou jednotku jako měřený znak. To usnadňuje interpretaci. Ukazuje jak moc jsou data rozptýlená kolem průměru.
+
+Dále existuje \textbf{variační koeficient($v_x$)}, který je poměrem směrodatné odchylky k průměru, často se vzjadřuje v procentech. Slouží k porovnání variability dvou souborů s různými jednotkami. Má smysl jen tehdy, nabývá-li znak $x$ pouze nezáporných hodnot.
+\[v_x = \frac{s_x}{\overline{x}}\]
+
+\section*{Korelace}
+Korelace se označuje \textbf{korelačním koeficientem $r$}, který nabývá hodnot $\langle -1,1 \rangle$. Pokud se $r = 1$ pak jde o přímou závislost, body leží přesně na roustoucí přímce. Pokud je $r = -1$, pak jde o nepřímou závislost a body přesně leží na klesající přímce. Pokud $r = 0$, pak je korelace nulová a body jsou rozptýleny náhodně.
+Pokud je $|r| < 0.3$ pak jde o slabou korelaci. Pokud je $0.3 \leq |r| < 0.7$, pak je korelace střední a  pokud $0.7 \leq |r|$, pak je korelace silná. Vzorec pro korelaci je následující, pokud předpokládáme, že vyšestřujeme uspořádanou dvojici kvantitativních znaků $(x,y)$
+\[r = \frac{\frac{1}{n}\sum_{i=1}^{n}(x_i - \overline{x})(y_i - \overline{y})}{s_x \cdot s_y}\]
+
+
 
 \end{document}
