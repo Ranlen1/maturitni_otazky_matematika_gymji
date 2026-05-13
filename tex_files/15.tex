@@ -1,0 +1,70 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{float}
+
+% matematicke package
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+
+\title{Maturitní otázka číslo 15: Tělesa}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\subsection*{Co to jsou tělesa}
+Prostorově omezené souvislé útvary se nazývají tělesa. Jejich hranicí jsou uzavřené plochy. Vnitřní
+body jsou body, které se nacházejí uvnitř prostoru. Hraniční body se nacházejí na plochách daného
+tělesa. Každé těleso musí mít nenulový objem. Pokud všechny úsečky tvořené všemi dvojicemi bodů
+tělesa leží uvnitř tělesa, jde o konvexní těleso, jinak jde o nekonvexní.
+\subsection*{Mnohostěny}
+Mnohostěny se skládají z vrcholů, hran a stěn. Vrcholy jsou body, kde se stýkají hrany, hrany jsou
+úsečky, kde se stýkají dvě stěny a stěny jsou mnohoúhelníky tvořící povrch tělesa. Dále v nich
+rozlišujeme stěnové a tělesové úhlopříčky. Stěnové úhlopříčky spojují vrcholy vrámci jedné stěny,
+zatímco tělesové spojují vrcholy, které neleží v téže stěně.
+\subsubsection*{Hranoly}
+Hranoly jsou tělesa, které mají dvě shodné podstavy v rovnoběžných rovinách a boční stěny, které
+jsou tvořeny rovnoběžníky. Hranoly rozlišujeme na n-boké podle toho, kolik hran má jejích podstava.
+Rozlišujeme dva specifické hranoly a to kolmý hranol, jehož boční stěny jsou kolmé k podstavám, takže
+všechny boční stěny jsou obdelníky nebo čtverce. Dalším z nich je pravidelný hranol, což je typ
+kolmého hranolu, jehož podstavou je pravidelný n-úhelník. U pravidelného hranolu platí, že délka
+všech tělesových úhlopříček je stejná.
+
+$V = S_p \cdot v$, $S_p$ je obsah podstavy a $v$ je výška hranolu
+
+$S = 2 \cdot S_p + S_{pl}$, $S_{pl}$ je obsah pláště.
+
+Kvádr je speciální typem hranolu. Pokud je jeho podstavou obdélník, jde o kolmý čtýřboký hranol, který
+má délku podstav $a, b$ a výšku $c$. Speciálním typem kvádru je čtvercový kvádr, který má jako 
+podstavu čtverec je to pravidelný čtyřboký hranol. Kvádr má čtyři tělesové úhlopříčky, které jsou
+stejně dlouhé a jejich délka lze vypočítat jako $u_t = \sqrt{a^2 + b^2 + c^2}$.
+
+$V = a \cdot b \cdot c$
+
+$S = 2(a \cdot b + b \cdot c + a \cdot c)$
+
+Krychle je pravidelný čtyřboký hranol, který má jako podstavu čtverec délky $a$ a výšku taky $a$.
+Všechny tělesové úhlopříčky mají stejnou délku $u_t = a \cdot \sqrt{3}$ a všechny stěnové $u_s =
+a \cdot \sqrt{2}$.
+
+$V = a^3$
+
+$S = 6 \cdot a^2$
+
+\subsection*{Jehlany}
+\end{document}
