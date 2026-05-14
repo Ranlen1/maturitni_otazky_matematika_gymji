@@ -66,7 +66,7 @@ $V = a^3$
 
 $S = 6 \cdot a^2$
 
-\subsubsection*{Jehlany}
+\subsubsection*{Jehlan, komolý jehlan}
 Jehlan je mnohosťen, který má podstavu jako libovolný n-úhelník a plášť tvořený trojúhelníky, které
 se sbíhají ve vrcholu značeném $V$. Speciálním typem jehlanu je pravidelný jehlan, který má jako
 podstavu pravidelný n-úhelník.
@@ -93,4 +93,72 @@ těleso. Krychle a osmistěn jsou mezi sebou duální a také dvanáctistěn a d
 dvojicí. Čtyřstěn je samoduální, tedy po spojení středů stran vznikne další čtyřstěn.
 
 \subsection*{Rotační tělesa}
+Rotační těleso je těleso, které vznikne rotací rovinného útvaru kolem přímky, která se nazývá osa 
+rotace.
+\subsubsection*{Válec}
+Rotační válec vznikne rotací obdélníků kolem jedné z jeho stran. Strana kolem které se rotuje udává
+výšku $v$ a druhá tvoří poloměr $r$ podstavy. Podstavy válce jsou dva shodné kruhy, které leží v
+rovnoběžných rovinách. Speciálním válcem je rovnostranný válec, který má výšku rovnu průměru válce a
+má osový řez, kterým je čtverec.
+
+$V = S_p \cdot v = \pi r^2 v$
+
+$S = 2 \cdot S_p + S_{pl} = 2 \pi r^2 + 2 \pi r v$
+
+\subsubsection*{Kužel, komolý kužel}
+Kužel vzniká rotací pravoúhlého trojúhelníku kolem jedné z jeho odvěsen. Odvěsna ležicí na ose
+rotace udává výšku $v$, druhá odvěsna udává poloměr $r$ a přepona stranu $s$, přičemž pořád platí
+$s^2 = r^2 + v^2$.
+
+$V = \frac{1}{3} \pi r^2 v$
+
+$S = \pi r^2 + \pi r s$
+
+Komolý kužel se dá představit jako kužel, kterému byla uříznuta špička rovinou rovnoběžnou s rovinou
+podstavy, nebo také rotací pravoúhlého lichoběžníku. Komolý kužel má dvě podstavy s poloměry $r_1,
+r_2$.
+
+$V = \frac{1}{3} \pi v(r_1^2 + r_1 r_2 + r_2^2)$
+
+$S = \pi r_1^2 + \pi r_2^2 + \pi s(r_1 + r_2)$
+\subsubsection*{Koule a spol}
+Koule vzniká rotací půlkruhu kolem jeho průměru. Kulová plocha neboli sféra je pouze povrch či slupka
+koule, tedy nemá žádný objem ale pouze povrch, který je totožný s povrchem dané koule.
+
+$V = \frac{4}{3} \pi r^3$
+
+$S = 4 \pi r^2$
+
+Polokoule je polovina koule.
+
+$V = \frac{2}{3} \pi r^3$
+
+$S = 2 \pi r^2 + \pi r^2 = 3 \pi r^2$
+
+Kulový vrchlík je část kulové plochy, která je odseknuta rovinou. Dá se představit jako taková 
+čepička. Stejně jako kulová plocha nemá žádný objem.
+
+$S = 2 \pi r h$, $h$ je výška vrchlíku.
+
+Kulová úseč je těleso, které vznikne odesknutím části koule jednou rovinou. Dá se říct, že vrchlík
+je plášť kulové úseče. $q$ je poloměr podstavy kulové úseče a $h$ je výška úseče.
+
+$V = \frac{1}{6} \pi h(3 q^2 + h^2) = \pi h^2(r - \frac{h}{3})$
+
+$S = 2\pi r h + \pi q^2$
+
+Pro kulovou úseč platí $r^2 = q^2 + (r - h)^2$
+
+Představ si že vložíš do koule kužel s vrcholem ve středu koule, pokud zbytek koule vyřízneme,
+získáme kulová výseč, která je podobná kornoutu se zmrzlinou.
+
+$V = \frac{2}{3} \pi r^2 h$
+
+$S = 2 \pi r h$
+
+\subsection*{Cavalieriův princip}
+Cavalieriův princip nám říká, že tělesa se stejně velkými podstavami a výškami mají stejný objem,
+pokud mají řezy rovnoběžné s podstavani a vedené ve stejné vzdálenosti od podstav stejné obsahy.
+Kvůli tomu mají kolmá a kosá tělesa stejný objem, pokud mají stejnou výšku a velkikost podstavy.
+Stejně tak kužel a jehlan se stejnou výškou obsahem základny má také stejný objem.
 \end{document}
