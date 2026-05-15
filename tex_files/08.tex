@@ -38,7 +38,7 @@
 \maketitle
 
 \section*{Exponenciální rovnice a nerovnice}
-Základem je vztah $a^{f(x) = a^{g(x)}}$, kde $a> 0, a\neq 1$.
+Základem je vztah $a^{f(x)} = a^{g(x)}$, kde $a> 0, a\neq 1$.
 
 \textbf{Metody řešení}
 \begin{itemize}[itemsep = 2pt]
@@ -77,4 +77,25 @@ Logaritmus $log_a x$ je definován pouze pro $x>0$ a $a \in (0,1) \cup (1,\infty
 
 Odlogaritmování můžeme použít, pokud převedeme rovnici do tvaru $\log_a f(x) = \log_a g(x)$, díky prostosti logaritmických funkcí, tak můžeme rovnici upravit na $f(x) = g(x)$
 
+\subsection*{Logaritmické nerovnice}
+Pro $a>1$ platí $\log_a f(x) < \log_a g(x) \Leftrightarrow f(x) < g(x)$
+
+Pro $0<a<1$ platí $\log_a f(x) < \log_a g(x) \Leftrightarrow f(x) > g(x)$
+
+A výsledný interval musí být v průniku s definičním oborem nerovnice.
+
+\section*{Goniometrické rovnice a nerovnice}
+\textbf{Jednotková kružnice} je kružnice se středem v počátku souřadnic o poloměru 1.
+
+Základní rovnice jako $\sin x = a$ řešíme pomocí jednotkové kružnice nebo grafu, typicky existuje více řešení.
+
+Složitější rovnice, jako $2\sin^2 x + 3\sin x + 1 = 0$ řešíme pomocí substituce. Tento konkrétní příklad subsituujeme jako $t = \sin x, |t|\leq 1$
+
+\textbf{Zápis řešení}
+
+Typicky dostaneme několik základních řešení v rámci jedné periody (fundamentální řešení), ke kterým přičítáme násobky periody.
+
+Obecně množinu řešení zapisujeme jako množinu $K$ a vypadá následovně:
+\[K = \underset{i=1}{\overset{n}{\bigcup}}\{x_i + k\cdot T; k\in\mathbb{Z}\}\]
+Kdokoliv se tohle učí, tak je to  sjednocení zapsaný blbě, brzo to opravim (takhle ho po nás ve škole nechtěj)
 \end{document}

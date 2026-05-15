@@ -30,7 +30,6 @@
 \usetikzlibrary{shapes.misc}
 \usetikzlibrary{angles,quotes}
 
-%%dodělat co patří do rozboru a udělat nějakej ukázkovej příklad
 
 \title{Maturitní otázka číslo 13: Základy planimetrie a konstrukční úlohy}
 \author{}
@@ -38,7 +37,7 @@
 
 \begin{document}
 \maketitle
-\section{Základní pojmy}
+\section*{Základní pojmy}
 \begin{itemize}
     \item \textbf{Přímka} se zapisuje buď malým písmenem, nebo $\leftrightarrow AB$
     \item \textbf{Úsečka} je část přímky ohraničená 2 body. Zapisuje se jako $AB$, nebo pokud chceme její velkost, tak $|AB|$
@@ -90,8 +89,8 @@
 
 \end{tikzpicture}
 
-\section{Trojúhelník}
-Věty o shodnosti: \textbf{sss, sus, usu, Ssu}, u věty Ssu jsou dva trojúhelníky shodné, pokud se shodují ve dvou stranách a úhlu, který leží proti větší z těchto stran. Věta o podobonosti trojúhelníku je \textbf{uu}
+\section*{Trojúhelník}
+Věty o shodnosti: \textbf{sss, sus, usu, Ssu}, u věty Ssu jsou dva trojúhelníky shodné, pokud se shodují ve dvou stranách a úhlu, který leží proti větší z těchto stran. Věty o podobonosti trojúhelníků jsou \textbf{uu, sss, sus}
 Významné body a přímky:
 \begin{itemize}
     \item \textbf{Těžiště} je průsečík těžnic, dělí těžnici v poměru 2:1
@@ -107,11 +106,20 @@ Celkový součet úhlů u konvexních čtyřúhelníků je vždy $360^\circ$
     \item \textbf{Lichoběžníky:} Mají jednu dvojici rovnoběžných stran (základny) a druhou dvojicí různoběžnou (ramena).
     \item \textbf{Rovnoramenný lichoběžník:} Ramena jsou shodná, je to tětivový čtyřúhelník (lze mu opsat kružnici). Úhlopříčky jsou shodné.
     \item \textbf{Pravoúhlý lichoběžník:} Jedno rameno je kolmé k základnám (je zároveň výškou).
-    \item \textbf{Deltoid:} Úhlopříčky jsou na sebe kolmé, půlí vnitřní úhly a zároveň se půlí. Je to tečnový čtyřúhelník (lze mu vepsat kružnici).
-    \item \textbf{Kosočtverec:} Rovnostranný rovnoběžník, který má všechny čtyří strany stejně dlouhé.
-    \item \textbf{Tětivový trojúhelník:} Lze mu opsat kružnici. Součet protilehlých vnitřních úhlů je $180^\circ$
+    \item \textbf{Deltoid:} Hlavní úhlopříčka půlí vnitřní úhly a komo půlí druhou úhlopříčku. Dvě a dvě strany jsou stejné.
+    \item \textbf{Kosočtverec:} Rovnostranný rovnoběžník, který má všechny čtyří strany stejně dlouhé, úhlopříčky jsou na sebe kolmé a půlí se, zároveň půlí vnitřní úhly.
+    \item \textbf{Tětivový čtyřúhelník:} Lze mu opsat kružnici. Součet protilehlých vnitřních úhlů je $180^\circ$
     \item \textbf{Tečnový čtyřúhelník:} Součty délek protilehlých stran jsou si rovny (čtverec, kosočtverec, deltoid)
 \end{itemize}
+
+Vzorec pro obsah obecného tečnového čtyřúhelníku (není v tabulkách): $S_{ABCD} = \frac{1}{2}\cdot o\cdot\rho$, kde $o$ je obvod a $\rho$ je poloměr vepsané kružnice. 
+
+Důkaz: Mějme obecný tečnový čtyřúhelník $ABCD$. Pokud střed vepsané kružnice spojíme s každým vrcholem, vzniknou nám 4 trojúhelníky, jejichž výška je $\rho$. Platí tedy:
+\[S_{ABCD} = S_{ABS} + S_{BSC} + S_{CSD} + S_{DSA}\]
+Obsahy těchto trojúhelníků budou tedy následující:
+\[S_{ABCD} = \frac{1}{2}|AB|\cdot\rho + \frac{1}{2}|BC|\cdot\rho + \frac{1}{2}|CD|\cdot\rho + \frac{1}{2}|DA|\cdot\rho\]
+Tento výraz můžeme zjednodušit na:
+\[S_{ABCD} = \frac{1}{2} \cdot o \cdot \rho\] 
 
 \section*{Úhly v kružnici a kružnice}
 Kužnice se zapíše pomocí $k(S;r)$, kružnice je pouze množina bodů jejichž vzdálenost od $S$ je $r$
@@ -281,7 +289,7 @@ Musíme znát důkaz pro tyto úhly, kdyžtak je na wikipedii
 
 \textbf{Kruhová výseč} je část kruhu příslušná určitému středovému úhlu $\phi$. Výseč příslušná přímému úhlu se nazývá půlkruh.
 
-\textbf{Kruhová úseč} je část kruhu vymezená tětivou a kruhovým obloukem vzniklá rozdělením kruhu sečnou. Obsah kruhové úseče je $S = \frac{r^2}{2}(\arcsin\alpha - \sin\alpha)$ V tabulkách je to zvláštně zapsaný, tak pozor.
+\textbf{Kruhová úseč} je část kruhu vymezená tětivou a kruhovým obloukem vzniklá rozdělením kruhu sečnou. Obsah kruhové úseče je $S = \frac{r^2}{2}(\alpha - \sin\alpha)$ V tabulkách je to zvláštně zapsaný, tak pozor.
 
 \section*{Vzájemná poloha útvarů}
 \subsection*{Přímka a kružnice}
