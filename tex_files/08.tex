@@ -1,0 +1,80 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+% matematicke package
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{mathrsfs}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{angles,quotes}
+
+\title{Maturitní otázka číslo 8: Nealgebraické rovnice, nerovnice a jejich soustavy}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Exponenciální rovnice a nerovnice}
+Základem je vztah $a^{f(x) = a^{g(x)}}$, kde $a> 0, a\neq 1$.
+
+\textbf{Metody řešení}
+\begin{itemize}[itemsep = 2pt]
+    \item Úprava na stejný základ ($a$): Pokud lze obě strany převést na mocniu o stejném základu, využíváme \textbf{prostoty exponenciální funkce}: $a^{f(x)} = a^{g(x)} \Leftrightarrow f(x) = g(x)$
+    \item Substituce: Typicky u rovnic tvaru $A \cdot a^{2x} + B\cdot a^x + C = 0$. Zavedeme substituci $t = a^x$ ($t$ bude vždy větší než nula) a řešíme kvadratickou rovnici.
+    \item Logaritmování: Pokud základy nelze sjednotit (například $7^x = 2^{x-1}$), logaritmujeme obě strany rovnice
+    
+    Příklad: řešte rovnici $7^x = 2^{x-1}$
+
+    Řešení:
+    \begin{align*}
+        \log_7 (7^x) &= \log_7 (2^{x-1})\\
+        x \cdot \log_7 7 &= (x-1) \cdot \log_7 2\\
+        x\cdot (1 - \log_7 2) &= -\log_7 2\\
+        x &= \frac{-\log_7 2}{1 - \log_7 2}\\
+    \end{align*}
+    
+\end{itemize}
+
+\subsection*{Exponenciální nerovnice}
+Při odstraňování základů u nerovnic $a^{f(x)} > a^{g(x)}$je důležité sledovat hodnotu $a$
+
+Pokud $a>1$, tak je funkce rostoucí a znaménko nerovnosti se nemění
+
+Pokud je $a<1$, tak je funkce klesající a znaménko nerovnosti se obrací
+
+\section*{Logaritmické rovnice a nerovnice}
+Logaritmus $log_a x$ je definován pouze pro $x>0$ a $a \in (0,1) \cup (1,\infty)$, takže nezapomeňte na podmínky
+
+\textbf{Věty o logaritmech}
+\begin{itemize} [itemsep = 2pt]
+    \item $\log_a x = \log_a y = \log_a(x\cdot y)$
+    \item $\log_a x - \log_a y = \log_a(\frac{x}{y})$
+    \item $\log_a x^k = k \cdot \log_a x$
+\end{itemize}
+
+Odlogaritmování můžeme použít, pokud převedeme rovnici do tvaru $\log_a f(x) = \log_a g(x)$, díky prostosti logaritmických funkcí, tak můžeme rovnici upravit na $f(x) = g(x)$
+
+\end{document}
