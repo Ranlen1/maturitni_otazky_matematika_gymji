@@ -202,6 +202,136 @@ musí protnout ve společném bodě těchto tří rovin. Bod $X$ tedy leží ve 
 rovině jako bod $P$ a mohu je spojit pro získání další čáry řezu.
 \end{itemize}
 
+\subsection*{Řez pravidelným jehlanem}
+Pro řez pravidelným jehlanem využíváme pomocnou přímku, která je průsečnicí řezu s podstavou. Ukážeme si to na následujícím příkladu.
+
+Příklad: Najděte řez jehlanem, který prochází body XYZ.
+
+\begin{tikzpicture}[scale=1.5, >=stealth]
+
+    \coordinate (V) at (0, 3.5); 
+    \coordinate (S) at (0, 0);  
+    
+    \coordinate (A) at ({2.2*cos(-15)}, {0.7*sin(-15)});
+    \coordinate (B) at ({2.2*cos(57)}, {0.7*sin(57)});
+    \coordinate (C) at ({2.2*cos(129)}, {0.7*sin(129)});
+    \coordinate (D) at ({2.2*cos(201)}, {0.7*sin(201)});
+    \coordinate (E) at ({2.2*cos(273)}, {0.7*sin(273)});
+    \coordinate (X) at ({(-1.5)/((0.7*sin(201)-3.5)/(2.2*cos(201)))}, {2});
+    \coordinate (Y) at ({(-2.5)/((0.7*sin(-15)-3.5)/(2.2*cos(-15)))}, {1});
+    \coordinate (Z) at ({(-1.5)/((0.7*sin(57)-3.5)/(2.2*cos(57)))}, {2});
+    
+    \draw[dashed, thick, gray!80] (A) -- (B);
+    \draw[dashed, thick, gray!80] (B) -- (C);
+    \draw[dashed, thick, gray!80] (C) -- (D);
+    \draw[dashed, thick, gray!80] (V) -- (B);
+    \draw[dashed, thick, gray!80] (V) -- (C);
+    
+    %přímka řezu
+    \draw[thin, black!80, shorten >= -7cm, shorten <= -1cm] (Z) -- (Y);
+    \draw[thin, black!80, shorten >= -7cm, shorten <= -1cm] (B) -- (A);
+    \draw[thin, black!80, shorten >= -7cm, shorten <= -1cm] (X) -- (Y);
+    \draw[thin, black!80, shorten >= -7cm, shorten <= -1cm] (D) -- (A);
+
+    %pomocná přímka
+    \draw[thick, black!80, shorten >= -7cm, shorten <= -7cm] (intersection of X--Y and D--A) -- (intersection of Z--Y and B--A);
+    
+    %označení průsečíků
+    \fill (Z) circle (1pt);
+    \fill (X) circle (1pt);
+    \fill (Y) circle (1pt);
+
+    \draw[ultra thick, black!80] (D) -- (E);
+    \draw[ultra thick, black!80] (E) -- (A);
+    \draw[ultra thick, black!80] (V) -- (D);
+    \draw[ultra thick, black!80] (V) -- (E);
+    \draw[ultra thick, black!80] (V) -- (A);
+    % popisky
+    \node[above, font=\large\bfseries] at (V) {$V$};
+    \node[right, font=\footnotesize] at (A) {$A$};
+    \node[above right, font=\footnotesize] at (B) {$B$};
+    \node[above right, font=\footnotesize] at (C) {$C$};
+    \node[left, font=\footnotesize] at (D) {$D$};
+    \node[below, font=\footnotesize] at (E) {$E$};
+    \node[above left, font=\footnotesize] at (X) {$X$};
+    \node[above right, font=\footnotesize] at (Y) {$Y$};
+    \node[left, font=\footnotesize] at (Z) {$Z$};
+
+\end{tikzpicture}
+
+Nejprve si najdeme pomocnou přímku, která je průsečnicí roviny řezu a roviny podstavy. Nejprve spojíme body v $XY$ a protože oba leží v rovině $ABV$, tak můžeme prodloužit i úsečku podstavy $AB$ a v jejich průsečíku se musí nacházet jeden bod této pomocné přímky
+
+Poté spojíme body $XY$, které leží v rovině $DAV$, zkonstruujeme tedy přímku, která leží zároveň v rovině podstavy a zároveň v rovině $DAV$. Je to přímka $DA$. V průsečíku těchto dvou leží druhý bod pomocné přímky. Můžeme ji tedy zkonstruovat. A budu pokračovat na dalším obrázku, ať to není moc chaotické. Nechám jen čáru řezu, kterou jsme již nalezli ($ZY$) a pomocnou přímku.
+
+\begin{tikzpicture}[scale=1.5, >=stealth]
+
+    \coordinate (V) at (0, 3.5); 
+    \coordinate (S) at (0, 0);  
+    
+    \coordinate (A) at ({2.2*cos(-15)}, {0.7*sin(-15)});
+    \coordinate (B) at ({2.2*cos(57)}, {0.7*sin(57)});
+    \coordinate (C) at ({2.2*cos(129)}, {0.7*sin(129)});
+    \coordinate (D) at ({2.2*cos(201)}, {0.7*sin(201)});
+    \coordinate (E) at ({2.2*cos(273)}, {0.7*sin(273)});
+    \coordinate (X) at ({(-1.5)/((0.7*sin(201)-3.5)/(2.2*cos(201)))}, {2});
+    \coordinate (Y) at ({(-2.5)/((0.7*sin(-15)-3.5)/(2.2*cos(-15)))}, {1});
+    \coordinate (Z) at ({(-1.5)/((0.7*sin(57)-3.5)/(2.2*cos(57)))}, {2});
+
+    %pruseciky pomocne primky
+    \coordinate (F) at (intersection of X--Y and D--A);
+    \coordinate (G) at (intersection of Z--Y and B--A);
+
+    \coordinate (H) at (intersection of D--E and F--G);
+    \coordinate (I) at (intersection of C--B and F--G);
+    
+    \draw[dashed, thick, gray!80] (A) -- (B);
+    \draw[dashed, thick, gray!80] (B) -- (C);
+    \draw[dashed, thick, gray!80] (C) -- (D);
+    \draw[dashed, thick, gray!80] (V) -- (B);
+    \draw[dashed, thick, gray!80] (V) -- (C);
+    
+    %roviny řezu
+    \draw[thick, blue] (X) -- (intersection of X--H and V--E);
+    \draw[thick, blue] (Z) -- (Y);
+    \draw[thick, blue] (Y) -- (intersection of X--H and V--E);
+    \draw[thick, blue] (Z) -- (intersection of C--V and I--Z);
+    \draw[thick, blue] (X) -- (intersection of I--Z and C--V);
+
+    %pomocná přímka
+    \draw[thick, black!80, shorten >= -2cm, shorten <= -7cm] (intersection of X--Y and D--A) -- (intersection of Z--Y and B--A);
+
+    %pomocné přímky
+    \draw[thin, black!80, shorten >= -8cm] (D) -- (E);
+    \draw[thin, black!80, shorten >= -1cm, shorten <= -1cm] (H) -- (X);
+
+    \draw[thin, black!80, shorten >= -8cm, shorten <= -1cm] (C) -- (B);
+    \draw[thin, black!80, shorten >= -1cm, shorten <= -3cm] (Z) -- (I);
+    %označení bodů
+    \fill (Z) circle (1pt);
+    \fill (X) circle (1pt);
+    \fill (Y) circle (1pt);
+
+    \draw[ultra thick, black!80] (D) -- (E);
+    \draw[ultra thick, black!80] (E) -- (A);
+    \draw[ultra thick, black!80] (V) -- (D);
+    \draw[ultra thick, black!80] (V) -- (E);
+    \draw[ultra thick, black!80] (V) -- (A);
+
+    % popisky
+    \node[above, font=\large\bfseries] at (V) {$V$};
+    \node[right, font=\footnotesize] at (A) {$A$};
+    \node[above right, font=\footnotesize] at (B) {$B$};
+    \node[above right, font=\footnotesize] at (C) {$C$};
+    \node[left, font=\footnotesize] at (D) {$D$};
+    \node[below, font=\footnotesize] at (E) {$E$};
+    \node[above left, font=\footnotesize] at (X) {$X$};
+    \node[above right, font=\footnotesize] at (Y) {$Y$};
+    \node[left, font=\footnotesize] at (Z) {$Z$};
+
+\end{tikzpicture}
+
+Pomocnou přímku jsme využili tak, že jsme vždy vedli přímku hranou podstavy, ve které máme už nějaký bod, ta se nám protla s pomocnou přímkou a z tohoto průsečíku jsme pak vedli přímku skrz bod v rovině, jejíž součástí byla hrana podstavy.
+
 \section*{Odchylky v prostoru}
 Vždy hledáme odchylku $\phi$ v intervalu $\langle 0, 90^\circ \rangle$
 

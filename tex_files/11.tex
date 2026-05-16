@@ -86,6 +86,7 @@ Třetí způsob je sloupkový diagram, kde základny sloupků znázorňují jedn
     \[\overline{x} = \frac{1\cdot 50 + 0.5 \cdot 80}{1 + 0.5} = 60 kmh^{-1}\]
     \item \textbf{Geometrický průměr} se používá pro míry růstu (inflace, rozmnožování bakterií \dots), jeho vzorec je: 
     \[\overline{x_g} = \sqrt[n]{x_1 \cdot x_2 \cdot \text{\dots} \cdot x_n} = \sqrt[n]{\prod_{i=1}^{n}x_1}\]
+    Existuje i jeho vážená varianta, funguje podobně jako ostatní varinaty váženého průměru.
     \item \textbf{Harmonický průměr} používáme pro data s převrácenými hodnotami, nebo poměry (rychlost, čas, hustota), vzorec je:
     \[\overline{x_h} = \frac{n}{\sum_{i=1}^{n}\frac{1}{x_i}}\]
     Použijeme ho pro výpočet průměrné rychlosti na úsecích stejné délky.
@@ -95,7 +96,11 @@ Třetí způsob je sloupkový diagram, kde základny sloupků znázorňují jedn
     Řešení: Protože se jedná o stejné vzdálenosti, použijeme harmonický průměr. Po dosazení do vzorce to tedy bude:
     \[\overline{x_h} = \frac{2}{\frac{1}{80} + \frac{1}{48}} = 60 km/h\]
 
+    Kdyby nebyla vzdálenost stejná, ale auto by jelo $80$ km/h 2 hodiny a $48$ km/h jen jednu hodinu, dosazená by vypadalo následovně:
+    \[\overline{x_h} = \frac{3}{\frac{2}{80} + \frac{1}{48}} \doteq 65,5 km/h\]
+    Toto je vážená varianta harmonického průměru.
 
+    
     \item \textbf{Modus ($Mod(x)$)} je nejčastější hodnota v souboru
     \item \textbf{Medián ($Med(x)$)} Je prostřední hodnota v uspořádaném souboru. Pokud je $n$ sudé, je to průměr dvou prostředních hodnot. Není citlivý na extrémní výkyvy.
     
