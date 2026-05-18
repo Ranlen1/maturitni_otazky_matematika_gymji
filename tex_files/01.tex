@@ -118,6 +118,49 @@ Výsledným číslem v požadované soustavě je řetězec zbytků po dělení v
 \label{tab:delitelnost}
 \end{table}
 
+\subsection*{Největší společný dělitel}
+Je to největší kladné celé číslo, které beze zbytku dělí všechna zadaná čísla.
+
+Tento dělitel můžeme najít po rozkladu na prvočísla a vybráním pouze čísel, která se v obou rozkladech vyskytují současně. Značí se takto: $D(a,b)$
+
+Příklad: Najděte nevětší společný dělitel čísel $24$ a $18$.\\
+Řešení: $24 = 2^3\cdot 3 \qquad 18 = 2\cdot 3^2$\\
+$D(24,45) = 2 \cdot 3 = 6$
+
+Největší společný dělitel lze najít i pomocí Euklidova algoritmu, používá se, pokud by bylo příliš zdlouhavé najít prvočíselný rozklad obou čísel. Funguje následovně:
+Platí následující výrok: $\forall d,a,b \in \mathbb{N}: d|a \land d|b \Rightarrow d|(a \mod b)$
+Přečteno to znamená: pro všechna $d,a,b$ v přirozených číslech platí, že pokud $d$ dělí $a$ a zároveň $d$ dělí $b$, tak $d$ dělí i zbytek po dělení $a,b$
+
+Důkaz: Nejprve si zapíši zbytek jako $a = q\cdot b + r$, kde $a$ a $b$ jsou původní dělitel a dělenec, $q$ je výsledek dělení a $r$ je zbytek.
+\[\Rightarrow \exists k,l \in \mathbb{N}: k\cdot d = a \land l\cdot d = b\]
+\[\Rightarrow r = l\cdot d - q\cdot k\cdot d = d(l-q\cdot k)\]
+Tím je výrok dokázaný.
+
+Jak funguje euklidův algoritmus ukáži na následujícím příkladu: Najděte $D(910,77)$
+Díky funkčnosti předchozí věty mohu vydělit $910$ a $77$ a největší společný dělitel bude dělit i zbytek
+
+$910 \div 77 = 11 \text{ zbytek } 63$ Po dělení vezmu výsledný zbytek a menší číslo z předešlých dvou a znovu je vydělím.$77 \div 63 = 1 \text{ zbytek } 14$ a takto pokračuji, dokud mi po dělení nezbude nulový zbytek.
+\[63\div 14 = 4 \text{ zbytek } 7 \qquad 14\div 7 = 2 \text{ zbytek } 0\]
+Největší společný dělitel je tedy $7$.
+
+\subsection*{Nejmenší společný násobek}
+Nejmenší společný násobek je nejmenší celé kladné číslo, které je beze zbytku dělitelné všemi zadanými čísly.
+
+Tento násobek můžeme najít pomocí prvočíselného rozkladu. Nejmenší společný násobek je roven součinu všech prvočísel v jejich nejvyšších mocninách, které se vyskytují alespoň v jednom rozkladu.\\
+Značí se takto: $n(a,b)$
+
+Příklad: Najděte nejmenší společný násobek čísel $24$ a $45$.\\
+Řešení: $24 = 2^3\cdot 3^1 \qquad 45 = 5\cdot 3^2$\\
+$n(24,45) = 2^3 \cdot 3^2 \cdot 5 = 360$
+
+Nejmenší společný násobek lze vypočítat také pomocí největšího společného dělitele: $n(a,b) \cdot D(a,b) = a\cdot b$
+
+\subsection*{Dělitelnost součtu a rozdílu}
+Pokud $d$ dělí $a$ a zároveň $d$ dělí $b$, tak platí, že $d$ dělí i součet, nebo rozdíl čísel $a,b$\\
+$d|a \land d|b \Rightarrow d|(a\pm b)$ (můžete si ho zkusit dokázat, není to složité. Tip: rozepiš si čísla $a$ a $b$ jako násobky $d$)
+
+
+
 \subsection*{Důkazy matematických vět}
 \subsubsection*{Důkazy prostých výroků}
 \textbf{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikací dokážeme pravdivost výroku B\\
