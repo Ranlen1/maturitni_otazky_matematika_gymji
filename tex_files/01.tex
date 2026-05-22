@@ -165,9 +165,9 @@ $d|a \land d|b \Rightarrow d|(a\pm b)$ (můžete si ho zkusit dokázat, není to
 
 
 
-\subsection*{Důkazy matematických vět}
-\subsubsection*{Důkazy prostých výroků}
-\textbf{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikací dokážeme pravdivost výroku B\\
+\section*{Důkazy matematických vět}
+\subsection*{Důkazy prostých výroků}
+\subsubsection*{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikací dokážeme pravdivost výroku B\\
 Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost 
 \begin{align*}
 \forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}&\geq \sqrt{x\cdot y}\\
@@ -179,7 +179,7 @@ Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost
 
 Tento výraz je vždy pravdivý, protože druhý mocnina je vždy nezáporná. Teď je ještě potřeba dokázat tento důkaz, což probíhá tím, že naše tvrzení $(x-y)^2 \geq 0$ upravíme zpět na původní výraz.\\
 
-\textbf{Důkaz sporem} je negace výroku, který chceme dokázat a pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé.(spor)
+\subsubsection*{Důkaz sporem} je negace výroku, který chceme dokázat a pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé.(spor)
 
 \[\neg(\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}) = \exists x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}<\sqrt{x\cdot y}\]\\
 A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
@@ -190,10 +190,12 @@ A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
 \Rightarrow (x-y)^2 &< 0\\
 \end{align*}
 Toto tvrzení je nepravdivé, protože druhá mocnina je vždy nezáporná, což je spor, a proto je původní tvrzení pravdivé.
-\subsubsection*{Důkazy implikace}
-\textbf{Přímý důkaz} se může provést přímým důkazem, nepřímým, nebo sporem.
-nejprve začnu přímým důkazem implikace, ten stejně jako u přímého důkazu prostých výroků předpokládá pravdivost výroku A a na základě řetězce pravdivých implikací dokáže pravdivost výroku B.\\
-Nejprve je potřeba příprava důkazu, v příkladu si dokážeme větu:
+\subsection*{Důkazy implikace}
+Implikaci můžeme dokázat buď přímým důkazem, nepřímým, nebo sporem.
+
+\subsubsection*{Přímý důkaz} 
+Začnu přímým důkazem implikace, ten předpokládá pravdivost výroku A a na základě řetězce pravdivých implikací dokáže pravdivost výroku B.\\
+V příkladu si dokážeme větu:
 \begin{align*}
 \forall x,y \in \mathbb{N}: 2|n &\Rightarrow 2|n^2\\
 \Rightarrow 2|n \Rightarrow \exists k \in \mathbb{N}: n &= 2k\\
@@ -205,7 +207,7 @@ Nejprve je potřeba příprava důkazu, v příkladu si dokážeme větu:
 \end{align*}
 Dokázali jsme, že $n^2$ musí být násobek dvou a tudíž je dělitelné dvěmi.
 
-\textbf{Důkaz sporem}
+\subsubsection*{Důkaz sporem}
 Nejprve znegujeme implikaci, kterou chceme dokázat, a pak pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé (spor).\\
 Negace věty \[\neg(\forall x,y \in \mathbb{N}: 2|n \Rightarrow 2|n^2) = \exists x,y \in \mathbb{N}: 2|n \land \neg(2|n^2)\]\\
 A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
@@ -215,7 +217,7 @@ A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
 \[\Rightarrow 2|n^2\]
 Došli jsme ke sporu, což znamená, že původní věta je pravdivá.
 
-\textbf{Důkaz nepřímý}
+\subsubsection*{Důkaz nepřímý}
 Je to přímý důkaz obměněné implikace, tedy místo $A \Rightarrow B$ dokážeme $\neg B \Rightarrow \neg A$.\\
 Používá se, pokud je výrok B jednodušší na důkaz než výrok A.\\
 Jako příklad si dokážeme větu \[\forall(n\in \mathbb{N}): 5|(n^2+1) \Rightarrow 5\nmid n\]
@@ -230,7 +232,7 @@ A teď už jen dokážeme tuto implikaci přímým důkazem.
 \[\Rightarrow 5 \nmid (n^2 + 1)\]
 Tím jsme dokázali obměněnou implikaci a tedy i původní implikaci.
 
-\textbf{Důkaz ekvivalence}
+\subsection*{Důkaz ekvivalence}
 Důkaz ekvivalence se provádí důkazem obou implikací, tedy $A \Rightarrow B$ a $B \Rightarrow A$.\\
 Jako příklad si dokážeme větu \[\forall n \in \mathbb{N}: 2|n \Leftrightarrow 2|n^2\]
 Tuto větu si rozdělíme do dvou implikací, tedy \[\forall n \in \mathbb{N}: 2|n \Rightarrow 2|n^2\] a \[\forall n \in \mathbb{N}: 2|n^2 \Rightarrow 2|n\]
@@ -256,8 +258,7 @@ L &= P\\
 Tímto jsme dokázali, že $L = P$, tedy $f(-x) = f(x)$.
 
 \subsection*{Důkaz matematickou indukcí}
-Matematická indukce se používá pro důkaz tvrzení, které platí pro všechna přirozená čísla. Skládá se ze dvou kroků, a to z báze a indukčního kroku. Pokud se projdou jen konkrétní případy, nazývá se to \textbf{neúplná indukce}, pokud jsou zkontrolovány případy všechny, nazývá se to \textbf{úplná indukce}, speciální typ úplné indukce je matematická indukce. Tento typ důkazu fuguje, díky tomu, že přirozená čísla jsou uspořádaná množina, tedy existuje nejmenší prvek a každé přirozené číslo má jednoznačně určeného následovníka\\
-Tento typ důkazu se skládá ze dvou kroků, a to z (báze, Pazi to neříkal, říká to chat) a z indukčního kroku.\\
+Matematická indukce se používá pro důkaz tvrzení, které platí pro všechna přirozená čísla. Skládá se ze dvou kroků, a to z báze(říká chat, Pazi to neříkal) a indukčního kroku. Pokud se projdou jen konkrétní případy, nazývá se to \textbf{neúplná indukce}, pokud jsou zkontrolovány případy všechny, nazývá se to \textbf{úplná indukce}, speciální typ úplné indukce je matematická indukce. Tento typ důkazu fuguje, díky tomu, že přirozená čísla jsou uspořádaná množina, tedy existuje nejmenší prvek a každé přirozené číslo má jednoznačně určeného následovníka\\
 \textbf{1. krok}: dokážeme, že tvrzení platí pro nejmenší prvek množiny, tedy pro $n = 1$\\
 \textbf{2. krok}: nazývá se \textbf{indukční krok} a dokážeme, že pokud tvrzení platí pro nějaké $n = k$, tak musí platit i pro $n = k + 1$\\
 Jako příklad si dokážeme, větu \[\forall n \in \mathbb{N}:1 + 3 + 5 + \dots + (2n-1) = n^2\]
